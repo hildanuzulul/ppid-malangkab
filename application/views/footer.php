@@ -66,14 +66,25 @@
 				<!-- <div class="col-lg-4 col-md-12"> -->
 				<h5><strong>Berlangganan Buletin</strong></h5>
 				<p>Tetap perbarui untuk rilis baru dan gratis. Masukkan email Anda dan berlangganan buletin kami.</p>
-				<form action="#" method="post" class="d-flex mb-5">
+				<!-- <form action="#" method="post" class="d-flex mb-5">
 					<input type="email" name="email" class="form-control rounded-0 rounded-start" placeholder="Masukkan email Anda"
 						style="width: 200px; height: 30px; font-size: 12px;">
 					<button type="submit" class="btn btn-danger rounded-0 rounded-end"
-						style="height: 30px; font-size: 14px; padding: 5px 10px;">Berlangganan</button>
-					<!-- <input type="email" name="email" class="form-control" placeholder="Masukkan email Anda"> -->
-					<!-- <button type="submit" class="btn btn-danger">Berlangganan</button> -->
+						style="height: 30px; font-size: 14px; padding: 5px 10px;">Berlangganan</button> -->
+				<!-- <input type="email" name="email" class="form-control" placeholder="Masukkan email Anda"> -->
+				<!-- <button type="submit" class="btn btn-danger">Berlangganan</button> -->
+				<!-- </form> -->
+
+				<form action="#" method="post" class="d-flex mb-5">
+					<input type="email" name="email" class="form-control rounded-0 rounded-start"
+						placeholder="Masukkan email Anda" style="width: 200px; height: 30px; font-size: 12px;">
+					<a href="#footer" class="btn btn-danger rounded-0 rounded-end d-flex align-items-center justify-content-center"
+						style="height: 30px; font-size: 14px; padding: 0 10px; display: flex;">
+						Berlangganan
+					</a>
 				</form>
+
+
 			</div>
 
 			<!-- <div class="col-lg-4 col-md-12">
