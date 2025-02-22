@@ -33,7 +33,7 @@
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                  <a href=""> <i class="bi bi-youtube"></i> </a>
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                  <a href=""> <i class="bi bi-youtube"></i> </a>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                  <a href=""> <i class="bi bi-youtube"></i> </a>
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                  <a href=""> <i class="bi bi-youtube"></i> </a>
                 </div>
               </div>
             </div>

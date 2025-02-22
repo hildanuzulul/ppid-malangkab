@@ -151,7 +151,8 @@ h6 {
 }
 
 .header .topbar {
-  background-color: var(--background-color);
+	background-color: #B22222 !important;
+  /* background-color: var(--background-color); */
   height: 40px;
   padding: 0;
   font-size: 14px;
@@ -189,15 +190,43 @@ h6 {
 }
 
 .header .topbar .social-links a {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  /* color: color-mix(in srgb, var(--default-color), transparent 40%); */
+	color: #ffffff !important;
   line-height: 0;
   transition: 0.3s;
   margin-left: 20px;
 }
 
+.header .topbar .social-links a.facebook {
+  margin-left: 3px;
+}
+
 .header .topbar .social-links a:hover {
   color: var(--accent-color);
 }
+
+@media (max-width: 768px) {
+  .header .topbar {
+    height: 40px; /* Tetap 40px seperti sebelumnya */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Agar social links tetap di kiri */
+    padding: 0 10px; /* Tambahkan padding agar tidak terlalu mepet */
+  }
+
+  .header .topbar .social-links {
+    width: auto; /* Hanya menyesuaikan isi */
+  }
+
+  .header .topbar .social-links a {
+    margin-left: 6px; /* Jarak antar ikon */
+  }
+
+  .header .topbar .social-links a.facebook {
+    margin-left: 0; /* Ikon pertama tanpa margin kiri */
+  }
+}
+
 
 .header .branding {
   padding: 10px 0;
@@ -208,7 +237,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 55px;
   margin-right: 8px;
 }
 
@@ -217,10 +246,48 @@ h6 {
   padding: 0 0 0 8px;
   margin: 11px 0;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  border-left: 8px solid var(--accent-color);
+  /* text-transform: uppercase; */
+  /* border-left: 8px solid var(--accent-color); */
+}
+ 
+/* Default style */
+.text-right {
+  display: flex;
+  gap: 8px; /* Jarak antar tombol */
+  justify-content: flex-end; /* Meratakan tombol ke kanan */
+}
+
+.text-right .btn {
+  background-color: white;
+  color: #B22222;
+  border: 1.5px solid #B22222;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.text-right .btn:hover {
+  background-color: #B22222;
+  color: white;
+  border: 1.5px solid white;
+}
+
+/* Mobile-friendly styles */
+@media (max-width: 768px) {
+  .text-right {
+    justify-content: flex-end; /* Memastikan tombol tetap rata kanan */
+    width: 100%; /* Memastikan area tombol penuh */
+		gap: 4px;
+  }
+
+  .text-right .btn {
+    padding: 3px 8px; /* Mengecilkan ukuran tombol */
+    font-size: 12px; /* Menyesuaikan ukuran font */
+  }
 }
 
 /*--------------------------------------------------------------
