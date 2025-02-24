@@ -104,7 +104,7 @@
 						<li><a href="beranda" class="active">Beranda</a></li>
 						<li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
-								<li><a href="#">Profil PPID Kabupaten Malang</a></li>
+								<li><a href="profil">Profil PPID Kabupaten Malang</a></li>
 								<li><a href="#">Visi Misi PPID Kabupaten Malang</a></li>
 								<li><a href="#">Struktur Organisasi</a></li>
 								<li><a href="#">Dasar Hukum</a></li>
