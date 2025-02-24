@@ -2676,3 +2676,23 @@ section,
 		width: 90%;
 	}
 }
+
+/*--------------------------------------------------------------
+  Visi dan Misi Section
+  --------------------------------------------------------------*/
+.visi-misi-page {
+	font-family: "Open Sans", sans-serif;
+}
+
+.misi-text {
+	font-size: 14px;
+	line-height: 22px;
+	color: #656565;
+}
+
+.visi-blockquote {
+	font-style: italic;
+	color: #656565;
+	padding-left: 15px;
+	margin-left: 10px;
+}

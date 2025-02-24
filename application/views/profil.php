@@ -1,4 +1,4 @@
-<body class="profile-page">
+<body class="profil-page">
 	<main class="main">
 
 		<!-- Page Title -->
@@ -7,6 +7,7 @@
 				<nav class="breadcrumbs">
 					<ol>
 						<li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Profil</li>
 						<li class="breadcrumb-item active" aria-current="page">Profil PPID Kabupaten Malang</li>
 					</ol>
 				</nav>
