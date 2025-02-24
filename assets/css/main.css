@@ -2618,9 +2618,9 @@ section,
 	text-align: left;
 }
 
-/* Container */
+/* Container DEFAULT */
 .container {
-	width: 80%;
+	width: 95%;
 	max-width: 1200px;
 	margin: 0 auto;
 	text-align: left;
