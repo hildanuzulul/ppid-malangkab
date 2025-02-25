@@ -107,7 +107,7 @@
 								<li><a href="profil">Profil PPID Kabupaten Malang</a></li>
 								<li><a href="visi_misi">Visi Misi PPID Kabupaten Malang</a></li>
 								<li><a href="#">Struktur Organisasi</a></li>
-								<li><a href="#">Dasar Hukum</a></li>
+								<li><a href="dasar_hukum">Dasar Hukum</a></li>
 								<li><a href="#">Maklumat Pelayanan</a></li>
 								<li><a href="#">Tugas Wewenang</a></li>
 								<li><a href="#">LHKPN</a></li>
@@ -126,7 +126,7 @@
 							<ul>
 								<li><a href="#">Mekanisme Permohonan Informasi</a></li>
 								<li><a href="#">Mekanisme Permohonan Keberatan</a></li>
-								<li><a href="#">Interaksi Masyarakat</a></li>
+								<li><a href="interaksi_masyarakat">Interaksi Masyarakat</a></li>
 								<li><a href="#">Koordinasi Rutin</a></li>
 								<li><a href="#">Mekanisme Permohonan Penyelesaian Sengketa...</a></li>
 								<li><a href="#">Permohonan Informasi</a></li>
