@@ -2634,7 +2634,7 @@ section,
 }
 
 .breadcrumb-item a {
-	color: #E96B56; /* Warna link (bisa disesuaikan) */
+	color: #e96b56; /* Warna link (bisa disesuaikan) */
 	text-decoration: none;
 }
 
@@ -2697,48 +2697,130 @@ section,
 	margin-left: 10px;
 }
 
-
 /*--------------------------------------------------------------
   Dasar Hukum Section
   --------------------------------------------------------------*/
-  .faq-item {
-    margin-bottom: 4px; /* Jarak antar pertanyaan */
+.faq-item {
+	margin-bottom: 4px; /* Jarak antar pertanyaan */
 }
 
 .faq-question {
-    width: 100%;
-    text-align: left;
-    padding: 8px 12px;
-    font-size: 13px;
-    cursor: pointer;
-    font-weight: 600;
-    background: #F8F9FA;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: black; /* Warna default */
+	width: 100%;
+	text-align: left;
+	padding: 8px 12px;
+	font-size: 13px;
+	cursor: pointer;
+	font-weight: 600;
+	background: #f8f9fa;
+	border: 1px solid #ddd;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: black; /* Warna default */
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 }
 
 .faq-icon {
-    font-weight: bold;
-    font-size: 18px;
-    flex-shrink: 0; /* Ikon tidak mengecil */
+	font-weight: bold;
+	font-size: 18px;
+	flex-shrink: 0; /* Ikon tidak mengecil */
 }
 
 .faq-question.active {
-    color: #b22222;
+	color: #b22222;
 }
 
 .faq-answer {
-    display: none;
-    padding: 8px 12px 0px;
-    font-size: 13px;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    margin-bottom: 10px; /* Jarak ke pertanyaan berikutnya */
+	display: none;
+	padding: 8px 12px 0px;
+	font-size: 13px;
+	background: #ffffff;
+	border: 1px solid #ddd;
+	margin-bottom: 10px; /* Jarak ke pertanyaan berikutnya */
 	border-bottom-left-radius: 4px;
 	border-bottom-right-radius: 4px;
+}
+
+/*--------------------------------------------------------------
+  Sengketa Section
+  --------------------------------------------------------------*/
+.sengketa-page {
+	font-family: "Open Sans", sans-serif;
+}
+
+.sengketa-text {
+	font-size: 14px;
+	line-height: 30px;
+	color: #656565;
+}
+
+.sengketa-text-a {
+	font-size: 14px;
+	line-height: 25px;
+	color: #656565;
+}
+
+.subtitle {
+	font-size: 18px;
+	line-height: 22px;
+	color: #656565;
+	text-transform: uppercase;
+}
+
+.subtitle-sengketa {
+	margin-bottom: 10px;
+	counter-increment: heading-counter;
+	font-size: 14px;
+	line-height: 22px;
+	color: #656565;
+	font-weight: 600;
+}
+.subtitle-sengketa::before {
+	content: counter(heading-counter) ". ";
+	font-weight: bold;
+	color: #656565;
+}
+
+.responsive-img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Menjadikan list numbering rapi */
+.sengketa-text ol {
+	list-style-type: decimal;
+	padding-left: 20px;
+}
+
+.sengketa-text li {
+	list-style-type: lower-alpha;
+	padding-left: 20px;
+}
+
+.sengketa-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	counter-reset: heading-counter;
+	/* flex-wrap: wrap */
+}
+/* Kolom kiri dan kanan */
+.sengketa-kiri,
+.sengketa-kanan {
+	width: 50%;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+	.sengketa-container {
+		flex-direction: column; /* Stack ke bawah */
+	}
+
+	.sengketa-kiri,
+	.sengketa-kanan {
+		width: 100%; /* Full width di layar kecil */
+	}
 }

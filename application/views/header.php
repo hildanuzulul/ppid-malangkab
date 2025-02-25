@@ -128,7 +128,7 @@
 								<li><a href="#">Mekanisme Permohonan Keberatan</a></li>
 								<li><a href="interaksi_masyarakat">Interaksi Masyarakat</a></li>
 								<li><a href="#">Koordinasi Rutin</a></li>
-								<li><a href="#">Mekanisme Permohonan Penyelesaian Sengketa...</a></li>
+								<li><a href="sengketa">Mekanisme Permohonan Penyelesaian Sengketa...</a></li>
 								<li><a href="#">Permohonan Informasi</a></li>
 								<li><a href="#">Permohonan Keberatan Informasi</a></li>
 							</ul>
