@@ -220,4 +220,37 @@
 				);
 			});
 	});
+
+	
+document.addEventListener("DOMContentLoaded", function () {
+    const faqQuestions = document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach((question) => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector(".faq-icon");
+
+        if (question.classList.contains("active")) {
+            answer.style.display = "block";
+            icon.textContent = "−";
+        }
+
+        question.addEventListener("click", function () {
+            const isActive = this.classList.contains("active");
+
+            // Tutup semua jawaban & reset ikon serta warna font
+            faqQuestions.forEach((btn) => {
+                btn.classList.remove("active");
+                btn.querySelector(".faq-icon").textContent = "+";
+                btn.nextElementSibling.style.display = "none";
+            });
+
+            // Jika tidak dalam keadaan terbuka, maka buka dan ubah warna menjadi merah
+            if (!isActive) {
+                this.classList.add("active");
+                this.querySelector(".faq-icon").textContent = "−";
+                this.nextElementSibling.style.display = "block";
+            }
+        });
+    });
+});
 })();
