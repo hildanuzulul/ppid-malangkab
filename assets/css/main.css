@@ -2747,27 +2747,27 @@ section,
   Interaksi Masyarakat Section
   --------------------------------------------------------------*/
 .container.content ol {
-    font-family: "Open Sans", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    color: rgb(101, 101, 101);
-    font-size: 14px;
-    line-height: 22px;
-    padding-left: 20px; /* Menjaga jarak dari sisi kiri */
+	font-family: "Open Sans", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	color: rgb(101, 101, 101);
+	font-size: 14px;
+	line-height: 22px;
+	padding-left: 20px; /* Menjaga jarak dari sisi kiri */
 }
 
 .container.content ol li {
-    margin-bottom: 10px; /* Memberikan jarak antar item */
+	margin-bottom: 10px; /* Memberikan jarak antar item */
 }
 
 .container.content ol a {
-    color: #E96B56;
-    font-weight: bold;
-    text-decoration: none; /* Menghilangkan garis bawah default */
+	color: #e96b56;
+	font-weight: bold;
+	text-decoration: none; /* Menghilangkan garis bawah default */
 }
 
 .container.content ol a:hover {
-    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+	text-decoration: underline; /* Menambahkan garis bawah saat hover */
 }
 
 /*--------------------------------------------------------------
@@ -2857,104 +2857,171 @@ section,
   --------------------------------------------------------------*/
 /* Gaya umum */
 .mekanismePI-page {
-    font-family: Arial, sans-serif;
-    /* color: #333;
+	font-family: Arial, sans-serif;
+	/* color: #333;
     background-color: #f8f9fa; */
 }
 
 .mekanisme-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	margin-top: 20px;
 }
 
 /* Bagian kiri: Informasi */
 .mekanisme-info {
-    width: 56%;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+	width: 56%;
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 .mekanisme-info h3 {
 	font-weight: 500;
-    color: rgb(53, 53, 53);
-    font-size: 18px;
-    line-height: 20px;
+	color: rgb(53, 53, 53);
+	font-size: 18px;
+	line-height: 20px;
 }
 
 .mekanisme-info p,
 .mekanisme-info ol li {
-    font-family: "Open Sans", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    color: rgb(101, 101, 101);
-    font-size: 14px;
-    line-height: 22px;
+	font-family: "Open Sans", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	color: rgb(101, 101, 101);
+	font-size: 14px;
+	line-height: 22px;
 }
 
 .mekanisme-info ol {
-    padding-left: 20px;
+	padding-left: 20px;
 }
 
 .table-service {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
 }
 
 .table-service th {
-    background: #E96B56;
-    color: white;
+	background: #e96b56;
+	color: white;
 }
 .table-service th {
 	border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    line-height: 22px;
+	padding: 8px;
+	text-align: center;
+	font-family: "Open Sans", sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	color: rgb(255, 255, 255);
+	font-size: 14px;
+	line-height: 22px;
 }
 
 .table-service td {
 	border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    color: rgb(101, 101, 101);
-    font-size: 14px;
-    line-height: 22px;
+	padding: 8px;
+	text-align: center;
+	font-family: "Open Sans", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	color: rgb(101, 101, 101);
+	font-size: 14px;
+	line-height: 22px;
 }
 
 /* Bagian kanan: Gambar */
 .mekanisme-image {
-    width: 44%;
-    text-align: center;
+	width: 44%;
+	text-align: center;
 }
 
 .mekanisme-image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsivitas */
 @media (max-width: 768px) {
-    .mekanisme-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .mekanisme-info {
-        width: 100%;
-    }
-    .mekanisme-image {
-        width: 100%;
-    }
+	.mekanisme-container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.mekanisme-info {
+		width: 100%;
+	}
+	.mekanisme-image {
+		width: 100%;
+	}
+}
+
+/* --------------------------------------------------------------
+	Keberatan Section
+	--------------------------------------------------------------*/
+
+.keberatan-page {
+	font-family: "Open Sans", sans-serif;
+}
+
+.keberatan-container {
+	display: flex;
+	align-items: left;
+	gap: 30px;
+}
+
+/* Kolom kiri (gambar) */
+.keberatan-kiri {
+	flex: 1;
+}
+
+.keberatan-kiri img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Kolom kanan (teks) */
+.keberatan-kanan {
+	flex: 1;
+}
+
+.subtitle-keberatan {
+	margin-bottom: 10px;
+	font-size: 14px;
+	line-height: 22px;
+	color: #656565;
+	font-weight: 600;
+}
+
+.keberatan-text {
+	font-size: 14px;
+	line-height: 30px;
+	color: #656565;
+	font-weight: 600;
+	padding-left: 20px;
+}
+
+.keberatan-text-a {
+	font-size: 14px;
+	line-height: 30px;
+	color: #656565;
+	padding-left: 20px;
+	text-align: left;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+	.keberatan-container {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.keberatan-kiri,
+	.keberatan-kanan {
+		width: 100%;
+	}
 }

@@ -125,7 +125,7 @@
 						<li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
 								<li><a href="mekanisme_permohonan_informasi">Mekanisme Permohonan Informasi</a></li>
-								<li><a href="#">Mekanisme Permohonan Keberatan</a></li>
+								<li><a href="permohonan_keberatan">Mekanisme Permohonan Keberatan</a></li>
 								<li><a href="interaksi_masyarakat">Interaksi Masyarakat</a></li>
 								<li><a href="#">Koordinasi Rutin</a></li>
 								<li><a href="sengketa">Mekanisme Permohonan Penyelesaian Sengketa...</a></li>

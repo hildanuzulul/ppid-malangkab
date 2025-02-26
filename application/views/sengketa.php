@@ -41,18 +41,21 @@
 						<li>Membawa bukti jawaban permohonan informasi dari Badan Publik beserta tanda terimanya (jika ada);</li>
 						<li>Membawa bukti pengajuan keberatan kepada Badan Publik dan tanda terimanya;</li>
 						<li>Membawa bukti jawaban keberatan dari Badan Publik beserta tanda terimanya (jika ada);</li>
-						<li>Membawa bukti Identitas (KTP jika individu, Anggaran Dasar jika Badan Hukum).</li>
+						<li>Membawa bukti Identitas (jika individu maka dibuktikan dengan Kartu Tanda Penduduk dan
+							jika Badan Hukum dibuktikan dengan Anggaran Dasar yang telah mendapat pengesahan sebagai Badan Hukum dan
+							bila dikuasakan dibuktikan dengan dengan surat kuasa).</li>
 					</ol>
 				</div>
 
 				<div class="sengketa-kanan">
 					<h4 class="subtitle-sengketa">Permohonan Penyelesaian Sengketa Informasi dapat diajukan secara tertulis (surat) dikirim melalui email atau surat tercatat dan secara online</h4>
 					<ol class="sengketa-text-a">
-						<li>Mengirim Surat Permohonan Penyelesaian Sengketa Informasi ke Ketua Komisi Informasi Pusat.</li>
-						<li>Menyertakan bukti surat permohonan informasi kepada Badan Publik dan tanda terimanya.</li>
-						<li>Menyertakan bukti jawaban permohonan informasi dari Badan Publik beserta tanda terimanya (jika ada).</li>
-						<li>Menyertakan Bukti Pengajuan Keberatan kepada Badan Publik dan tanda terimanya.</li>
-						<li>Bukti Identitas (KTP jika individu, Anggaran Dasar jika Badan Hukum).</li>
+						<li>Mengirim Surat Permohonan Penyelesaian Sengketa Informasi yang ditujukan ke Ketua Komisi Informasi Pusat dengan melampirkan buktisurat permohonan informasi kepada Badan Publik dan tanda terimanya;</li>
+						<li>Bukti jawaban permohonan informasi dari Badan Publik beserta tanda terimanya (jika ada);</li>
+						<li>Bukti Pengajuan Keberatan kepada Badan Publik dan tanda terimanya;</li>
+						<li>Bukti jawaban keberatan dari Badan Publik beserta tanda terimanya (jika ada);</li>
+						<li>Bukti Identitas (jika individu maka dibuktikan dengan Kartu Tanda Penduduk dan jika Badan Hukum dibuktikan dengan Anggaran Dasar yang telah mendapat pengesahan
+							sebagai Badan Hukum dan bila dikuasakan dibuktikan dengan dengan surat kuasa).</li>
 					</ol>
 				</div>
 			</div>
