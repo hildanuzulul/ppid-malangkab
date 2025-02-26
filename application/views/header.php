@@ -68,7 +68,7 @@
 					<img src="assets/img/logo.png" alt="PPID Kab. Malang">
 					<h1 class="sitename">
 						<strong style="color: #E96B56;">PPID</strong><br>
-						<span style="font-size: 18px;">Kabupaten <span style="color: #E96B56;">Malang</span></span>
+						<span style="font-size: 16px;">Kabupaten <span style="color: #E96B56;">Malang</span></span>
 					</h1>
 				</a>
 
@@ -124,7 +124,7 @@
 						<li><a href="team">Berita</a></li>
 						<li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
-								<li><a href="#">Mekanisme Permohonan Informasi</a></li>
+								<li><a href="mekanisme_permohonan_informasi">Mekanisme Permohonan Informasi</a></li>
 								<li><a href="#">Mekanisme Permohonan Keberatan</a></li>
 								<li><a href="interaksi_masyarakat">Interaksi Masyarakat</a></li>
 								<li><a href="#">Koordinasi Rutin</a></li>

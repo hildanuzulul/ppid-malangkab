@@ -15,8 +15,8 @@
 	--default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
 		"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--heading-font: "Raleway", sans-serif;
-	--nav-font: "Poppins", sans-serif;
+	--heading-font: "Open Sans", sans-serif;
+	--nav-font: "Open Sans", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -242,6 +242,7 @@ h6 {
 }
 
 .header .logo h1 {
+	font-family: "Open Sans", sans-serif;
 	font-size: 26px;
 	padding: 0 0 0 8px;
 	margin: 11px 0;
@@ -786,14 +787,34 @@ h6 {
 }
 
 .page-title .breadcrumbs ol li + li {
-	padding-left: 10px;
+	padding-left: 4px;
 }
 
 .page-title .breadcrumbs ol li + li::before {
 	content: "/";
 	display: inline-block;
-	padding-right: 10px;
+	padding-right: 4px;
 	color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.breadcrumb {
+	background-color: transparent;
+	padding: 0;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+.breadcrumb-item a {
+	color: #e96b56; /* Warna link (bisa disesuaikan) */
+	text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+	text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+	color: #888; /* Warna breadcrumb terakhir */
 }
 
 /*--------------------------------------------------------------
@@ -2614,7 +2635,7 @@ section,
 /* Page Title */
 .page-title {
 	background-color: white;
-	padding-top: 50px;
+	padding-top: 30px;
 	text-align: left;
 }
 
@@ -2624,26 +2645,6 @@ section,
 	max-width: 1200px;
 	margin: 0 auto;
 	text-align: left;
-}
-
-.breadcrumb {
-	background-color: transparent;
-	padding: 0;
-	margin-bottom: 10px;
-	font-size: 14px;
-}
-
-.breadcrumb-item a {
-	color: #e96b56; /* Warna link (bisa disesuaikan) */
-	text-decoration: none;
-}
-
-.breadcrumb-item a:hover {
-	text-decoration: underline;
-}
-
-.breadcrumb-item.active {
-	color: #888; /* Warna breadcrumb terakhir */
 }
 
 /* Page Content */
@@ -2657,7 +2658,7 @@ section,
 	height: 1px;
 	background-color: #656579;
 	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 /* Styling untuk paragraf dengan border kiri */
@@ -2743,6 +2744,33 @@ section,
 }
 
 /*--------------------------------------------------------------
+  Interaksi Masyarakat Section
+  --------------------------------------------------------------*/
+.container.content ol {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(101, 101, 101);
+    font-size: 14px;
+    line-height: 22px;
+    padding-left: 20px; /* Menjaga jarak dari sisi kiri */
+}
+
+.container.content ol li {
+    margin-bottom: 10px; /* Memberikan jarak antar item */
+}
+
+.container.content ol a {
+    color: #E96B56;
+    font-weight: bold;
+    text-decoration: none; /* Menghilangkan garis bawah default */
+}
+
+.container.content ol a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}
+
+/*--------------------------------------------------------------
   Sengketa Section
   --------------------------------------------------------------*/
 .sengketa-page {
@@ -2823,4 +2851,110 @@ section,
 	.sengketa-kanan {
 		width: 100%; /* Full width di layar kecil */
 	}
+}
+/*--------------------------------------------------------------
+  Mekanisme Permohonana Informasi Section
+  --------------------------------------------------------------*/
+/* Gaya umum */
+.mekanismePI-page {
+    font-family: Arial, sans-serif;
+    /* color: #333;
+    background-color: #f8f9fa; */
+}
+
+.mekanisme-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Bagian kiri: Informasi */
+.mekanisme-info {
+    width: 56%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.mekanisme-info h3 {
+	font-weight: 500;
+    color: rgb(53, 53, 53);
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.mekanisme-info p,
+.mekanisme-info ol li {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(101, 101, 101);
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.mekanisme-info ol {
+    padding-left: 20px;
+}
+
+.table-service {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table-service th {
+    background: #E96B56;
+    color: white;
+}
+.table-service th {
+	border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.table-service td {
+	border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(101, 101, 101);
+    font-size: 14px;
+    line-height: 22px;
+}
+
+/* Bagian kanan: Gambar */
+.mekanisme-image {
+    width: 44%;
+    text-align: center;
+}
+
+.mekanisme-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .mekanisme-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mekanisme-info {
+        width: 100%;
+    }
+    .mekanisme-image {
+        width: 100%;
+    }
 }

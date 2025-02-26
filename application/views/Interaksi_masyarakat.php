@@ -1,4 +1,4 @@
-<body class="visi-misi-page">
+<body class="interaksi_masryarakat-page">
 	<main class="main">
 
 		<!-- Page Title -->
