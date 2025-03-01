@@ -873,7 +873,7 @@ section,
 /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
-  .hero {
+.hero {
 	padding: 0;
 }
 
@@ -893,17 +893,17 @@ section,
 		min-height: 100vh;
 	}
 }
- 
+
 .slide-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 }
 
 .logo-image {
-    width: auto;
-    height: 250px;
-    display: block;
+	width: auto;
+	height: 250px;
+	display: block;
 	margin-left: 20px; /* Geser ke kanan */
 }
 
@@ -934,17 +934,17 @@ section,
 }
 
 /* Responsif untuk tablet */
-@media (max-width: 991px) { 
-    .hero .carousel-container {
-        inset: 60px 40px 40px 40px; /* Kurangi padding agar lebih pas di layar tablet */
-    }
+@media (max-width: 991px) {
+	.hero .carousel-container {
+		inset: 60px 40px 40px 40px; /* Kurangi padding agar lebih pas di layar tablet */
+	}
 }
 
 /* Responsif untuk mobile */
-@media (max-width: 767px) { 
-    .hero .carousel-container {
-        inset: 40px 20px 20px 20px; /* Lebih kecil untuk layar HP */
-    }
+@media (max-width: 767px) {
+	.hero .carousel-container {
+		inset: 40px 20px 20px 20px; /* Lebih kecil untuk layar HP */
+	}
 }
 
 /* .hero .carousel-item h2 {
@@ -991,23 +991,23 @@ section,
 } */
 
 .hero .carousel-item h2 {
-    margin-bottom: 30px;
-    font-size: 38px;
-    font-weight: 800;
-    color: rgb(255, 255, 255);
-    line-height: 42px;
-    animation: fadeInDown 1s both;
+	margin-bottom: 30px;
+	font-size: 38px;
+	font-weight: 800;
+	color: rgb(255, 255, 255);
+	line-height: 42px;
+	animation: fadeInDown 1s both;
 	margin-left: 10px; /* Geser ke kanan */
 }
 
 .hero .carousel-item p {
 	margin-left: 10px; /* Geser ke kanan */
 	margin-bottom: 0px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    color: rgb(255, 255, 255);
-    line-height: 29px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	color: rgb(255, 255, 255);
+	line-height: 29px;
 	animation: fadeInDown 1s both 0.2s;
 }
 
@@ -1041,58 +1041,57 @@ section,
 	}
 }
 
-
 /* Default style */
 .hero .btn-get-started {
 	margin-left: 10px; /* Geser ke kanan */
 	margin-top: 46px;
-    background-color: white;
-    color: #b22222;
-    padding: 14px 20px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 28px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: background-color 0.3s, color 0.3s, border 0.3s;
-    min-width: 140px;
-    justify-content: center;
+	background-color: white;
+	color: #b22222;
+	padding: 14px 20px;
+	border-radius: 12px;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 28px;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	transition: background-color 0.3s, color 0.3s, border 0.3s;
+	min-width: 140px;
+	justify-content: center;
 }
 
 /* Hover style */
 .hero .btn-get-started:hover {
-    background-color: #b22222;
-    color: white;
+	background-color: #b22222;
+	color: white;
 }
 
 /* Ikon dalam tombol */
 .btn-get-started i {
-    font-size: 24px;
+	font-size: 24px;
 }
 
 /* Mobile-friendly styles */
 @media (max-width: 768px) {
-    .hero .btn-get-started {
-        padding: 12px 18px; /* Lebih kecil di layar mobile */
-        font-size: 20px;
-        line-height: 24px;
-        min-width: 120px;
-    }
-    .btn-get-started i {
-        font-size: 22px;
-    }
+	.hero .btn-get-started {
+		padding: 12px 18px; /* Lebih kecil di layar mobile */
+		font-size: 20px;
+		line-height: 24px;
+		min-width: 120px;
+	}
+	.btn-get-started i {
+		font-size: 22px;
+	}
 }
 
 .hero .carousel-control-prev,
 .hero .carousel-control-next {
-    width: 5%; /* Atur lebar navigasi */
-    transition: 0.3s;
-    opacity: 0.4;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+	width: 5%; /* Atur lebar navigasi */
+	transition: 0.3s;
+	opacity: 0.4;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .hero .carousel-control-prev:focus,
@@ -1193,7 +1192,6 @@ section,
 	}
 }
 
-
 .hero .featured-item {
 	background-color: var(--surface-color);
 	box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
@@ -1276,6 +1274,92 @@ section,
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
+}
+
+.beranda-page {
+	font-family: "Open Sans", sans-serif;
+}
+body {
+	background-color: #f8f9fa;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+.card {
+	border-radius: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 95%;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+/* Styling untuk ikon bulat */
+.icon-circle {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 40px;
+	color: white;
+	margin: 0 auto 10px;
+}
+
+/* Warna latar ikon */
+.bg-primary {
+	background-color: #007bff;
+} /* Biru */
+.bg-success {
+	background-color: #28a745;
+} /* Hijau */
+.bg-secondary {
+	background-color: #6c757d;
+} /* Abu-abu */
+.bg-danger {
+	background-color: #dc3545;
+} /* Merah */
+.bg-warning {
+	background-color: #ffc107;
+} /* Kuning */
+.bg-orange {
+	background-color: #fd7e14;
+} /* Oranye */
+
+/* Card styling */
+.card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	border: none;
+	transition: transform 0.2s ease-in-out;
+}
+
+.card-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 10px; /* Atur jarak antar elemen */
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.card-body,
+.card {
+	height: 100%;
 }
 
 /*--------------------------------------------------------------

@@ -147,6 +147,139 @@
 
 		</section><!-- /Hero Section -->
 
+		<!-- <section id="content"> -->
+		<div class="container content" data-aos="fade-up" data-aos-delay="100">
+			<hr class="separator">
+			<!-- <div class="container mt-5"> -->
+			<h2 class="text-left mb-4">INFORMASI PUBLIK</h2>
+			<div class="row justify-content-start">
+
+				<!-- Dokumen -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<div class="card text-center shadow-sm">
+						<div class="card-body">
+							<div class="icon-circle bg-primary">
+								<i class="fa-solid fa-book"></i>
+							</div>
+							<h3 class="mt-2">10,116</h3>
+							<p class="text-danger fw-bold">Dokumen</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Informasi -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<div class="card text-center shadow-sm">
+						<div class="card-body">
+							<div class="icon-circle bg-success">
+								<i class="fa-solid fa-info-circle"></i>
+							</div>
+							<h3 class="mt-2">200</h3>
+							<p class="text-danger fw-bold">Informasi</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Artikel -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<div class="card text-center shadow-sm">
+						<div class="card-body">
+							<div class="icon-circle bg-orange">
+								<i class="fa-solid fa-file-alt"></i>
+							</div>
+							<h3 class="mt-2">33,287</h3>
+							<p class="text-danger fw-bold">Artikel</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Galeri -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<div class="card text-center shadow-sm">
+						<div class="card-body">
+							<div class="icon-circle bg-warning">
+								<i class="fa-solid fa-image"></i>
+							</div>
+							<h3 class="mt-2">13,757</h3>
+							<p class="text-danger fw-bold">Galeri</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Layanan Permohonan Informasi PPID -->
+			<h2 class="text-left mb-4 mt-5">LAYANAN PERMOHONAN INFORMASI PPID</h2>
+			<div class="row justify-content-start">
+
+				<!-- Permohonan Informasi -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<div class="card text-center shadow-sm">
+						<div class="card-body">
+							<div class="icon-circle bg-primary">
+								<i class="fa-solid fa-book"></i>
+							</div>
+							<h3 class="mt-2">2</h3>
+							<p class="text-danger fw-bold">Permohonan Informasi</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Pengajuan Baru -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<div class="card text-center shadow-sm">
+						<div class="card-body">
+							<div class="icon-circle bg-success">
+								<i class="fa-solid fa-pen-to-square"></i>
+							</div>
+							<h3 class="mt-2">2</h3>
+							<p class="text-danger fw-bold">Pengajuan Baru</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Diproses -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<div class="card text-center shadow-sm">
+						<div class="card-body">
+							<div class="icon-circle bg-secondary">
+								<i class="fa-solid fa-gears"></i>
+							</div>
+							<h3 class="mt-2">0</h3>
+							<p class="text-danger fw-bold">Diproses</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Disetujui -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<div class="card text-center shadow-sm">
+						<div class="card-body">
+							<div class="icon-circle bg-danger">
+								<i class="fa-solid fa-square-check"></i>
+							</div>
+							<h3 class="mt-2">0</h3>
+							<p class="text-danger fw-bold">Disetujui</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Ditolak -->
+				<div class="col-md-3 col-sm-6 mb-4 me-3">
+					<div class="card text-center shadow-sm">
+						<div class="card-body">
+							<div class="icon-circle bg-warning">
+								<i class="fa fa-xmark"></i>
+							</div>
+							<h3 class="mt-2">0</h3>
+							<p class="text-danger fw-bold">Ditolak</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- </div> -->
+		</div>
+
 		<!-- About Section -->
 		<section id="about" class="section about">
 
