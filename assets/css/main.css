@@ -1283,6 +1283,10 @@ body {
 	background-color: #f8f9fa;
 }
 
+.container.beranda {
+    padding: 40px 0; /* Padding atas dan bawah 40px */
+}
+
 .row {
 	display: flex;
 	flex-wrap: wrap;
@@ -1293,9 +1297,12 @@ body {
 	border-radius: 5%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	height: 100%;
 	width: 95%;
+	border: none;
+	transition: transform 0.2s ease-in-out;
+	margin: 16px auto;
 }
 
 .card:hover {
@@ -1304,15 +1311,14 @@ body {
 
 /* Styling untuk ikon bulat */
 .icon-circle {
-	width: 70px;
-	height: 70px;
+	width: 80px;
+	height: 80px;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 40px;
+	font-size: 45px;
 	color: white;
-	margin: 0 auto 10px;
 }
 
 /* Warna latar ikon */
@@ -1335,22 +1341,18 @@ body {
 	background-color: #fd7e14;
 } /* Oranye */
 
-/* Card styling */
-.card {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	border: none;
-	transition: transform 0.2s ease-in-out;
-}
-
 .card-body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	gap: 10px; /* Atur jarak antar elemen */
+	gap: 10px;
+}
+
+.card-body h3, 
+.card-body p {
+    margin-bottom: 0;
 }
 
 .card:hover {

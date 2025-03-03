@@ -148,9 +148,8 @@
 		</section><!-- /Hero Section -->
 
 		<!-- <section id="content"> -->
-		<div class="container content" data-aos="fade-up" data-aos-delay="100">
-			<hr class="separator">
-			<h2 class="text-left mb-4">INFORMASI PUBLIK</h2>
+		<div class="container beranda" data-aos="fade-up" data-aos-delay="100">
+			<h2 class="text-left mb-3">INFORMASI PUBLIK</h2>
 			<div class="row justify-content-start">
 
 				<!-- Dokumen -->
@@ -208,7 +207,7 @@
 			</div>
 
 			<!-- Layanan Permohonan Informasi PPID -->
-			<h2 class="text-left mb-4 mt-5">LAYANAN PERMOHONAN INFORMASI PPID</h2>
+			<h2 class="text-left mb-3 mt-4">LAYANAN PERMOHONAN INFORMASI PPID</h2>
 			<div class="row justify-content-start">
 
 				<!-- Permohonan Informasi -->
