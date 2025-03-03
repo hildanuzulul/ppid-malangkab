@@ -150,7 +150,6 @@
 		<!-- <section id="content"> -->
 		<div class="container content" data-aos="fade-up" data-aos-delay="100">
 			<hr class="separator">
-			<!-- <div class="container mt-5"> -->
 			<h2 class="text-left mb-4">INFORMASI PUBLIK</h2>
 			<div class="row justify-content-start">
 
