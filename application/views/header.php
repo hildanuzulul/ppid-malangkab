@@ -57,7 +57,7 @@
 				<div class="text-right">
 					<a href="https://ppid.malangkab.go.id/index.php/User" class="btn btn-sm btn-danger">Permintaan Data</a>
 					<a href="https://ppid.malangkab.go.id/index.php/User/Register" class="btn btn-sm btn-danger">Register</a>
-					<a href="https://ppid.malangkab.go.id/index.php/Request" class="btn btn-sm btn-danger">Login</a>
+					<a href="login" class="btn btn-sm btn-danger">Login</a>
 				</div>
 			</div>
 		</div><!-- End Top Bar -->
