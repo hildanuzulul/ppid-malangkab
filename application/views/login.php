@@ -1,7 +1,7 @@
 <body>
 	<div class="user-login-wrapper">
 		<div class="user-login-container text-center">
-			<h2>Login</h2>
+			<h2>Loginn</h2>
 			<form>
 				<div class="mb-3 text-start">
 					<label for="username" class="form-label">Username</label>
@@ -21,7 +21,6 @@
 			</form>
 		</div>
 
-		<!-- Tambahan teks di bawah login -->
 		<div class="register-container">
 			<p>Belum memiliki akun? <a href="register.html" class="text-danger">Daftar di sini</a></p>
 		</div>
