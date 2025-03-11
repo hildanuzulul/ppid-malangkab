@@ -1,41 +1,8 @@
 <footer id="footer" class="footer position-relative dark-background">
-
-	<!-- <div class="footer-newsletter">
-		<div class="container">
-			<div class="row justify-content-center text-center">
-				<div class="col-lg-6">
-					<h4>Join Our Newsletterr</h4>
-					<p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-					<form action="forms/newsletter.php" method="post" class="php-email-form">
-						<div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-						<div class="loading">Loading</div>
-						<div class="error-message"></div>
-						<div class="sent-message">Your subscription request has been sent. Thank you!</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
 	<div class="container footer-top">
 		<div class="row gy-4">
-			<!-- <div class="row gx-10 gy-4"> -->
 
-			<!-- <div class="col-lg-4 col-md-6 footer-about">
-				<a href="index.html" class="d-flex align-items-center">
-					<span class="sitename">Eterna</span>
-				</a>
-				<div class="footer-contact pt-3">
-					<p>A108 Adam Street</p>
-					<p>New York, NY 535022</p>
-					<p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-					<p><strong>Email:</strong> <span>info@example.com</span></p>
-				</div>
-			</div> -->
-
-			<!-- Website Lainnya -->
 			<div class="col-lg-4 col-md-4 col-sm-12 footer-links">
-				<!-- <div class="col-lg-3 col-md-4 footer-links mt-4"> -->
 				<h5><strong>Website Lainnya</strong></h5>
 				<ul style="margin: 0; padding: 0;" class="link-list">
 					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="https://malangkab.go.id/" target="_blank">MalangKab</a></li>
@@ -47,11 +14,9 @@
 			</div>
 
 			<!-- Alamat -->
-			<!-- <div class="container position-relative d-flex align-items-center justify-content-between"></div> -->
 			<div class="col-lg-4 col-md-4 col-sm-12 footer-links">
-				<!-- <div class="col-lg-3 col-md-4 footer-links"> -->
 				<h5><strong>Alamat</strong></h5>
-				<address>
+				<address style="margin-bottom: 0;">
 					<strong>Sekretariat Daerah</strong><br>
 					Jalan K.H. Agus Salim No. 7 Gedung J lt. 3, Malang<br>
 					Jawa Timur - Indonesia<br>
@@ -63,17 +28,8 @@
 
 			<!-- Berlangganan Buletin -->
 			<div class="col-lg-4 col-md-4 col-sm-12">
-				<!-- <div class="col-lg-4 col-md-12"> -->
 				<h5><strong>Berlangganan Buletin</strong></h5>
 				<p>Tetap perbarui untuk rilis baru dan gratis. Masukkan email Anda dan berlangganan buletin kami.</p>
-				<!-- <form action="#" method="post" class="d-flex mb-5">
-					<input type="email" name="email" class="form-control rounded-0 rounded-start" placeholder="Masukkan email Anda"
-						style="width: 200px; height: 30px; font-size: 12px;">
-					<button type="submit" class="btn btn-danger rounded-0 rounded-end"
-						style="height: 30px; font-size: 14px; padding: 5px 10px;">Berlangganan</button> -->
-				<!-- <input type="email" name="email" class="form-control" placeholder="Masukkan email Anda"> -->
-				<!-- <button type="submit" class="btn btn-danger">Berlangganan</button> -->
-				<!-- </form> -->
 
 				<form action="#" method="post" class="d-flex mb-5">
 					<input type="email" name="email" class="form-control rounded-0 rounded-start"
@@ -86,21 +42,8 @@
 
 
 			</div>
-
-			<!-- <div class="col-lg-4 col-md-12">
-				<h4>Follow Us</h4>
-				<p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-				<div class="social-links d-flex">
-					<a href=""><i class="bi bi-twitter-x"></i></a>
-					<a href=""><i class="bi bi-facebook"></i></a>
-					<a href=""><i class="bi bi-instagram"></i></a>
-					<a href=""><i class="bi bi-linkedin"></i></a>
-				</div>
-			</div> -->
 		</div>
 	</div>
-
-	<!-- <hr class="footer-divider" style="border-color: red;"> -->
 
 	<div style="width: 100%; background-color: #B22222; color: white; padding: 3px; text-align: center;">
 		<div class="container mt-6 d-flex flex-column flex-md-row align-items-center text-center" style="background-color: #B22222; color: white; padding: 10px 0; height: 50px;">
@@ -117,23 +60,6 @@
 	<!-- </div>
 	</div> -->
 
-	<!-- <hr class="footer-divider">
-
-	<div class="container mt-4 d-flex flex-column flex-md-row justify-content-between text-center">
-		<p>© <span>Copyright</span> <strong class="px-1 sitename">Eterna</strong> <span>All Rights Reserved</span></p>
-		<p>Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></p>
-	</div> -->
-
-	<!-- <div class="container copyright text-center mt-4">
-		<p>© <span>Copyright</span> <strong class="px-1 sitename">Eterna</strong> <span>All Rights Reserved</span></p>
-		<div class="credits"> -->
-	<!-- All the links in the footer should remain intact. -->
-	<!-- You can delete the links only if you've purchased the pro version. -->
-	<!-- Licensing information: https://bootstrapmade.com/license/ -->
-	<!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-	<!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-		</div>
-	</div> -->
 </footer>
 
 <!-- Scroll Top -->

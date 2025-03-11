@@ -683,6 +683,25 @@ h6 {
 	font-size: 13px;
 }
 
+@media (max-width: 768px) {
+	.footer .footer-top .footer-links,
+	.footer .footer-top > div {
+		margin-bottom: 20px !important;
+	}
+
+	.footer .footer-top {
+		padding-bottom: 20px !important;
+	}
+
+	.footer .footer-top .col-sm-12:last-child {
+		margin-bottom: 0 !important;
+	}
+
+	.footer form.mb-5 {
+		margin-bottom: 0 !important;
+	}
+}
+
 /*--------------------------------------------------------------
   # Preloader
   --------------------------------------------------------------*/
@@ -728,10 +747,10 @@ h6 {
 	right: 15px;
 	bottom: 15px;
 	z-index: 99999;
-	background-color: var(--accent-color);
-	width: 40px;
-	height: 40px;
-	border-radius: 4px;
+	background-color: #8b0000;
+	width: 55px;
+	height: 55px;
+	border-radius: 30px;
 	transition: all 0.4s;
 }
 
@@ -3229,7 +3248,8 @@ body {
 /* --------------------------------------------------------------
    Registrasi Section
 -------------------------------------------------------------- */
-.user-register-wrapper {
+.user-register-wrapper,
+.user-permintaan_data-wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -3239,7 +3259,8 @@ body {
 	background-color: white;
 }
 
-.user-register-container {
+.user-register-container,
+.user-permintaan_data-container {
 	background: #f9f9f9;
 	padding: 30px;
 	border-radius: 8px;
@@ -3248,12 +3269,14 @@ body {
 	border: 1px solid #b22222;
 }
 
-.user-register-container h2 {
+.user-register-container h2,
+.user-permintaan_data-container h2 {
 	margin-top: -8px;
-	margin-bottom: 0px;
+	margin-bottom: 16px;
 }
 
-.user-register-container .form-label {
+.user-register-container .form-label,
+.user-permintaan_data-container .form-label {
 	font-size: 14px;
 	color: #333;
 	font-weight: 500;
@@ -3262,6 +3285,9 @@ body {
 .user-register-container .input,
 .user-register-container .form-control,
 .user-register-container .form-select,
+.user-permintaan_data-container .input,
+.user-permintaan_data-container .form-control,
+.user-permintaan_data-container .form-select,
 option {
 	font-size: 12px;
 	color: #333;
@@ -3270,7 +3296,8 @@ option {
 	width: 100%; /* biar tetap full */
 }
 
-.user-register-container input::placeholder {
+.user-register-container input::placeholder,
+.user-permintaan_data-container input::placeholder {
 	font-size: 12px;
 	color: #6c757d;
 }
