@@ -1,5 +1,5 @@
 <div class="user-permintaan_data-wrapper">
-	<div class="user-permintaan_data-container text-center">
+	<div class="user-permintaan_data-container text-start">
 		<h2>Permohonan Informasi</h2>
 		<form>
 			<div class="mb-3">
