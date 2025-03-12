@@ -3207,7 +3207,8 @@ body {
 }
 
 .user-login-container .btn,
-.user-register-container .btn {
+.user-register-container .btn,
+.user-permintaan_data-container .btn {
 	background-color: #b22222;
 	color: white;
 	border: 1.5px solid #b22222;
@@ -3220,13 +3221,13 @@ body {
 }
 
 .user-login-container .btn:hover,
-.user-register-container .btn:hover {
+.user-register-container .btn:hover,
+.user-permintaan_data-container .btn:hover {
 	background-color: white;
 	color: #b22222;
 	border: 1.5px solid #b22222;
 }
 
-/* Styling untuk teks registrasi */
 .register-container {
 	width: 100%;
 	text-align: center;
