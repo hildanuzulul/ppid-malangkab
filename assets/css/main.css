@@ -1189,12 +1189,10 @@ section,
 .beranda-page {
 	font-family: "Open Sans", sans-serif;
 }
-body {
-	background-color: #f8f9fa;
-}
 
 .container.beranda {
 	padding: 40px 0; /* Padding atas dan bawah 40px */
+	/* background-color: #f8f9fa; */
 }
 
 .row {
@@ -1213,6 +1211,8 @@ body {
 	border: none;
 	transition: transform 0.2s ease-in-out;
 	margin: 16px auto;
+	background-color: #fbfbfb;
+	
 }
 
 .card:hover {
