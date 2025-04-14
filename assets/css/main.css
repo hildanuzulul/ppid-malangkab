@@ -2573,7 +2573,7 @@ section,
 	color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form btn[type="submit"] {
 	color: var(--contrast-color);
 	background: var(--accent-color);
 	border: 0;
@@ -2582,8 +2582,84 @@ section,
 	border-radius: 50px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form btn[type="submit"]:hover {
 	background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.contact-container {
+	width: 95%;
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: left;
+	border-radius: 12px;
+}
+
+.contact-page {
+	font-family: "Open Sans", sans-serif;
+}
+
+.sent-message {
+	display: flex;
+	gap: 8px; /* Jarak antar tombol */
+	justify-content: flex-end; /* Meratakan tombol ke kanan */
+}
+
+.contact-container .btn {
+	background-color: white;
+	color: #b22222;
+	border: 1.5px solid #b22222;
+	padding: 5px 12px;
+	border-radius: 4px;
+	font-weight: 600;
+	font-size: 14px;
+	transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.contact-container .btn:hover {
+	background-color: #b22222;
+	color: white;
+	border: 1.5px solid white;
+}
+
+/* Mobile-friendly styles */
+@media (max-width: 768px) {
+	.contact-container {
+		justify-content: flex-end; /* Memastikan tombol tetap rata kanan */
+		width: 100%; /* Memastikan area tombol penuh */
+		gap: 4px;
+	}
+
+	.contact-container .btn {
+		padding: 3px 8px; /* Mengecilkan ukuran tombol */
+		font-size: 12px; /* Menyesuaikan ukuran font */
+	}
+}
+
+/* Styling tabel hasil form */
+.contact-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-table th,
+.contact-table td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+}
+
+.contact-table th {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	font-weight: 500px;
+	text-align: left;
+}
+
+.contact-table td {
+	background-color: #fff;
+	color: #333;
 }
 
 /*--------------------------------------------------------------
@@ -2989,7 +3065,7 @@ section,
   --------------------------------------------------------------*/
 /* Gaya umum */
 .mekanismePI-page {
-	font-family: Arial, sans-serif;
+	font-family: "Open Sans", sans-serif;
 	/* color: #333;
     background-color: #f8f9fa; */
 }
@@ -3208,7 +3284,8 @@ section,
 
 .user-login-container .btn,
 .user-register-container .btn,
-.user-permintaan_data-container .btn {
+.user-permintaan_data-container .btn,
+.contact-container .btn {
 	background-color: #b22222;
 	color: white;
 	border: 1.5px solid #b22222;
@@ -3222,7 +3299,7 @@ section,
 
 .user-login-container .btn:hover,
 .user-register-container .btn:hover,
-.user-permintaan_data-container .btn:hover {
+.user-permintaan_data-container .btn:hover .contact-container .btn:hover {
 	background-color: white;
 	color: #b22222;
 	border: 1.5px solid #b22222;
@@ -3250,7 +3327,8 @@ section,
    Registrasi Section
 -------------------------------------------------------------- */
 .user-register-wrapper,
-.user-permintaan_data-wrapper {
+.user-permintaan_data-wrapper,
+.contact-wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -3261,7 +3339,8 @@ section,
 }
 
 .user-register-container,
-.user-permintaan_data-container {
+.user-permintaan_data-container,
+.contact-container-form {
 	background: #f9f9f9;
 	padding: 30px;
 	border-radius: 8px;
@@ -3339,224 +3418,226 @@ option {
    Navright Section
 -------------------------------------------------------------- */
 .input-group {
-    max-width: 100%;
-    width: 400px;
-    display: flex;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 40px;
+	max-width: 100%;
+	width: 400px;
+	display: flex;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-bottom: 40px;
 }
 
 .search-input {
-    flex: 1;
-    border: none;
-    padding: 6px 10px;
-    font-size: 14px;
-    height: 30px;
+	flex: 1;
+	border: none;
+	padding: 6px 10px;
+	font-size: 14px;
+	height: 30px;
 }
 
 .search-input:focus {
-    outline: none;
-    box-shadow: none;
+	outline: none;
+	box-shadow: none;
 }
 
 .btn-search {
-    background-color: #e57361;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    height: 30px;
+	background-color: #e57361;
+	color: white;
+	border: none;
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	height: 30px;
 }
 
 .btn-search:hover {
-    background-color: #b22222;
-    color: white;
+	background-color: #b22222;
+	color: white;
 }
 
 /* Widget Tab */
 .widget.tab-widget {
-    margin-bottom: 40px;
+	margin-bottom: 40px;
 }
 
 /* Tabs */
 .custom-tabs {
-    display: flex;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 0;
+	display: flex;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 0;
 }
 
 .custom-tabs .nav-link {
-    flex: 1;
-    text-align: center;
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-    color: #333;
-    font-weight: normal;
-    border-bottom: none;
-    gap: 20px;
+	flex: 1;
+	text-align: center;
+	border: 1px solid #ddd;
+	background-color: #f8f8f8;
+	color: #333;
+	font-weight: normal;
+	border-bottom: none;
+	gap: 20px;
 	font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 20px;
-    position: relative;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    overflow: hidden;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 20px;
+	position: relative;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	overflow: hidden;
 }
 
 /* Garis abu-abu di atas semua tab */
 .custom-tabs .nav-link::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #ddd;
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ddd;
 	border-radius: 8px;
 }
 
 /* Warna tab yang aktif */
 .custom-tabs .nav-link.active {
-    background-color: #fff;
-    font-weight: bold;
-    color: #e74c3c;
-    border-bottom: none;
-    position: relative;
+	background-color: #fff;
+	font-weight: bold;
+	color: #e74c3c;
+	border-bottom: none;
+	position: relative;
 }
 
 /* Saat tab aktif, ubah garis abu-abu menjadi merah */
 .custom-tabs .nav-link.active::before {
-    background-color: #e74c3c; /* Ubah jadi merah */
+	background-color: #e74c3c; /* Ubah jadi merah */
 }
 
 /* Menambahkan jarak di antara tab */
 .custom-tabs .nav-item:not(:last-child) {
-    margin-right: 1px;
+	margin-right: 1px;
 }
 
 .custom-tabs .nav-link:first-child {
-    border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
 }
 
 .custom-tabs .nav-link:last-child {
-    border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 /* Konten Tab */
 .tab-content {
-    border: 1px solid #ddd;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    background-color: #fff;
+	border: 1px solid #ddd;
+	border-top: none;
+	border-radius: 0 0 5px 5px;
+	background-color: #fff;
 }
 
 .gallery-list {
-    padding: 16px;
-    margin: 0;
-    list-style: none;
+	padding: 16px;
+	margin: 0;
+	list-style: none;
 }
 
 .gallery-list li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-height: 100px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-height: 100px;
 }
 
 .gallery-list .image-box {
-    flex: 0 0 110px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box;
+	flex: 0 0 110px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-sizing: border-box;
 }
 
 .gallery-list img {
-    width: auto;
-    height: 60px;
-    border-radius: 5px;
+	width: auto;
+	height: 60px;
+	border-radius: 5px;
 }
 
 .gallery-list p {
-    margin: 0;
-    font-weight: 600;
-    font-size: 14px;
-    color: #e96b56;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+	margin: 0;
+	font-weight: 600;
+	font-size: 14px;
+	color: #e96b56;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .gallery-list span {
-    font-size: 12px;
-    color: #666;
+	font-size: 12px;
+	color: #666;
 }
 
 /* Daftar pengumuman */
 .announcement-list {
-    list-style: none;
-    padding: 16px 16px;
+	list-style: none;
+	padding: 16px 16px;
 }
 
 .announcement-list li {
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
+	display: flex;
+	align-items: center;
+	padding: 5px 0;
 }
 
 /* Ikon centang */
 .announcement-list li i {
-    color: rgb(233, 107, 86);
-    margin-right: 8px;
-    font-size: 16px;
+	color: rgb(233, 107, 86);
+	margin-right: 8px;
+	font-size: 16px;
 }
 
 /* Teks pengumuman */
 .announcement-list p {
-    margin: 0;
-    font-family: "Open Sans", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-    color: rgb(233, 107, 86);
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 22px;
+	color: rgb(233, 107, 86);
 }
 
 /* Tautan dalam daftar pengumuman */
 .announcement-list p a {
-    text-decoration: none;
-    color: rgb(233, 107, 86);
+	text-decoration: none;
+	color: rgb(233, 107, 86);
 }
 
 .announcement-list p a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* Statistik */
 .statistics-widget .badge {
 	display: flex;
-    flex-wrap: wrap; 
-    gap: 8px;
-    display: inline-block;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-weight: bold;
-    white-space: nowrap;
+	flex-wrap: wrap;
+	gap: 8px;
+	display: inline-block;
+	padding: 8px 12px;
+	border-radius: 5px;
+	font-weight: bold;
+	white-space: nowrap;
 }
 
-.statistik.hari, .statistik.bulan, .statistik.tahun {
-    background-color: #b22222;
-    color: white;
+.statistik.hari,
+.statistik.bulan,
+.statistik.tahun {
+	background-color: #b22222;
+	color: white;
 }

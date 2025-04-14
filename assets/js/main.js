@@ -270,7 +270,7 @@ function togglePassword() {
 	}
 }
 
-// Preview file Image
+// Preview file Image with Toggle
 function handleFileName(event, fileNameId, previewId) {
 	const input = event.target;
 	const fileNameTag = document.getElementById(fileNameId);
@@ -298,3 +298,28 @@ function togglePreview(previewId) {
 		preview.style.display = "none";
 	}
 }
+
+// Contact
+document
+	.querySelector(".php-email-form")
+	.addEventListener("submit", function (event) {
+		event.preventDefault(); // Mencegah form dari reload halaman
+
+		// Ambil nilai dari input form
+		let name = document.querySelector('input[name="name"]').value;
+		let message = document.querySelector('textarea[name="message"]').value;
+
+		// Format hasil input ke dalam satu sel tabel
+		let resultRow = `
+        <tr>
+            <td>
+                <strong>${name}</strong> <br><br>
+                <strong>${message}</strong> 
+            </td>
+        </tr>`;
+
+		// Tambahkan hasil input ke dalam tabel
+		document.getElementById("form-results").innerHTML = resultRow;
+
+		document.querySelector(".php-email-form").reset();
+	});
