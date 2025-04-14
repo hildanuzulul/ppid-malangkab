@@ -12,9 +12,7 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-	--default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--default-font: "Open Sans", sans-serif;
 	--heading-font: "Open Sans", sans-serif;
 	--nav-font: "Open Sans", sans-serif;
 }
@@ -25,6 +23,7 @@
 	--default-color: #444444; /* Default color used for the majority of the text content across the entire website */
 	--heading-color: #545454; /* Color for headings, subheadings and title throughout the website */
 	--accent-color: #e96b56; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+	--second-color: #B22222;
 	--surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
 	--contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -94,7 +93,7 @@ h6 {
 .php-email-form .error-message {
 	display: none;
 	background: #df1529;
-	color: #ffffff;
+	color: var(--background-color);
 	text-align: left;
 	padding: 15px;
 	margin-bottom: 24px;
@@ -103,7 +102,7 @@ h6 {
 
 .php-email-form .sent-message {
 	display: none;
-	color: #ffffff;
+	color: var(--background-color);
 	background: #059652;
 	text-align: center;
 	padding: 15px;
@@ -153,8 +152,7 @@ h6 {
 }
 
 .header .topbar {
-	background-color: #b22222 !important;
-	/* background-color: var(--background-color); */
+	background-color: var(--second-color);
 	height: 40px;
 	padding: 0;
 	font-size: 14px;
@@ -191,8 +189,8 @@ h6 {
 }
 
 .header .topbar .social-links a {
-	/* color: color-mix(in srgb, var(--default-color), transparent 40%); */
-	color: #ffffff !important;
+	color: var(--default-color);
+	/* color: #ffffff !important; */
 	line-height: 0;
 	transition: 0.3s;
 	margin-left: 20px;
@@ -242,18 +240,15 @@ h6 {
 }
 
 .header .logo h1 {
-	font-family: "Open Sans", sans-serif;
+	font-family: var(--default-font);
 	font-size: 26px;
 	padding: 0 0 0 8px;
 	margin: 11px 0;
 	line-height: 1;
 	font-weight: 600;
 	letter-spacing: 1px;
-	/* text-transform: uppercase; */
-	/* border-left: 8px solid var(--accent-color); */
 }
 
-/* Default style */
 .text-right {
 	display: flex;
 	gap: 8px; /* Jarak antar tombol */
@@ -262,8 +257,8 @@ h6 {
 
 .text-right .btn {
 	background-color: white;
-	color: #b22222;
-	border: 1.5px solid #b22222;
+	color: var(--second-color);
+	border: 1.5px solid var(--second-color);
 	padding: 5px 12px;
 	border-radius: 4px;
 	font-weight: 600;
@@ -272,7 +267,7 @@ h6 {
 }
 
 .text-right .btn:hover {
-	background-color: #b22222;
+	background-color: var(--second-color);
 	color: white;
 	border: 1.5px solid white;
 }
@@ -824,7 +819,7 @@ h6 {
 }
 
 .breadcrumb-item a {
-	color: #e96b56; /* Warna link (bisa disesuaikan) */
+	color: var(--accent-color); /* Warna link (bisa disesuaikan) */
 	text-decoration: none;
 }
 
@@ -890,8 +885,236 @@ section,
 	margin-bottom: 0;
 }
 
+/* --------------------------------------------------------------
+   Navright Section
+-------------------------------------------------------------- */
+.input-group {
+	max-width: 100%;
+	width: 400px;
+	display: flex;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+
+.search-input {
+	flex: 1;
+	border: none;
+	padding: 6px 10px;
+	font-size: 14px;
+	height: 30px;
+}
+
+.search-input:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+.btn-search {
+	background-color: var(--accent-color);
+	color: white;
+	border: none;
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	height: 30px;
+}
+
+.btn-search:hover {
+	background-color: var(--second-color);
+	color: white;
+}
+
+/* Widget Tab */
+.widget.tab-widget {
+	margin-bottom: 40px;
+}
+
+/* Tabs */
+.custom-tabs {
+	display: flex;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 0;
+}
+
+.custom-tabs .nav-link {
+	flex: 1;
+	text-align: center;
+	border: 1px solid #ddd;
+	background-color: #f8f8f8;
+	color: #333;
+	font-weight: normal;
+	border-bottom: none;
+	gap: 20px;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 20px;
+	position: relative;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	overflow: hidden;
+}
+
+/* Garis abu-abu di atas semua tab */
+.custom-tabs .nav-link::before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ddd;
+	border-radius: 8px;
+}
+
+/* Warna tab yang aktif */
+.custom-tabs .nav-link.active {
+	background-color: #fff;
+	font-weight: bold;
+	color: var(--accent-color);
+	border-bottom: none;
+	position: relative;
+}
+
+/* Saat tab aktif, ubah garis abu-abu menjadi merah */
+.custom-tabs .nav-link.active::before {
+	background-color: var(--accent-color); /* Ubah jadi merah */
+}
+
+/* Menambahkan jarak di antara tab */
+.custom-tabs .nav-item:not(:last-child) {
+	margin-right: 1px;
+}
+
+.custom-tabs .nav-link:first-child {
+	border-top-left-radius: 5px;
+}
+
+.custom-tabs .nav-link:last-child {
+	border-top-right-radius: 5px;
+}
+
+/* Konten Tab */
+.tab-content {
+	border: 1px solid #ddd;
+	border-top: none;
+	border-radius: 0 0 5px 5px;
+	background-color: #fff;
+}
+
+.gallery-list {
+	padding: 16px;
+	margin: 0;
+	list-style: none;
+}
+
+.gallery-list li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-height: 100px;
+}
+
+.gallery-list .image-box {
+	flex: 0 0 110px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-sizing: border-box;
+}
+
+.gallery-list img {
+	width: auto;
+	height: 60px;
+	border-radius: 5px;
+}
+
+.gallery-list p {
+	margin: 0;
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--accent-color);
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.gallery-list span {
+	font-size: 12px;
+	color: #666;
+}
+
+/* Daftar pengumuman */
+.announcement-list {
+	list-style: none;
+	padding: 16px 16px;
+}
+
+.announcement-list li {
+	display: flex;
+	align-items: center;
+	padding: 5px 0;
+}
+
+/* Ikon centang */
+.announcement-list li i {
+	color: var(--accent-color);
+	margin-right: 8px;
+	font-size: 16px;
+}
+
+/* Teks pengumuman */
+.announcement-list p {
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 22px;
+	color: var(--accent-color);
+}
+
+/* Tautan dalam daftar pengumuman */
+.announcement-list p a {
+	text-decoration: none;
+	color: var(--accent-color);
+}
+
+.announcement-list p a:hover {
+	text-decoration: underline;
+}
+
+/* Statistik */
+.statistics-widget .badge {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	display: inline-block;
+	padding: 8px 12px;
+	border-radius: 5px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.statistik.hari,
+.statistik.bulan,
+.statistik.tahun {
+	background-color: var(--second-color);
+	color: white;
+}
+
 /*--------------------------------------------------------------
-  # Hero Section
+  # Beranda Section
   --------------------------------------------------------------*/
 .hero {
 	padding: 0;
@@ -938,7 +1161,6 @@ section,
 
 .hero .carousel-item:before {
 	content: "";
-	/* background: color-mix(in srgb, var(--background-color), transparent 20%); */
 	position: absolute;
 	inset: 0;
 	z-index: 2;
@@ -967,54 +1189,11 @@ section,
 	}
 }
 
-/* .hero .carousel-item h2 {
-    margin-bottom: 30px;
-    font-size: 38px;
-    font-weight: 800;
-    color: rgb(255, 255, 255);
-    line-height: 42px;
-    animation: fadeInDown 1s both;
-	margin-left: 10px;
-}
-
-.hero .carousel-item p {
-	margin-left: 10px;
-	margin-bottom: 0px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    color: rgb(255, 255, 255);
-    line-height: 29px;
-	animation: fadeInDown 1s both 0.2s;
-}
-
-.hero .carousel-item h2 span {
-	color: var(--accent-color);
-}
-
-@media (max-width: 768px) {
-	.hero .carousel-item h2 {
-		font-size: 30px;
-		margin-top: -300px;
-	}
-}
-
-.hero .carousel-item p {
-	animation: fadeInDown 1s both 0.2s;
-}
-
-@media (min-width: 1024px) {
-	.hero h2,
-	.hero p {
-		max-width: 90%;
-	}
-} */
-
 .hero .carousel-item h2 {
 	margin-bottom: 30px;
 	font-size: 38px;
 	font-weight: 800;
-	color: rgb(255, 255, 255);
+	color: var(--background-color);
 	line-height: 42px;
 	animation: fadeInDown 1s both;
 	margin-left: 10px; /* Geser ke kanan */
@@ -1026,7 +1205,7 @@ section,
 	font-style: normal;
 	font-weight: 400;
 	font-size: 24px;
-	color: rgb(255, 255, 255);
+	color: var(--background-color);
 	line-height: 29px;
 	animation: fadeInDown 1s both 0.2s;
 }
@@ -1065,8 +1244,8 @@ section,
 .hero .btn-get-started {
 	margin-left: 10px; /* Geser ke kanan */
 	margin-top: 46px;
-	background-color: white;
-	color: #b22222;
+	background-color: var(--background-color);
+	color: var(--second-color);
 	padding: 14px 20px;
 	border-radius: 12px;
 	font-weight: 700;
@@ -1082,8 +1261,8 @@ section,
 
 /* Hover style */
 .hero .btn-get-started:hover {
-	background-color: #b22222;
-	color: white;
+	background-color: var(--second-color);
+	color: var(--background-color);
 }
 
 /* Ikon dalam tombol */
@@ -1134,8 +1313,7 @@ section,
 .hero .carousel-control-next-icon,
 .hero .carousel-control-prev-icon {
 	background: none;
-	/* color: var(--default-color); */
-	color: white;
+	color: var(--background-color);
 	font-size: 48px;
 	line-height: 1;
 }
@@ -1188,12 +1366,11 @@ section,
 }
 
 .beranda-page {
-	font-family: "Open Sans", sans-serif;
+	font-family: var(--default-font);
 }
 
 .container.beranda {
 	padding: 40px 0; /* Padding atas dan bawah 40px */
-	/* background-color: #f8f9fa; */
 }
 
 .row {
@@ -1228,7 +1405,7 @@ section,
 	align-items: center;
 	justify-content: center;
 	font-size: 45px;
-	color: white;
+	color: var(--background-color);
 }
 
 /* Warna latar ikon */
@@ -1272,6 +1449,124 @@ section,
 .card-body,
 .card {
 	height: 100%;
+}
+
+/*--------------------------------------------------------------
+  Profile Section
+  --------------------------------------------------------------*/
+  .profil-page {
+	font-family:var(--default-font);
+}
+
+/* Page Title */
+.page-title {
+	background-color: white;
+	padding-top: 30px;
+	text-align: left;
+}
+
+/* Container DEFAULT */
+.container {
+	width: 95%;
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+/* Page Content */
+.content {
+	margin-top: 0px;
+}
+
+/* Garis Pemisah */
+.separator {
+	border: none;
+	height: 1px;
+	background-color: #656579;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+/* Styling untuk paragraf dengan border kiri */
+.highlight {
+	border-left: 4px solid var(--accent-color);
+	padding-left: 15px;
+	text-align: left;
+	font-size: 14px;
+	line-height: 22px;
+	color: var(--default-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.container {
+		width: 90%;
+	}
+}
+
+/*--------------------------------------------------------------
+  Visi dan Misi Section
+  --------------------------------------------------------------*/
+.visi-misi-page {
+	font-family: var(--default-font);
+}
+
+.misi-text {
+	font-size: 14px;
+	line-height: 22px;
+	color: var(--default-color);
+}
+
+.visi-blockquote {
+	font-style: italic;
+	color: var(--default-color);
+	padding-left: 15px;
+	margin-left: 10px;
+}
+
+/*--------------------------------------------------------------
+  Dasar Hukum Section
+  --------------------------------------------------------------*/
+  .faq-item {
+	margin-bottom: 4px; /* Jarak antar pertanyaan */
+}
+
+.faq-question {
+	width: 100%;
+	text-align: left;
+	padding: 8px 12px;
+	font-size: 13px;
+	cursor: pointer;
+	font-weight: 600;
+	background: #f8f9fa;
+	border: 1px solid #ddd;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--default-color);
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.faq-icon {
+	font-weight: bold;
+	font-size: 18px;
+	flex-shrink: 0; /* Ikon tidak mengecil */
+}
+
+.faq-question.active {
+	color: var(--second-color);
+}
+
+.faq-answer {
+	display: none;
+	padding: 8px 12px 0px;
+	font-size: 13px;
+	background: var(--background-color);
+	border: 1px solid #ddd;
+	margin-bottom: 10px; /* Jarak ke pertanyaan berikutnya */
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
 }
 
 /*--------------------------------------------------------------
@@ -1644,7 +1939,7 @@ section,
 	font-size: 14px;
 	padding: 5px 10px;
 	font-weight: 400;
-	color: #ffffff;
+	color: var(--background-color);
 	display: inline-block;
 	background-color: var(--accent-color);
 }
@@ -2606,8 +2901,8 @@ section,
 
 .contact-container .btn {
 	background-color: white;
-	color: #b22222;
-	border: 1.5px solid #b22222;
+	color: var(--second-color);
+	border: 1.5px solid var(--second-color);
 	padding: 5px 12px;
 	border-radius: 4px;
 	font-weight: 600;
@@ -2616,7 +2911,7 @@ section,
 }
 
 .contact-container .btn:hover {
-	background-color: #b22222;
+	background-color: var(--second-color);
 	color: white;
 	border: 1.5px solid white;
 }
@@ -2834,124 +3129,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-  Profile Section
-  --------------------------------------------------------------*/
-.profil-page {
-	font-family: "Open Sans", sans-serif;
-}
-
-/* Page Title */
-.page-title {
-	background-color: white;
-	padding-top: 30px;
-	text-align: left;
-}
-
-/* Container DEFAULT */
-.container {
-	width: 95%;
-	max-width: 1200px;
-	margin: 0 auto;
-	text-align: left;
-}
-
-/* Page Content */
-.content {
-	margin-top: 0px;
-}
-
-/* Garis Pemisah */
-.separator {
-	border: none;
-	height: 1px;
-	background-color: #656579;
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-
-/* Styling untuk paragraf dengan border kiri */
-.highlight {
-	border-left: 4px solid #e96b56;
-	padding-left: 15px;
-	text-align: left;
-	font-size: 14px;
-	line-height: 22px;
-	color: #656565;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-	.container {
-		width: 90%;
-	}
-}
-
-/*--------------------------------------------------------------
-  Visi dan Misi Section
-  --------------------------------------------------------------*/
-.visi-misi-page {
-	font-family: "Open Sans", sans-serif;
-}
-
-.misi-text {
-	font-size: 14px;
-	line-height: 22px;
-	color: #656565;
-}
-
-.visi-blockquote {
-	font-style: italic;
-	color: #656565;
-	padding-left: 15px;
-	margin-left: 10px;
-}
-
-/*--------------------------------------------------------------
-  Dasar Hukum Section
-  --------------------------------------------------------------*/
-.faq-item {
-	margin-bottom: 4px; /* Jarak antar pertanyaan */
-}
-
-.faq-question {
-	width: 100%;
-	text-align: left;
-	padding: 8px 12px;
-	font-size: 13px;
-	cursor: pointer;
-	font-weight: 600;
-	background: #f8f9fa;
-	border: 1px solid #ddd;
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	color: black; /* Warna default */
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-}
-
-.faq-icon {
-	font-weight: bold;
-	font-size: 18px;
-	flex-shrink: 0; /* Ikon tidak mengecil */
-}
-
-.faq-question.active {
-	color: #b22222;
-}
-
-.faq-answer {
-	display: none;
-	padding: 8px 12px 0px;
-	font-size: 13px;
-	background: #ffffff;
-	border: 1px solid #ddd;
-	margin-bottom: 10px; /* Jarak ke pertanyaan berikutnya */
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
-}
-
-/*--------------------------------------------------------------
   Interaksi Masyarakat Section
   --------------------------------------------------------------*/
 .container.content ol {
@@ -2969,7 +3146,7 @@ section,
 }
 
 .container.content ol a {
-	color: #e96b56;
+	color: var(--accent-color);
 	font-weight: bold;
 	text-decoration: none; /* Menghilangkan garis bawah default */
 }
@@ -3114,7 +3291,7 @@ section,
 }
 
 .table-service th {
-	background: #e96b56;
+	background: var(--accent-color);
 	color: white;
 }
 .table-service th {
@@ -3250,7 +3427,7 @@ section,
 	padding: 30px;
 	border-radius: 8px;
 	width: 350px;
-	border: 1px solid #b22222;
+	border: 1px solid var(--second-color);
 }
 
 .user-login-container h2 {
@@ -3286,9 +3463,9 @@ section,
 .user-register-container .btn,
 .user-permintaan_data-container .btn,
 .contact-container .btn {
-	background-color: #b22222;
+	background-color: var(--second-color);
 	color: white;
-	border: 1.5px solid #b22222;
+	border: 1.5px solid var(--second-color);
 	padding: 8px 12px;
 	border-radius: 4px;
 	font-weight: 600;
@@ -3301,8 +3478,8 @@ section,
 .user-register-container .btn:hover,
 .user-permintaan_data-container .btn:hover .contact-container .btn:hover {
 	background-color: white;
-	color: #b22222;
-	border: 1.5px solid #b22222;
+	color: var(--second-color);
+	border: 1.5px solid var(--second-color);
 }
 
 .register-container {
@@ -3346,7 +3523,7 @@ section,
 	border-radius: 8px;
 	width: 100%;
 	max-width: 900px;
-	border: 1px solid #b22222;
+	border: 1px solid var(--second-color);
 }
 
 .user-register-container h2,
@@ -3414,230 +3591,3 @@ option {
 	text-decoration: underline;
 }
 
-/* --------------------------------------------------------------
-   Navright Section
--------------------------------------------------------------- */
-.input-group {
-	max-width: 100%;
-	width: 400px;
-	display: flex;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	overflow: hidden;
-	margin-bottom: 40px;
-}
-
-.search-input {
-	flex: 1;
-	border: none;
-	padding: 6px 10px;
-	font-size: 14px;
-	height: 30px;
-}
-
-.search-input:focus {
-	outline: none;
-	box-shadow: none;
-}
-
-.btn-search {
-	background-color: #e57361;
-	color: white;
-	border: none;
-	padding: 6px 12px;
-	border-radius: 4px;
-	font-size: 14px;
-	font-weight: bold;
-	cursor: pointer;
-	height: 30px;
-}
-
-.btn-search:hover {
-	background-color: #b22222;
-	color: white;
-}
-
-/* Widget Tab */
-.widget.tab-widget {
-	margin-bottom: 40px;
-}
-
-/* Tabs */
-.custom-tabs {
-	display: flex;
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 0;
-}
-
-.custom-tabs .nav-link {
-	flex: 1;
-	text-align: center;
-	border: 1px solid #ddd;
-	background-color: #f8f8f8;
-	color: #333;
-	font-weight: normal;
-	border-bottom: none;
-	gap: 20px;
-	font-family: "Open Sans", sans-serif;
-	font-weight: 600;
-	font-size: 13px;
-	line-height: 20px;
-	position: relative;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	overflow: hidden;
-}
-
-/* Garis abu-abu di atas semua tab */
-.custom-tabs .nav-link::before {
-	content: "";
-	position: absolute;
-	top: 0px;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background-color: #ddd;
-	border-radius: 8px;
-}
-
-/* Warna tab yang aktif */
-.custom-tabs .nav-link.active {
-	background-color: #fff;
-	font-weight: bold;
-	color: #e74c3c;
-	border-bottom: none;
-	position: relative;
-}
-
-/* Saat tab aktif, ubah garis abu-abu menjadi merah */
-.custom-tabs .nav-link.active::before {
-	background-color: #e74c3c; /* Ubah jadi merah */
-}
-
-/* Menambahkan jarak di antara tab */
-.custom-tabs .nav-item:not(:last-child) {
-	margin-right: 1px;
-}
-
-.custom-tabs .nav-link:first-child {
-	border-top-left-radius: 5px;
-}
-
-.custom-tabs .nav-link:last-child {
-	border-top-right-radius: 5px;
-}
-
-/* Konten Tab */
-.tab-content {
-	border: 1px solid #ddd;
-	border-top: none;
-	border-radius: 0 0 5px 5px;
-	background-color: #fff;
-}
-
-.gallery-list {
-	padding: 16px;
-	margin: 0;
-	list-style: none;
-}
-
-.gallery-list li {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	min-height: 100px;
-}
-
-.gallery-list .image-box {
-	flex: 0 0 110px;
-	height: 80px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 1px solid #ddd;
-	border-radius: 8px;
-	box-sizing: border-box;
-}
-
-.gallery-list img {
-	width: auto;
-	height: 60px;
-	border-radius: 5px;
-}
-
-.gallery-list p {
-	margin: 0;
-	font-weight: 600;
-	font-size: 14px;
-	color: #e96b56;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.gallery-list span {
-	font-size: 12px;
-	color: #666;
-}
-
-/* Daftar pengumuman */
-.announcement-list {
-	list-style: none;
-	padding: 16px 16px;
-}
-
-.announcement-list li {
-	display: flex;
-	align-items: center;
-	padding: 5px 0;
-}
-
-/* Ikon centang */
-.announcement-list li i {
-	color: rgb(233, 107, 86);
-	margin-right: 8px;
-	font-size: 16px;
-}
-
-/* Teks pengumuman */
-.announcement-list p {
-	margin: 0;
-	font-family: "Open Sans", sans-serif;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 22px;
-	color: rgb(233, 107, 86);
-}
-
-/* Tautan dalam daftar pengumuman */
-.announcement-list p a {
-	text-decoration: none;
-	color: rgb(233, 107, 86);
-}
-
-.announcement-list p a:hover {
-	text-decoration: underline;
-}
-
-/* Statistik */
-.statistics-widget .badge {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-	display: inline-block;
-	padding: 8px 12px;
-	border-radius: 5px;
-	font-weight: bold;
-	white-space: nowrap;
-}
-
-.statistik.hari,
-.statistik.bulan,
-.statistik.tahun {
-	background-color: #b22222;
-	color: white;
-}
