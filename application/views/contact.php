@@ -35,22 +35,22 @@
 						<form class="php-email-form">
 							<div class="row gy-4">
 								<div class="col-md-6">
-									<input type="text" name="name" class="form-control" placeholder="Your Name" required>
+									<input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required>
 								</div>
 								<div class="col-md-6">
-									<input type="email" name="email" class="form-control" placeholder="Your Email" required>
+									<input type="email" name="email" class="form-control" placeholder="Email" required>
 								</div>
 								<div class="col-md-12">
-									<input type="text" name="subject" class="form-control" placeholder="Subject" required>
+									<input type="text" name="subject" class="form-control" placeholder="Telepon" required>
 								</div>
 								<div class="col-md-12">
-									<textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
+									<textarea name="message" rows="6" class="form-control" placeholder="Pesan" required></textarea>
 								</div>
 								<div class="col-md-12 text-center">
 									<div class="loading">Loading</div>
 									<div class="error-message"></div>
 									<div class="sent-message">Your message has been sent. Thank you!</div>
-									<button type="submit" class="btn btn-sm btn-danger w-100">Send Message</button>
+									<button type="submit" class="btn btn btn-sm btn-danger w-100">Send Message</button>
 								</div>
 							</div>
 						</form>
