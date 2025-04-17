@@ -110,8 +110,8 @@
 								<li><a href="visi_misi">Visi Misi PPID Kabupaten Malang</a></li>
 								<li><a href="struktur_organisasi">Struktur Organisasi</a></li>
 								<li><a href="dasar_hukum">Dasar Hukum</a></li>
-								<li><a href="#">Maklumat Pelayanan</a></li>
-								<li><a href="#">Tugas Wewenang</a></li>
+								<li><a href="maklumat_pelayanan">Maklumat Pelayanan</a></li>
+								<li><a href="tugas_wewenang">Tugas Wewenang</a></li>
 								<li><a href="#">LHKPN</a></li>
 								<li><a href="#">SOP</a></li>
 							</ul>
