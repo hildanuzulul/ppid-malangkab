@@ -1920,9 +1920,10 @@ section,
 /*--------------------------------------------------------------
   # Contact Section
   --------------------------------------------------------------*/
-.contact .info-item {
+  .contact .info-item {
 	background-color: var(--surface-color);
 	padding: 20px 0 30px 0;
+	border-radius: 50px;
 	box-shadow: 0px 0px 20px #0000001a;
 }
 
@@ -1963,32 +1964,39 @@ section,
 
 @media (max-width: 575px) {
 	.contact .php-email-form {
-		padding: 20px;
+		padding: 10px;
 	}
 }
 
 .contact .php-email-form input[type="text"],
+.contact .php-email-form input[type="tel"],
 .contact .php-email-form input[type="email"],
 .contact .php-email-form textarea {
-	font-size: 14px;
-	padding: 10px 15px;
+	font-size: 12px;
+	padding: 8px;
 	box-shadow: none;
-	border-radius: 0;
+	border-radius: 4px;
 	color: var(--default-color);
 	background-color: var(--surface-color);
 	border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
-
 .contact .php-email-form input[type="text"]:focus,
+.contact .php-email-form input[type="tel"]:focus,
 .contact .php-email-form input[type="email"]:focus,
 .contact .php-email-form textarea:focus {
 	border-color: var(--accent-color);
 }
 
 .contact .php-email-form input[type="text"]::placeholder,
+.contact .php-email-form input[type="tel"]::placeholder,
 .contact .php-email-form input[type="email"]::placeholder,
 .contact .php-email-form textarea::placeholder {
 	color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+input:invalid,
+textarea:invalid {
+	border: 1px solid red;
 }
 
 .contact .php-email-form btn[type="submit"] {
@@ -1997,7 +2005,6 @@ section,
 	border: 0;
 	padding: 10px 30px;
 	transition: 0.4s;
-	border-radius: 50px;
 }
 
 .contact .php-email-form btn[type="submit"]:hover {
@@ -2023,20 +2030,21 @@ section,
 }
 
 .contact-container .btn {
-	background-color: var(--background-color);
-	color: var(--second-color);
-	border: 1.5px solid var(--second-color);
-	padding: 5px 12px;
-	border-radius: 4px;
-	font-weight: 600;
-	font-size: 14px;
-	transition: background-color 0.3s, color 0.3s, border 0.3s;
-}
-
-.contact-container .btn:hover {
 	background-color: var(--second-color);
 	color: var(--background-color);
 	border: 1.5px solid var(--background-color);
+	height: 38px;
+	border-radius: 4px;
+	font-weight: 600;
+	font-size: 14px;
+	transition: var(--second-color) 0.3s, color 0.3s, border 0.3s;
+	margin-bottom: 8px;
+}
+
+.contact-container .btn:hover {
+	background-color: var(--background-color);
+	color: var(--second-color);
+	border: 1.5px solid var(--second-color);
 }
 
 /* Mobile-friendly styles */
@@ -2078,6 +2086,25 @@ section,
 .contact-table td {
 	background-color: var(--background-color);
 	color: #333;
+}
+
+.contact-message {
+	display: flex;
+	flex-direction: column;
+	font-family: "Open Sans", sans-serif;
+	padding: 8px 0;
+}
+
+.message-name {
+	font-weight: bold;
+	font-size: 15px;
+	color: var(--default-color);
+	margin-bottom: 4px;
+}
+
+.message-content {
+	font-size: 14px;
+	color: #555;
 }
 
 /* --------------------------------------------------------------

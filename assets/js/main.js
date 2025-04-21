@@ -300,26 +300,55 @@ function togglePreview(previewId) {
 }
 
 // Contact
-document
-	.querySelector(".php-email-form")
-	.addEventListener("submit", function (event) {
-		event.preventDefault(); // Mencegah form dari reload halaman
+document.addEventListener("DOMContentLoaded", () => {
+	const form = document.getElementById("contact-form");
+	const tableBody = document.getElementById("form-results");
 
-		// Ambil nilai dari input form
-		let name = document.querySelector('input[name="name"]').value;
-		let message = document.querySelector('textarea[name="message"]').value;
+	// 1. Fungsi untuk render data dari localStorage ke tabel
+	function renderTable() {
+		tableBody.innerHTML = ""; // Kosongkan dulu
+		const messages = JSON.parse(localStorage.getItem("formMessages")) || [];
+		messages.forEach((msg) => {
+			const tr = document.createElement("tr");
+			const td = document.createElement("td");
+			// td.innerHTML = `<strong>${msg.name}</strong> ${msg.message}`;
+			td.innerHTML = `
+			<div class="contact-message">
+			  <strong class="message-name">${msg.name}</strong>
+			  <span class="message-content">${msg.message}</span>
+			</div>`;
+			tr.appendChild(td);
+			tableBody.appendChild(tr);
+		});
+	}
 
-		// Format hasil input ke dalam satu sel tabel
-		let resultRow = `
-        <tr>
-            <td>
-                <strong>${name}</strong> <br><br>
-                <strong>${message}</strong> 
-            </td>
-        </tr>`;
+	// 2. Saat form disubmit
+	form.addEventListener("submit", function (event) {
+		event.preventDefault();
 
-		// Tambahkan hasil input ke dalam tabel
-		document.getElementById("form-results").innerHTML = resultRow;
+		const name = form.elements["name"].value.trim();
+		const message = form.elements["message"].value.trim();
 
-		document.querySelector(".php-email-form").reset();
+		if (name && message) {
+			// Ambil data lama, tambahkan data baru
+			const messages = JSON.parse(localStorage.getItem("formMessages")) || [];
+			messages.push({ name, message });
+			localStorage.setItem("formMessages", JSON.stringify(messages));
+
+			// Render ulang tabel
+			renderTable();
+
+			// Reset form
+			form.reset();
+
+			// Tampilkan notifikasi
+			document.querySelector(".sent-message").style.display = "block";
+			setTimeout(() => {
+				document.querySelector(".sent-message").style.display = "none";
+			}, 3000);
+		}
 	});
+
+	// 3. Saat halaman pertama kali dibuka, langsung render data
+	renderTable();
+});
