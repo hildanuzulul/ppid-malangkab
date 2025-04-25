@@ -352,3 +352,17 @@ document.addEventListener("DOMContentLoaded", () => {
 	// 3. Saat halaman pertama kali dibuka, langsung render data
 	renderTable();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+	const searchInput = document.querySelector(".search-input");
+	const tableRows = document.querySelectorAll("#form-results tr");
+
+	searchInput.addEventListener("keyup", function () {
+		const keyword = searchInput.value.toLowerCase();
+
+		tableRows.forEach((row) => {
+			const text = row.textContent.toLowerCase();
+			row.style.display = text.includes(keyword) ? "" : "none";
+		});
+	});
+});
