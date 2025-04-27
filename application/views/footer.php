@@ -83,6 +83,9 @@
 <!-- Main JS File -->
 <script src="assets/js/main.js"></script>
 
+<!-- Script UserWay -->
+<script src="https://cdn.userway.org/widget.js" data-account="B3mZXfyDkb"></script>
+
 </body>
 
 </html>
