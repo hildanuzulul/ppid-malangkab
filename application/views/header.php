@@ -131,8 +131,8 @@
 								<li><a href="interaksi_masyarakat">Interaksi Masyarakat</a></li>
 								<li><a href="#">Koordinasi Rutin</a></li>
 								<li><a href="sengketa">Mekanisme Permohonan Penyelesaian Sengketa...</a></li>
-								<li><a href="#">Permohonan Informasi</a></li>
-								<li><a href="#">Permohonan Keberatan Informasi</a></li>
+								<li><a href="permintaan_data">Permohonan Informasi</a></li>
+								<li><a href="login">Permohonan Keberatan Informasi</a></li>
 							</ul>
 						<li><a href="blog">Unduhan</a></li>
 						<li><a href="contact">Kontak Kami</a></li>
