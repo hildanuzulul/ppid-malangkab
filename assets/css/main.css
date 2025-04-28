@@ -2251,7 +2251,7 @@ textarea:invalid {
 .user-register-container,
 .user-permintaan_data-container,
 .contact-container-form {
-	background: var(--background-color);
+	background: #f5f5f5;
 	padding: 30px;
 	border-radius: 8px;
 	width: 100%;
