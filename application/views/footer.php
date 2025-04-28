@@ -84,7 +84,14 @@
 <script src="assets/js/main.js"></script>
 
 <!-- Script UserWay -->
-<script src="https://cdn.userway.org/widget.js" data-account="B3mZXfyDkb"></script>
+<!-- <script src="https://cdn.userway.org/widget.js" data-account="B3mZXfyDkb"></script> -->
+<script 
+  src="https://cdn.userway.org/widget.js" 
+  data-account="B3mZXfyDkb"
+  data-position="2"
+  data-color="#b22222">
+</script>
+
 
 <script type="text/javascript">
 	var Tawk_API = Tawk_API || {},
