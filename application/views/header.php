@@ -120,7 +120,7 @@
 								<li><a href="#">Informasi Serta Merta</a></li>
 								<li><a href="#">Informasi Berkala</a></li>
 								<li><a href="#">Informasi Setiap Saat</a></li>
-								<li><a href="#">Informasi Dikecualikan</a></li>
+								<li><a href="informasi_dikecualikan">Informasi Dikecualikan</a></li>
 							</ul>
 						<li><a href="portfolio">Situs PD</a></li>
 						<li><a href="berita">Berita</a></li>

@@ -366,3 +366,48 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 });
+
+// Informasi search
+function searchTable() {
+	const input = document.getElementById("searchInput");
+	const filter = input.value.toLowerCase();
+	const table = document.querySelector(".table-informasi");
+	const rows = table.querySelectorAll("tbody tr");
+
+	rows.forEach((row) => {
+		const cells = row.querySelectorAll("td");
+		let match = false;
+
+		cells.forEach((cell) => {
+			if (cell.textContent.toLowerCase().includes(filter)) {
+				match = true;
+			}
+		});
+
+		row.style.display = match ? "" : "none";
+	});
+}
+
+// informasi download
+document.addEventListener("DOMContentLoaded", function () {
+	document.querySelectorAll(".btn-download").forEach(function (el) {
+		el.addEventListener("click", function () {
+			const fileUrl = this.getAttribute("data-file");
+			const link = document.createElement("a");
+			link.href = fileUrl;
+			link.download = ""; // biar auto download
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		});
+	});
+});
+
+// pagination
+function changeLimit() {
+	const limit = document.getElementById("limitSelect").value;
+	const url = new URL(window.location.href);
+	url.searchParams.set("limit", limit);
+	url.searchParams.set("offset", 0); // reset ke halaman pertama
+	window.location.href = url.toString();
+}

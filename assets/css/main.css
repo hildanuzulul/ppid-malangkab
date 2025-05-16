@@ -1681,6 +1681,236 @@ section,
 /*--------------------------------------------------------------
   Informasi Dikecualikan Section
   --------------------------------------------------------------*/
+.informasi-page {
+	font-family: var(--default-font);
+}
+
+.table-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	font-size: 14px;
+	overflow-x: auto;
+}
+
+.table-container {
+	width: 100%;
+	overflow-x: auto;
+	border-radius: 4px;
+}
+
+.table-header {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+#searchInput {
+	width: 30%;
+	padding: 7px;
+	border: 1px solid var(--heading-color);
+	border-radius: 4px;
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+
+.table-informasi th:nth-child(1),
+.table-informasi td:nth-child(1) {
+	width: 3%;
+}
+
+.table-informasi th:nth-child(2),
+.table-informasi td:nth-child(2) {
+	width: 11%;
+}
+
+.table-informasi th:nth-child(3),
+.table-informasi td:nth-child(3) {
+	width: 12%;
+}
+
+.table-informasi th:nth-child(4),
+.table-informasi td:nth-child(4) {
+	width: 9%;
+}
+
+.table-informasi th:nth-child(5),
+.table-informasi td:nth-child(5) {
+	width: 9%;
+}
+
+.table-informasi th:nth-child(6),
+.table-informasi td:nth-child(6) {
+	width: 9%;
+}
+
+.table-informasi th:nth-child(7),
+.table-informasi td:nth-child(7) {
+	width: 7%;
+}
+
+.table-informasi th:nth-child(8),
+.table-informasi td:nth-child(8) {
+	width: 9%;
+}
+
+.table-informasi th:nth-child(9),
+.table-informasi td:nth-child(9) {
+	width: 7%;
+	text-align: center;
+}
+
+.table-informasi th:nth-child(10),
+.table-informasi td:nth-child(10) {
+	width: 6%;
+	text-align: center;
+}
+
+.table-informasi th:nth-child(11),
+.table-informasi td:nth-child(11) {
+	width: 6%;
+	text-align: center;
+}
+.table-informasi thead th:nth-child(9) {
+	width: 6%;
+	text-align: start;
+}
+
+.table-informasi thead th:nth-child(11) {
+	width: 4%;
+	text-align: start;
+}
+
+.table-informasi td:nth-child(9) i,
+.table-informasi td:nth-child(10) i {
+	font-size: 25px;
+}
+
+.table-informasi thead {
+	vertical-align: bottom;
+}
+
+.table-container {
+	overflow-x: auto;
+	width: 100%;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	border: 1px solid var(--heading-color);
+	padding: 10px;
+	text-align: left;
+	word-break: break-word;
+}
+
+@media (max-width: 768px) {
+	th,
+	td {
+		white-space: nowrap;
+	}
+}
+
+table {
+	width: 100%;
+	table-layout: auto;
+	border-collapse: collapse;
+	min-width: 100%;
+}
+
+thead {
+	background-color: #eaeaea;
+}
+
+th,
+td {
+	padding: 10px;
+	border: 1px solid #ccc;
+	word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+	#searchInput {
+		width: 100%;
+		margin-bottom: 10px;
+		font-size: 14px;
+	}
+
+	.table-wrapper {
+		align-items: flex-start;
+	}
+
+	.table-container {
+		overflow-x: auto;
+		width: 100%;
+	}
+
+	.table-informasi {
+		min-width: 1350px;
+		table-layout: fixed;
+	}
+
+	.table-informasi th,
+	.table-informasi td {
+		white-space: normal;
+	}
+}
+
+.pagination-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+	font-size: 14px;
+	color: #ccc;
+}
+
+.pagination-info select {
+	margin-left: 5px;
+	padding: 3px 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+	background-color: var(--background-color);
+	cursor: pointer;
+}
+
+.pagination-links {
+	display: flex;
+	gap: 5px;
+}
+
+.pagination-links a {
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	background-color: var(--background-color);
+	color: var(--second-color);
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 0.3s;
+}
+
+.pagination-links a:hover {
+	background-color: var(--background-color);
+}
+
+.pagination-links .current {
+	background-color: var(--second-color); /* merah */
+	color: var(--background-color);
+	border-color: var(--second-color);
+}
+
+.pagination-links .disabled {
+	color: #ccc;
+	pointer-events: none;
+	cursor: default;
+}
 
 /*--------------------------------------------------------------
   Situs PD Section
