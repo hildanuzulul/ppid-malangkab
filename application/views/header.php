@@ -123,7 +123,7 @@
 								<li><a href="#">Informasi Dikecualikan</a></li>
 							</ul>
 						<li><a href="portfolio">Situs PD</a></li>
-						<li><a href="team">Berita</a></li>
+						<li><a href="berita">Berita</a></li>
 						<li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
 								<li><a href="mekanisme_permohonan_informasi">Mekanisme Permohonan Informasi</a></li>
