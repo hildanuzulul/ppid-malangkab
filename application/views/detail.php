@@ -18,31 +18,45 @@
 			<section id="content">
 				<div class="row g-5">
 					<div class="col-md-8">
-						<div class="container detail-container">
+						<div class="container-fluid detail-container">
+							<!-- <div class="container detail-container"> -->
 							<div class="artikel-detail">
 								<!-- Judul Artikel -->
 								<h1><?= isset($berita['judul_artikel']) ? $berita['judul_artikel'] : '(Tanpa Judul)' ?></h1>
 
 								<!-- Gambar Artikel -->
 								<div class="gambar-detail" style="text-align: center;">
-									<img src="<?= isset($berita['artikel_image_url']) ? base_url('assets/uploads/' . $berita['artikel_image_url']) : 'https://ppid.malangkab.go.id/assets/uploads/notfound.jpg' ?>" alt="gambar artikel" style="max-width: 80%; height: auto;">
+									<img src="<?= $berita['gambar'] ?>" alt="gambar artikel" style="max-width: 60%; height: auto;">
 								</div>
 
 								<!-- Informasi Artikel -->
-								<p><strong>Dipost Oleh:</strong> Admin | <strong>Pada:</strong> <?= isset($berita['created_at']) ? $berita['created_at'] : '(Tanggal tidak tersedia)' ?></p>
+								<div class="meta-info center">
+									<i class="bi bi-file-earmark-fill d-block mb-1 text-danger"></i>
+									<div>
+										Dipost Oleh <span class="text-accent">Admin</span> |
+										Pada <span class="text-accent">
+											<?= date('d-m-Y H:i:s', strtotime($berita['created_at'])) ?>
+										</span>
+									</div>
+								</div>
 
 								<!-- Konten Artikel -->
 								<div class="konten-detail">
-									<p><?= isset($berita['konten_artikel']) ? nl2br($berita['konten_artikel']) : '(Konten tidak tersedia)' ?></p>
+									<?= isset($berita['konten_artikel']) ? $berita['konten_artikel'] : '(Konten tidak tersedia)' ?>
 								</div>
+
 							</div>
 
-							<!-- Tombol Kembali -->
-							<a href="<?= base_url('berita') ?>" class="btn btn-secondary">Kembali ke Berita</a>
+							<div style="text-align: left; margin-top: 20px;">
+								<a href="<?= base_url('berita') ?>" class="back"><i class="fas fa-angle-left"></i>
+									Kembali ke Berita
+								</a>
+							</div>
+
 						</div>
 
 					</div>
-					<div class="col-md-4">
+					<div class=" col-md-4">
 						<aside class="right-sidebar">
 
 							<!-- Widget Pencarian -->

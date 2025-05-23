@@ -45,28 +45,37 @@ class Berita extends MY_Controller
 		$this->render('berita', $data);
 	}
 	public function detail($id)
-	{
-		$url_detail = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=30&id_artikel=' . $id;
-		$response_detail = file_get_contents($url_detail);
-		$detail_berita = json_decode($response_detail, true);
+{
+	$url_detail = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=30&id_artikel=' . $id;
+	$response_detail = file_get_contents($url_detail);
+	$detail_berita = json_decode($response_detail, true);
 
-		if (empty($detail_berita)) {
-			show_404();
-		}
-
-		$berita = null;
-		foreach ($detail_berita as $item) {
-			if ($item['id_artikel'] == $id) {
-				$berita = $item;
-				break;
-			}
-		}
-
-		if ($berita === null) {
-			show_404();
-		}
-
-		$data['berita'] = $berita;
-		$this->render('detail', $data);
+	if (empty($detail_berita)) {
+		show_404();
 	}
+
+	$berita = null;
+	foreach ($detail_berita as $item) {
+		if ($item['id_artikel'] == $id) {
+			$berita = $item;
+			break;
+		}
+	}
+
+	if ($berita === null) {
+		show_404();
+	}
+
+	// Tambahkan gambar lengkap seperti di index()
+	$default_image_url = 'assets/img/logo.png';
+	if (!empty($berita['artikel_image_url'])) {
+		$berita['gambar'] = 'https://web-admin.malangkab.go.id/5' . $berita['artikel_image_url'];
+	} else {
+		$berita['gambar'] = $default_image_url;
+	}
+
+	$data['berita'] = $berita;
+	$this->render('detail', $data);
+}
+
 }
