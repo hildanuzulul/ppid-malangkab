@@ -7,9 +7,9 @@
 				<ul style="margin: 0; padding: 0;" class="link-list">
 					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="https://malangkab.go.id/" target="_blank">MalangKab</a></li>
 					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="https://kominfo.malangkab.go.id/" target="_blank">Kominfo</a></li>
-					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="portfolio">LPSE</a></li>
+					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="<?= base_url('portfolio'); ?>">LPSE</a></li>
 					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="https://daily-kanjuruhan.malangkab.go.id/" target="_blank">Daily-Kanjuruhan</a></li>
-					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="contact">Kontak Kami</a></li>
+					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="<?= base_url('contact'); ?>">Kontak Kami</a></li>
 				</ul>
 			</div>
 
@@ -22,7 +22,7 @@
 					Jawa Timur - Indonesia<br>
 					<br>
 					<i class="bi bi-telephone"></i> (0341) 408788<br>
-					<i class="bi bi-envelope"></i><a href="mailto:ppid@malangkab.go.id"> ppid@malangkab.go.id</a>
+					<i class="bi bi-envelope"></i><a href="mailto:ppid@malangkab.go.id" target="_blank"> ppid@malangkab.go.id</a>
 				</address>
 			</div>
 
@@ -50,15 +50,6 @@
 			<p style="margin: 0;">© <span>Dinas Kominfo Kabupaten Malang. 2025</span></p>
 		</div>
 	</div>
-
-
-	<!-- <div style="width: 100%; background-color: red; color: white; padding: 3px; text-align: center;">
-		<div class="container mt-6 d-flex flex-column flex-md-row justify-content-between text-center" style="background-color: B22222; color: white; padding: 10px 0;">
-			<p>© <span>Dinas Kominfo Kabupaten Malang. 2025</span> -->
-	<!-- <strong class="px-1 sitename">Eterna</strong> <span>All Rights Reserved</span></p> -->
-	<!-- <p>Designed by <a href="https://bootstrapmade.com/" style="color: white;">BootstrapMade</a></p> -->
-	<!-- </div>
-	</div> -->
 
 </footer>
 

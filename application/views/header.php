@@ -55,7 +55,7 @@
 				</div>
 
 				<div class="text-right">
-					<a href="permintaan_data" class="btn btn-sm btn-danger">Permintaan Data</a>
+					<a href="<?= base_url('permintaan_data'); ?>" class="btn btn-sm btn-danger">Permintaan Data</a>
 					<?php if ($this->session->userdata('nama_user')) : ?>
 						<div class="dropdown">
 							<div class="text-light fs-6 pt-1 ms-3" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -70,8 +70,8 @@
 							</ul>
 						</div>
 					<?php else : ?>
-						<a href="registrasi" class="btn btn-sm btn-danger">Register</a>
-						<a href="login" class="btn btn-sm btn-danger">Login</a>
+						<a href="<?= base_url('registrasi'); ?>" class="btn btn-sm btn-danger">Register</a>
+						<a href="<?= base_url('login'); ?>" class="btn btn-sm btn-danger">Login</a>
 					<?php endif; ?>
 				</div>
 			</div>
@@ -81,7 +81,6 @@
 
 			<div class="container position-relative d-flex align-items-center justify-content-between">
 				<a href="#" class="logo d-flex align-items-center">
-					<!-- Uncomment the line below if you also wish to use an image logo -->
 					<img src="<?= base_url('assets/img/logo.png'); ?>" alt="PPID Kab. Malang">
 					<h1 class="sitename">
 						<strong style="color: #E96B56;">PPID</strong><br>
@@ -90,67 +89,40 @@
 				</a>
 
 				<nav id="navmenu" class="navmenu">
-					<!-- <ul>
-						<li><a href="beranda" class="active">Homee</a></li>
-						<li><a href="about">Profil</a></li>
-						<li><a href="services">Services</a></li>
-						<li><a href="portfolio">Portfolio</a></li>
-						<li><a href="team">Team</a></li>
-						<li><a href="pricing">Pricing</a></li>
-						<li><a href="blog">Blog</a></li>
-						<li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-							<ul>
-								<li><a href="#">Dropdown 1</a></li>
-								<li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-									<ul>
-										<li><a href="#">Deep Dropdown 1</a></li>
-										<li><a href="#">Deep Dropdown 2</a></li>
-										<li><a href="#">Deep Dropdown 3</a></li>
-										<li><a href="#">Deep Dropdown 4</a></li>
-										<li><a href="#">Deep Dropdown 5</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Dropdown 2</a></li>
-								<li><a href="#">Dropdown 3</a></li>
-								<li><a href="#">Dropdown 4</a></li>
-							</ul>
-						</li>
-						<li><a href="contact">Contact</a></li>
-					</ul> -->
 					<ul>
 						<li><a href="<?= base_url('beranda'); ?>" class="active">Beranda</a></li>
 						<li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
 								<li><a href="<?= base_url('profil'); ?>">Profil PPID Kabupaten Malang</a></li>
 								<li><a href="<?= base_url('visi_misi'); ?>">Visi Misi PPID Kabupaten Malang</a></li>
-								<li><a href="struktur_organisasi">Struktur Organisasi</a></li>
-								<li><a href="dasar_hukum">Dasar Hukum</a></li>
-								<li><a href="maklumat_pelayanan">Maklumat Pelayanan</a></li>
-								<li><a href="tugas_wewenang">Tugas Wewenang</a></li>
-								<li><a href="#">LHKPN</a></li>
-								<li><a href="#">SOP</a></li>
+								<li><a href="<?= base_url('struktur_organisasi'); ?>">Struktur Organisasi</a></li>
+								<li><a href="<?= base_url('dasar_hukum'); ?>">Dasar Hukum</a></li>
+								<li><a href="<?= base_url('maklumat_pelayanan'); ?>">Maklumat Pelayanan</a></li>
+								<li><a href="<?= base_url('tugas_wewenang'); ?>">Tugas Wewenang</a></li>
+								<li><a href="<?= base_url('laporan_lhkpn'); ?>">LHKPN</a></li>
+								<li><a href="<?= base_url('sop_ppid'); ?>">SOP</a></li>
 							</ul>
 						<li class="dropdown"><a href="#"><span>Informasi Publik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
 								<li><a href="#">Informasi Serta Merta</a></li>
 								<li><a href="#">Informasi Berkala</a></li>
 								<li><a href="#">Informasi Setiap Saat</a></li>
-								<li><a href="informasi_dikecualikan">Informasi Dikecualikan</a></li>
+								<li><a href="<?= base_url('informasi_dikecualikan'); ?>">Informasi Dikecualikan</a></li>
 							</ul>
-						<li><a href="portfolio">Situs PD</a></li>
-						<li><a href="berita">Berita</a></li>
+						<li><a href="<?= base_url('portfolio'); ?>">Situs PD</a></li>
+						<li><a href="<?= base_url('berita'); ?>">Berita</a></li>
 						<li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
-								<li><a href="mekanisme_permohonan_informasi">Mekanisme Permohonan Informasi</a></li>
-								<li><a href="permohonan_keberatan">Mekanisme Permohonan Keberatan</a></li>
-								<li><a href="interaksi_masyarakat">Interaksi Masyarakat</a></li>
+								<li><a href="<?= base_url('mekanisme_permohonan_informasi'); ?>">Mekanisme Permohonan Informasi</a></li>
+								<li><a href="<?= base_url('permohonan_keberatan'); ?>">Mekanisme Permohonan Keberatan</a></li>
+								<li><a href="<?= base_url('interaksi_masyarakat'); ?>">Interaksi Masyarakat</a></li>
 								<li><a href="#">Koordinasi Rutin</a></li>
-								<li><a href="sengketa">Mekanisme Permohonan Penyelesaian Sengketa...</a></li>
-								<li><a href="permintaan_data">Permohonan Informasi</a></li>
-								<li><a href="login">Permohonan Keberatan Informasi</a></li>
+								<li><a href="<?= base_url('sengketa'); ?>">Mekanisme Permohonan Penyelesaian Sengketa...</a></li>
+								<li><a href="<?= base_url('permintaan_data'); ?>">Permohonan Informasi</a></li>
+								<li><a href="<?= base_url('login'); ?>">Permohonan Keberatan Informasi</a></li>
 							</ul>
-						<li><a href="blog">Unduhan</a></li>
-						<li><a href="contact">Kontak Kami</a></li>
+						<li><a href="<?= base_url('blog'); ?>">Unduhan</a></li>
+						<li><a href="<?= base_url('contact'); ?>">Kontak Kami</a></li>
 					</ul>
 					<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 				</nav>
