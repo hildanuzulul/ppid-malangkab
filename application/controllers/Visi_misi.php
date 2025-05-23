@@ -1,6 +1,6 @@
 <?php
 
-class Visi_misi extends CI_Controller
+class Visi_misi extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Visi_misi extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('visi_misi');
-		$this->load->view('footer');
+		$this->render('visi_misi');
 	}
 }

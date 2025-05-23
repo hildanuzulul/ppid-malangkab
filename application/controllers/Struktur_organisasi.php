@@ -1,6 +1,6 @@
 <?php
 
-class Struktur_organisasi extends CI_Controller
+class Struktur_organisasi extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Struktur_organisasi extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('struktur_organisasi');
-		$this->load->view('footer');
+		$this->render('struktur_organisasi');
 	}
 }

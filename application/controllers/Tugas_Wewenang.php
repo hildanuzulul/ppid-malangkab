@@ -1,6 +1,6 @@
 <?php
 
-class Tugas_Wewenang extends CI_Controller
+class Tugas_Wewenang extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Tugas_Wewenang extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('tugas_wewenang');
-		$this->load->view('footer');
+		$this->render('tugas_wewenang');
 	}
 }

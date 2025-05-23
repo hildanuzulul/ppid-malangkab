@@ -1,6 +1,6 @@
 <?php
 
-class Sengketa extends CI_Controller
+class Sengketa extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Sengketa extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('sengketa');
-		$this->load->view('footer');
+		$this->render('sengketa');
 	}
 }

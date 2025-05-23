@@ -183,7 +183,6 @@ h6 {
 }
 
 @media (max-width: 575px) {
-
 	.header .topbar .contact-info i a,
 	.header .topbar .contact-info i span {
 		font-size: 13px;
@@ -358,7 +357,7 @@ h6 {
 		padding-right: 0;
 	}
 
-	.navmenu li:hover>a,
+	.navmenu li:hover > a,
 	.navmenu .active,
 	.navmenu .active:focus {
 		color: var(--nav-hover-color);
@@ -397,11 +396,11 @@ h6 {
 
 	.navmenu .dropdown ul a:hover,
 	.navmenu .dropdown ul .active:hover,
-	.navmenu .dropdown ul li:hover>a {
+	.navmenu .dropdown ul li:hover > a {
 		color: var(--nav-dropdown-hover-color);
 	}
 
-	.navmenu .dropdown:hover>ul {
+	.navmenu .dropdown:hover > ul {
 		opacity: 1;
 		top: 100%;
 		visibility: visible;
@@ -413,7 +412,7 @@ h6 {
 		visibility: hidden;
 	}
 
-	.navmenu .dropdown .dropdown:hover>ul {
+	.navmenu .dropdown .dropdown:hover > ul {
 		opacity: 1;
 		top: 0;
 		left: -100%;
@@ -515,7 +514,7 @@ h6 {
 		background-color: rgba(33, 37, 41, 0.1);
 	}
 
-	.navmenu .dropdown>.dropdown-active {
+	.navmenu .dropdown > .dropdown-active {
 		display: block;
 		background-color: rgba(33, 37, 41, 0.03);
 	}
@@ -542,7 +541,7 @@ h6 {
 		transition: 0.3s;
 	}
 
-	.mobile-nav-active .navmenu>ul {
+	.mobile-nav-active .navmenu > ul {
 		display: block;
 	}
 }
@@ -690,7 +689,8 @@ h6 {
 .footer .copyright {
 	padding-top: 25px;
 	padding-bottom: 25px;
-	border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+	border-top: 1px solid
+		color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .copyright p {
@@ -703,9 +703,8 @@ h6 {
 }
 
 @media (max-width: 768px) {
-
 	.footer .footer-top .footer-links,
-	.footer .footer-top>div {
+	.footer .footer-top > div {
 		margin-bottom: 20px !important;
 	}
 
@@ -825,11 +824,11 @@ h6 {
 	font-size: 14px;
 }
 
-.page-title .breadcrumbs ol li+li {
+.page-title .breadcrumbs ol li + li {
 	padding-left: 4px;
 }
 
-.page-title .breadcrumbs ol li+li::before {
+.page-title .breadcrumbs ol li + li::before {
 	content: "/";
 	display: inline-block;
 	padding-right: 4px;
@@ -872,7 +871,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
 	section,
 	.section {
 		scroll-margin-top: 66px;
@@ -1271,7 +1269,6 @@ section,
 
 /* Desktop (≥ 1025px) */
 @media (min-width: 1025px) {
-
 	.hero h2,
 	.hero p {
 		max-width: 90%;
@@ -1346,7 +1343,6 @@ section,
 }
 
 @media (min-width: 1024px) {
-
 	.hero .carousel-control-prev,
 	.hero .carousel-control-next {
 		width: 5%;
@@ -1378,8 +1374,7 @@ section,
 	opacity: 1;
 }
 
-@media (max-height: 768px),
-(max-width: 1024px) {
+@media (max-height: 768px), (max-width: 1024px) {
 	.hero .carousel-indicators li {
 		margin-bottom: 20px;
 	}
@@ -1419,7 +1414,7 @@ section,
 }
 
 .section-title {
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-size: 28px;
 	font-weight: 600;
 	margin-bottom: -20px;
@@ -1661,6 +1656,186 @@ section,
 /*--------------------------------------------------------------
   LHKPN Section
   --------------------------------------------------------------*/
+.lhkpn-page {
+	font-family: var(--default-font);
+}
+
+#filterForm {
+	margin-bottom: 20px;
+}
+
+.filter-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.filter-group {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	min-width: 200px;
+}
+
+.filter-group label {
+	font-weight: 500;
+	color: var(--heading-color);
+	font-size: 14px;
+	min-width: 80px;
+}
+
+.filter-group select {
+	width: auto;
+	min-width: 150px;
+	max-width: 100%;
+	padding: 5px 28px 5px 8px; /* Tambahkan padding kanan agar tidak bentrok panah */
+	font-size: 13px;
+	line-height: 1.2;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: #f9f9f9;
+
+	/* Kustom panah */
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 6px center;
+	background-size: 12px 12px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+	.filter-group select {
+		width: 100%;
+		font-size: 14px;
+	}
+	.filter-container {
+		flex-direction: column;
+	}
+
+	.filter-group {
+		width: 100%;
+	}
+}
+
+.tableLhkpn {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: auto;
+}
+
+.tableLhkpn th,
+.tableLhkpn td {
+	padding: 10px;
+	font-size: 14px;
+	color: var(--heading-color);
+	vertical-align: middle;
+	text-align: left;
+	white-space: normal;
+	word-break: break-word;
+}
+
+/* Sesuaikan proporsi kolom tanpa fixed width */
+.tableLhkpn th:nth-child(1),
+.tableLhkpn td:nth-child(1) {
+	width: 12%;
+	text-align: center;
+}
+.tableLhkpn th:nth-child(4),
+.tableLhkpn td:nth-child(4) {
+	width: 10%;
+	text-align: center;
+}
+
+.tableLhkpn th:nth-child(2),
+.tableLhkpn td:nth-child(2),
+.tableLhkpn th:nth-child(3),
+.tableLhkpn td:nth-child(3) {
+	width: auto;
+}
+
+/* RESPONSIF TANPA SCROLLING */
+@media (max-width: 576px) {
+	.tableLhkpn th,
+	.tableLhkpn td {
+		font-size: 13px;
+		padding: 8px;
+	}
+}
+
+/* Form Wrapper */
+#filterForm {
+	font-family: var(--default-font);
+	font-size: 14px; /* Ukuran font seragam */
+	color: var(--heading-color); /* Sesuai gaya warna teks lain */
+	margin-bottom: 20px;
+}
+
+/* Label dan Select Grouping */
+.filter-group {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Label */
+.filter-group label {
+	font-weight: 500;
+	min-width: 80px; /* agar rata kiri */
+	color: var(--heading-color);
+}
+
+/* Select */
+#filterForm select {
+	font-family: var(--default-font);
+	font-size: 14px;
+	padding: 6px 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	height: 38px;
+	width: 220px; /* bisa pakai 100% juga untuk responsif */
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+	.filter-container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	#filterForm select {
+		width: 100%;
+	}
+}
+
+.my-custom-button {
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--background-color);
+	background-color: var(--second-color);
+	border: 1px solid var(--second-color);
+	border-radius: 4px;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	min-width: 80px; /* ukuran minimum tombol agar tidak menyempit */
+	text-transform: capitalize;
+	white-space: nowrap; /* mencegah teks turun ke baris baru */
+}
+
+.my-custom-button:hover {
+	background-color: var(--background-color);
+	color: var(--second-color);
+	border-color: var(--second-color);
+	text-decoration: none;
+}
 
 /*--------------------------------------------------------------
   SOP Section
@@ -1948,7 +2123,6 @@ td {
 }
 
 @media (max-width: 768px) {
-
 	.container,
 	.container-fluid {
 		padding-left: 10px !important;
@@ -1969,7 +2143,7 @@ td {
 }
 
 .berita-item h3 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 20px;
@@ -1994,7 +2168,7 @@ td {
 	align-items: center;
 	gap: 6px;
 	margin-top: 8px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Open Sans", sans-serif;
 	line-height: 19px;
 }
 
@@ -2042,7 +2216,7 @@ td {
 }
 
 .unduhan-section {
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Open Sans", sans-serif;
 	color: var(--heading-color);
 	margin-bottom: 40px;
 }
@@ -2088,7 +2262,6 @@ td {
 .unduhan-list li a:hover {
 	color: var(--accent-color);
 }
-
 
 /*--------------------------------------------------------------
   Detail Berita Section
@@ -3277,14 +3450,20 @@ option {
 	position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+	.portfolio-details-slider
+	.swiper-pagination
+	.swiper-pagination-bullet {
 	width: 12px;
 	height: 12px;
 	background-color: color-mix(in srgb, var(--default-color), transparent 85%);
 	opacity: 1;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+	.portfolio-details-slider
+	.swiper-pagination
+	.swiper-pagination-bullet-active {
 	background-color: var(--accent-color);
 }
 
@@ -3299,7 +3478,8 @@ option {
 	font-weight: 700;
 	margin-bottom: 20px;
 	padding-bottom: 20px;
-	border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+	border-bottom: 1px solid
+		color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .portfolio-details .portfolio-info ul {
@@ -3308,7 +3488,7 @@ option {
 	font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
 	margin-top: 10px;
 }
 
@@ -3449,7 +3629,7 @@ option {
 	color: var(--contrast-color);
 }
 
-.team .team-member .social a+a {
+.team .team-member .social a + a {
 	margin-left: 8px;
 }
 
@@ -3652,7 +3832,7 @@ option {
 	margin: 0;
 }
 
-.blog-posts .meta-top ul li+li {
+.blog-posts .meta-top ul li + li {
 	padding-left: 20px;
 }
 
@@ -3811,7 +3991,7 @@ option {
 	margin: 0;
 }
 
-.blog-details .meta-top ul li+li {
+.blog-details .meta-top ul li + li {
 	padding-left: 20px;
 }
 
@@ -3831,7 +4011,8 @@ option {
 
 .blog-details .meta-bottom {
 	padding-top: 10px;
-	border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+	border-top: 1px solid
+		color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .blog-details .meta-bottom i {
@@ -3870,7 +4051,7 @@ option {
 	display: inline-block;
 }
 
-.blog-details .meta-bottom .tags li+li::before {
+.blog-details .meta-bottom .tags li + li::before {
 	padding-right: 6px;
 	color: var(--default-color);
 	content: ",";

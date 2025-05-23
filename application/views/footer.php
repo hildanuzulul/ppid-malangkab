@@ -60,27 +60,26 @@
 <div id="preloader"></div>
 
 <!-- Vendor JS Files -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>icon for card beranda -->
-<script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js');?>"></script>
-<script src="<?= base_url('assets/vendor/php-email-form/validate.js');?>"></script>
-<script src="<?= base_url('assets/vendor/aos/aos.js');?>"></script>
-<script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js');?>"></script>
-<script src="<?= base_url('assets/vendor/purecounter/purecounter_vanilla.js');?>"></script>
-<script src="<?= base_url('assets/vendor/waypoints/noframework.waypoints.js');?>"></script>
-<script src="<?= base_url('assets/vendor/glightbox/js/glightbox.min.js');?>"></script>
-<script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js');?>"></script>
-<script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js');?>"></script>
+<script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/php-email-form/validate.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/aos/aos.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/purecounter/purecounter_vanilla.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/waypoints/noframework.waypoints.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/glightbox/js/glightbox.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js'); ?>"></script>
 
 <!-- Main JS File -->
 <script src="<?= base_url('assets/js/main.js'); ?>"></script>
 
 <!-- Script UserWay -->
 <!-- <script src="https://cdn.userway.org/widget.js" data-account="B3mZXfyDkb"></script> -->
-<script 
-  src="https://cdn.userway.org/widget.js" 
-  data-account="B3mZXfyDkb"
-  data-position="2"
-  data-color="#b22222">
+<script
+	src="https://cdn.userway.org/widget.js"
+	data-account="B3mZXfyDkb"
+	data-position="2"
+	data-color="#b22222">
 </script>
 
 
@@ -96,7 +95,7 @@
 		s1.setAttribute('crossorigin', '*');
 		s0.parentNode.insertBefore(s1, s0);
 	})();
-</script>  
+</script>
 </body>
 
 </html>

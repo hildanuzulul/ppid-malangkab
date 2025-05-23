@@ -1,6 +1,6 @@
 <?php
 
-class Profil extends CI_Controller
+class Profil extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Profil extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('profil');
-		$this->load->view('footer');
+		$this->render('profil');
 	}
 }

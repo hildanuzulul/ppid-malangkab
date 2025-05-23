@@ -1,6 +1,6 @@
 <?php
 
-class Permohonan_keberatan extends CI_Controller
+class Permohonan_keberatan extends MY_Controller
 {
 	public function __construct()
 	{
@@ -9,8 +9,6 @@ class Permohonan_keberatan extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('permohonan_keberatan');
-		$this->load->view('footer');
+		$this->render('permohonan_keberatan');
 	}
 }

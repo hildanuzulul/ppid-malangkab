@@ -388,6 +388,27 @@ function searchTable() {
 	});
 }
 
+// LHKPN
+function searchTable() {
+	const input = document.getElementById("searchInput");
+	const filter = input.value.toLowerCase();
+	const table = document.getElementById("lhkpnTable"); // target tabel LHKPN
+	const rows = table.querySelectorAll("tbody tr");
+
+	rows.forEach((row) => {
+		const cells = row.querySelectorAll("td");
+		let match = false;
+
+		cells.forEach((cell) => {
+			if (cell.textContent.toLowerCase().includes(filter)) {
+				match = true;
+			}
+		});
+
+		row.style.display = match ? "" : "none";
+	});
+}
+
 // informasi download
 document.addEventListener("DOMContentLoaded", function () {
 	document.querySelectorAll(".btn-download").forEach(function (el) {
@@ -411,3 +432,35 @@ function changeLimit() {
 	url.searchParams.set("offset", 0); // reset ke halaman pertama
 	window.location.href = url.toString();
 }
+
+// pagination
+function changeLimit() {
+	const limit = document.getElementById("limitSelect").value;
+	const url = new URL(window.location.href);
+	url.searchParams.set("limit", limit);
+	url.searchParams.set("offset", 0); // reset ke halaman pertama
+	window.location.href = url.toString();
+}
+
+document.getElementById("searchSop").addEventListener("keyup", function () {
+	const keyword = this.value.toLowerCase();
+	const rows = document.querySelectorAll("#sopTable tr");
+
+	rows.forEach((row) => {
+		const text = row.innerText.toLowerCase();
+		row.style.display = text.includes(keyword) ? "" : "none";
+	});
+});
+
+// FIlter
+document.addEventListener("DOMContentLoaded", function () {
+	const tahun = document.getElementById("tahunFilter");
+	const unitKerja = document.getElementById("unitKerjaFilter");
+
+	tahun.addEventListener("change", () =>
+		document.getElementById("filterForm").submit()
+	);
+	unitKerja.addEventListener("change", () =>
+		document.getElementById("filterForm").submit()
+	);
+});
