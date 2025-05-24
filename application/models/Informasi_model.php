@@ -20,6 +20,20 @@ class Informasi_model extends CI_Model
 		return $this->db->get('informasi')->result();
 	}
 
+	// SOP_PPID
+	public function get_all_sop()
+	{
+		return $this->db->order_by('tahun', 'DESC')->get('laporan_sop')->result();
+	}
+	public function get_sop_by_id($id)
+	{
+		return $this->db->get_where('laporan_sop', ['id' => $id])->row();
+	}
+	public function get_sop_by_kategori($kategori)
+	{
+		return $this->db->get_where('laporan_sop', ['kategori' => $kategori])->result();
+	}
+
 	// Laporan LHKPN
 	public function get_all_lhkpn()
 	{
