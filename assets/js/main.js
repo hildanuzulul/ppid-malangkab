@@ -388,11 +388,11 @@ function searchTable() {
 	});
 }
 
-// LHKPN
+// LHKPN search
 function searchTable() {
 	const input = document.getElementById("searchInput");
 	const filter = input.value.toLowerCase();
-	const table = document.getElementById("lhkpnTable"); // target tabel LHKPN
+	const table = document.getElementById("lhkpnTable");
 	const rows = table.querySelectorAll("tbody tr");
 
 	rows.forEach((row) => {
@@ -407,6 +407,31 @@ function searchTable() {
 
 		row.style.display = match ? "" : "none";
 	});
+}
+
+// SOP search
+function searchTable() {
+	const input = document.getElementById("searchInput");
+	const filter = input.value.toLowerCase();
+	const table = document.getElementById("sopTable");
+	const tr = table.getElementsByTagName("tr");
+
+	for (let i = 1; i < tr.length; i++) {
+		let tds = tr[i].getElementsByTagName("td");
+		let match = false;
+
+		for (let j = 0; j < tds.length; j++) {
+			if (tds[j]) {
+				let textValue = tds[j].textContent || tds[j].innerText;
+				if (textValue.toLowerCase().indexOf(filter) > -1) {
+					match = true;
+					break;
+				}
+			}
+		}
+
+		tr[i].style.display = match ? "" : "none";
+	}
 }
 
 // informasi download
