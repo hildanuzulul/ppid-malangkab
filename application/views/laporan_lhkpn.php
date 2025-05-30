@@ -21,11 +21,10 @@
 				<div class="row">
 					<div class="col-md-8">
 						<div class="table-header">
-							<input type="text" id="searchInput" placeholder="Cari..." onkeyup="searchTable()" class="form-control mb-3">
+							<input type="text" class="search-lhkpn" id="searchInput" placeholder="Cari...">
 						</div>
 
 						<form method="GET" action="<?= base_url('laporan_lhkpn') ?>" id="filterForm">
-							<!-- <div class="filter-container"> -->
 							<div class="filter-container d-flex flex-wrap gap-3 align-items-center">
 								<div class="filter-group">
 									<label for="tahun">Tahun :</label>

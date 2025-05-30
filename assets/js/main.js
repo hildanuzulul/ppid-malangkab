@@ -368,71 +368,55 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Informasi search
-function searchTable() {
-	const input = document.getElementById("searchInput");
-	const filter = input.value.toLowerCase();
-	const table = document.querySelector(".table-informasi");
-	const rows = table.querySelectorAll("tbody tr");
+document.addEventListener("DOMContentLoaded", function () {
+	const input = document.querySelector(".search-informasi");
+	if (input) {
+		input.addEventListener("keyup", function () {
+			const filter = input.value.toLowerCase();
+			const table = document.getElementById("informasiTable");
+			const rows = table.querySelectorAll("tbody tr");
 
-	rows.forEach((row) => {
-		const cells = row.querySelectorAll("td");
-		let match = false;
-
-		cells.forEach((cell) => {
-			if (cell.textContent.toLowerCase().includes(filter)) {
-				match = true;
-			}
+			rows.forEach(function (row) {
+				const text = row.textContent.toLowerCase();
+				row.style.display = text.includes(filter) ? "" : "none";
+			});
 		});
+	}
+});
 
-		row.style.display = match ? "" : "none";
-	});
-}
+//search-sop
+document.addEventListener("DOMContentLoaded", function () {
+	const input = document.querySelector(".search-sop");
+	if (input) {
+		input.addEventListener("keyup", function () {
+			const filter = input.value.toLowerCase();
+			const table = document.getElementById("sopTable");
+			const rows = table.querySelectorAll("tbody tr");
+
+			rows.forEach(function (row) {
+				const text = row.textContent.toLowerCase();
+				row.style.display = text.includes(filter) ? "" : "none";
+			});
+		});
+	}
+});
 
 // LHKPN search
-function searchTable() {
-	const input = document.getElementById("searchInput");
-	const filter = input.value.toLowerCase();
-	const table = document.getElementById("lhkpnTable");
-	const rows = table.querySelectorAll("tbody tr");
+document.addEventListener("DOMContentLoaded", function () {
+	const input = document.querySelector(".search-lhkpn");
+	if (input) {
+		input.addEventListener("keyup", function () {
+			const filter = input.value.toLowerCase();
+			const table = document.getElementById("lhkpnTable");
+			const rows = table.querySelectorAll("tbody tr");
 
-	rows.forEach((row) => {
-		const cells = row.querySelectorAll("td");
-		let match = false;
-
-		cells.forEach((cell) => {
-			if (cell.textContent.toLowerCase().includes(filter)) {
-				match = true;
-			}
+			rows.forEach(function (row) {
+				const text = row.textContent.toLowerCase();
+				row.style.display = text.includes(filter) ? "" : "none";
+			});
 		});
-
-		row.style.display = match ? "" : "none";
-	});
-}
-
-// SOP search
-function searchTable() {
-	const input = document.getElementById("searchInput");
-	const filter = input.value.toLowerCase();
-	const table = document.getElementById("sopTable");
-	const tr = table.getElementsByTagName("tr");
-
-	for (let i = 1; i < tr.length; i++) {
-		let tds = tr[i].getElementsByTagName("td");
-		let match = false;
-
-		for (let j = 0; j < tds.length; j++) {
-			if (tds[j]) {
-				let textValue = tds[j].textContent || tds[j].innerText;
-				if (textValue.toLowerCase().indexOf(filter) > -1) {
-					match = true;
-					break;
-				}
-			}
-		}
-
-		tr[i].style.display = match ? "" : "none";
 	}
-}
+});
 
 // informasi download
 document.addEventListener("DOMContentLoaded", function () {
@@ -489,3 +473,4 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.getElementById("filterForm").submit()
 	);
 });
+

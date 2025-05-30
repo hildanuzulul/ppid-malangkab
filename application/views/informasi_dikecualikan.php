@@ -18,11 +18,11 @@
 		<section>
 			<div class="container">
 				<div class="table-header">
-					<input type="text" id="searchInput" placeholder="Cari..." onkeyup="searchTable()">
+					<input type="text" id="searchInput" class="search-informasi" placeholder="Cari...">
 				</div>
 				<div class="table-wrapper">
 					<div class="table-container">
-						<table class="table-informasi">
+						<table class="table-informasi" id="informasiTable">
 							<thead>
 								<tr>
 									<th>#</th>

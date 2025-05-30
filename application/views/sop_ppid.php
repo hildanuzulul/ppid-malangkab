@@ -20,7 +20,7 @@
 				<div class="row g-5">
 					<div class="col-md-8">
 						<div class="table-header">
-							<input type="text" id="searchInput" placeholder="Cari..." onkeyup="searchTable()">
+							<input type="text" class="search-sop" id="searchInput" placeholder="Cari...">
 						</div>
 						<div class="tablesop-wrapper">
 							<div class="tablesop-responsive">
