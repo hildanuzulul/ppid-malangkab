@@ -10,21 +10,13 @@ class Beranda extends MY_Controller
 
 	public function index()
 	{
-		// Ambil data berita terbatas (misal 4 berita terbaru)
+		// Ambil 4 berita terbaru untuk konten utama
 		$url_berita = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=4';
 		$response_berita = @file_get_contents($url_berita);
 
-		if ($response_berita === false) {
-			log_message('error', 'Gagal ambil berita dari API dengan file_get_contents.');
-			$data['berita'] = [];
-			$this->render('beranda', $data);
-			return;
-		}
+		$berita_list = $response_berita ? json_decode($response_berita, true) : [];
 
-		$berita_list = json_decode($response_berita, true);
-
-		// Tambahkan gambar default jika tidak tersedia
-		$default_image_url = 'assets/img/logo.png';
+		$default_image_url = base_url('assets/img/logo.png');
 		foreach ($berita_list as &$berita) {
 			$berita['gambar'] = !empty($berita['artikel_image_url'])
 				? 'https://web-admin.malangkab.go.id/5' . $berita['artikel_image_url']
@@ -33,6 +25,20 @@ class Beranda extends MY_Controller
 
 		$data['berita'] = $berita_list;
 
+		// === Sidebar: ambil 4 berita juga ===
+		$sidebar_url = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=4';
+		$response_sidebar = @file_get_contents($sidebar_url);
+		$sidebar_berita = $response_sidebar ? json_decode($response_sidebar, true) : [];
+
+		foreach ($sidebar_berita as &$item) {
+			$item['gambar'] = !empty($item['artikel_image_url'])
+				? 'https://web-admin.malangkab.go.id/5' . $item['artikel_image_url']
+				: $default_image_url;
+		}
+
+		$data['sidebar_berita'] = $sidebar_berita;
+
+		// Render view
 		$this->render('beranda', $data);
 	}
 }

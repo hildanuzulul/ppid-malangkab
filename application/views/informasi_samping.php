@@ -20,68 +20,31 @@
 		<div class="tab-content">
 			<div class="tab-pane fade show active" id="one">
 				<ul class="gallery-list">
-					<li>
-						<div class="image-box">
-							<img src="https://inspektorat.malangkab.go.id/uploads/galeri/inspektorat-opd@3507-WhatsApp Image 2024-12-18 at 10.16.11.png"
-								onerror="this.onerror=null;this.src='https://ppid.malangkab.go.id/assets/uploads/notfound.jpg';"
-								alt="Logo Kabupaten Malang">
-						</div>
-						<div>
-							<p>Menerima Kunjungan Kerja Inspektorat Daerah Provinsi Kalimantan Utara</p>
-							<span>2024-12-18 13:42:14</span>
-						</div>
-					</li>
-					<hr>
-					<li>
-						<div class="image-box">
-							<img src="https://inspektorat.malangkab.go.id/uploads/galeri/inspektorat-opd@3507-WhatsApp Image 2024-12-18 at 10.16.11.png"
-								onerror="this.onerror=null;this.src='https://ppid.malangkab.go.id/assets/uploads/notfound.jpg';"
-								alt="Logo Kabupaten Malang">
-						</div>
-						<div>
-							<p>Menerima Kunjungan Kerja Inspektorat Daerah Provinsi Kalimantan Utara</p>
-							<span>2024-12-18 13:42:14</span>
-						</div>
-					</li>
-					<hr>
-					<li>
-						<div class="image-box">
-							<img src="https://inspektorat.malangkab.go.id/uploads/galeri/inspektorat-opd@3507-WhatsApp Image 2024-12-18 at 10.16.11.png"
-								onerror="this.onerror=null;this.src='https://ppid.malangkab.go.id/assets/uploads/notfound.jpg';"
-								alt="Logo Kabupaten Malang">
-						</div>
-						<div>
-							<p>Menerima Kunjungan Kerja Inspektorat Daerah Provinsi Kalimantan Utara</p>
-							<span>2024-12-18 13:42:14</span>
-						</div>
-					</li>
-					<hr>
-					<li>
-						<div class="image-box">
-							<img src="https://inspektorat.malangkab.go.id/uploads/galeri/inspektorat-opd@3507-WhatsApp Image 2024-12-18 at 10.16.11.png"
-								onerror="this.onerror=null;this.src='https://ppid.malangkab.go.id/assets/uploads/notfound.jpg';"
-								alt="Logo Kabupaten Malang">
-						</div>
-						<div>
-							<p>Sosialisasi Upaya Pencegahan Tindak Pidana Korupsi dan Pungli pada Pemerintahan Desa Kabupaten Malang Tahun 2024 di Wilayah Kecamatan Donomulyo dan Pagak</p>
-							<span>2024-12-18 13:42:14</span>
-						</div>
-					</li>
-					<hr>
-					<li>
-						<div class="image-box">
-							<img src="https://inspektorat.malangkab.go.id/uploads/galeri/inspektorat-opd@3507-WhatsApp Image 2024-12-18 at 10.16.11.png"
-								onerror="this.onerror=null;this.src='https://ppid.malangkab.go.id/assets/uploads/notfound.jpg';"
-								alt="Logo Kabupaten Malang">
-						</div>
-						<div>
-							<p>Sosialisasi Upaya Pencegahan Tindak Pidana Korupsi dan Pungli pada Pemerintahan Desa Kabupaten Malang Tahun 2024 di Wilayah Kecamatan Donomulyo dan Pagak</p>
-							<span>2024-12-18 13:42:14</span>
-						</div>
-					</li>
+					<?php if (!empty($sidebar_berita)): ?>
+						<?php foreach ($sidebar_berita as $item): ?>
+							<li>
+								<div class="image-box">
+									<img src="<?= $item['gambar'] ?>"
+										onerror="this.onerror=null;this.src='<?= base_url('assets/uploads/notfound.jpg') ?>';"
+										alt="<?= htmlspecialchars($item['judul_artikel']) ?>">
+								</div>
+								<div>
+									<p>
+										<a href="<?= base_url('berita/detail/' . $item['id_artikel']) ?>" class="sidebar-link">
+											<?= htmlspecialchars($item['judul_artikel']) ?>
+										</a>
+									</p>
+									<span><?= date('Y-m-d H:i:s', strtotime($item['created_at'])) ?></span>
+								</div>
+							</li>
+							<hr>
+						<?php endforeach; ?>
+					<?php else: ?>
+						<li>Tidak ada berita terbaru.</li>
+					<?php endif; ?>
 				</ul>
-
 			</div>
+
 			<div class="tab-pane fade" id="two">
 				<ul class="announcement-list">
 					<li><i class="bi bi-check"></i>
