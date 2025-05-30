@@ -39,7 +39,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<?php $no = 1;
+								<?php $no = $offset + 1;
 								if (!empty($informasi)):
 									foreach ($informasi as $row): ?>
 										<tr>
@@ -88,6 +88,9 @@
 					</div>
 				</div>
 
+				<!-- <div>
+					<?= $pagination_links ?>
+				</div> -->
 				<div class="pagination-container">
 					<div class="pagination-info">
 						Showing <?= $offset + 1 ?> to <?= min($offset + $limit, $total_rows) ?> of <?= $total_rows ?> rows
@@ -99,11 +102,29 @@
 						rows per page
 					</div>
 					<div class="pagination-links">
-						<a href="#" class="disabled">&lt;</a>
-						<a href="#" class="current">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#">&gt;</a>
+						<?php
+						$base_url = base_url('informasi_dikecualikan/index');
+						$prev_offset = max(0, $offset - $limit);
+						$next_offset = $offset + $limit;
+						$max_offset = $total_rows - ($total_rows % $limit ?: $limit);
+						?>
+
+						<!-- Prev button -->
+						<?php if ($offset <= 0): ?>
+							<a href="#" class="disabled">&lt;</a>
+						<?php else: ?>
+							<a href="<?= $base_url . "?limit=$limit&offset=$prev_offset" ?>">&lt;</a>
+						<?php endif; ?>
+
+						<!-- Numbered links (from create_links) -->
+						<?= $pagination_links ?>
+
+						<!-- Next button -->
+						<?php if ($offset + $limit >= $total_rows): ?>
+							<a href="#" class="disabled">&gt;</a>
+						<?php else: ?>
+							<a href="<?= $base_url . "?limit=$limit&offset=$next_offset" ?>">&gt;</a>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
