@@ -55,4 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 // $route['beranda'] = 'beranda/index';
 
-$route['berita/detail/(:num)'] = 'berita/detail/$1';  // Menangani URL berita/detail/{id_artikel}
+$route['berita/detail/(:num)/(:num)'] = 'berita/detail/$1/$3';

@@ -45,6 +45,7 @@ class Informasi_dikecualikan extends MY_Controller
 
 		// Kirim link pagination ke view
 		$data['pagination_links'] = $this->pagination->create_links();
+		var_dump($data['informasi']);
 
 		$this->render('informasi_dikecualikan', $data);
 	}

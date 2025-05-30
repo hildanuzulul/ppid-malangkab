@@ -88,9 +88,6 @@
 					</div>
 				</div>
 
-				<!-- <div>
-					<?= $pagination_links ?>
-				</div> -->
 				<div class="pagination-container">
 					<div class="pagination-info">
 						Showing <?= $offset + 1 ?> to <?= min($offset + $limit, $total_rows) ?> of <?= $total_rows ?> rows
