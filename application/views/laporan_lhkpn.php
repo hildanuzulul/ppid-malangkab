@@ -29,15 +29,7 @@
 								<div class="filter-group">
 									<label for="tahun">Tahun :</label>
 									<select class="choices" name="tahun" id="tahunFilter">
-										<option value="Semua">Semua</option>
-										<option value="2018">2018</option>
-										<option value="2019">2019</option>
-										<option value="2020">2020</option>
-										<option value="2021">2021</option>
-										<option value="2022">2022</option>
-										<option value="2023">2023</option>
-										<option value="2024">2024</option>
-										<option value="2025">2025</option>
+										<option value="Semua" <?= $tahun_terpilih == 'Semua' ? 'selected' : '' ?>>Semua</option>
 										<?php foreach ($list_tahun as $row): ?>
 											<option value="<?= $row->tahun ?>" <?= $tahun_terpilih == $row->tahun ? 'selected' : '' ?>><?= $row->tahun ?></option>
 										<?php endforeach; ?>

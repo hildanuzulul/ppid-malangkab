@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	// 2. Saat form disubmit
+	// Saat form disubmit
 	form.addEventListener("submit", function (event) {
 		event.preventDefault();
 
@@ -418,29 +418,26 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
-// informasi download
+// Filter
 document.addEventListener("DOMContentLoaded", function () {
-	document.querySelectorAll(".btn-download").forEach(function (el) {
-		el.addEventListener("click", function () {
-			const fileUrl = this.getAttribute("data-file");
-			const link = document.createElement("a");
-			link.href = fileUrl;
-			link.download = ""; // biar auto download
-			document.body.appendChild(link);
-			link.click();
-			document.body.removeChild(link);
+	const tahunSelect = document.getElementById("tahunFilter");
+	const unitSelect = document.getElementById("unitKerjaFilter");
+	const form = document.getElementById("filterForm");
+
+	if (tahunSelect && unitSelect && form) {
+		tahunSelect.addEventListener("change", function () {
+			form.submit();
 		});
-	});
+		unitSelect.addEventListener("change", function () {
+			form.submit();
+		});
+	}
 });
 
-// pagination
-function changeLimit() {
-	const limit = document.getElementById("limitSelect").value;
-	const url = new URL(window.location.href);
-	url.searchParams.set("limit", limit);
-	url.searchParams.set("offset", 0); // reset ke halaman pertama
-	window.location.href = url.toString();
-}
+document.addEventListener("DOMContentLoaded", function () {
+	const choicesElements = document.querySelectorAll(".choices");
+	choicesElements.forEach((el) => new Choices(el));
+});
 
 // pagination
 function changeLimit() {
@@ -460,17 +457,3 @@ document.getElementById("searchSop").addEventListener("keyup", function () {
 		row.style.display = text.includes(keyword) ? "" : "none";
 	});
 });
-
-// FIlter
-document.addEventListener("DOMContentLoaded", function () {
-	const tahun = document.getElementById("tahunFilter");
-	const unitKerja = document.getElementById("unitKerjaFilter");
-
-	tahun.addEventListener("change", () =>
-		document.getElementById("filterForm").submit()
-	);
-	unitKerja.addEventListener("change", () =>
-		document.getElementById("filterForm").submit()
-	);
-});
-

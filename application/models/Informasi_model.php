@@ -35,13 +35,9 @@ class Informasi_model extends CI_Model
 	}
 
 	// Laporan LHKPN
-	public function get_all_lhkpn()
+	public function get_filtered($tahun, $unit_kerja)
 	{
-		return $this->db->get('lhkpn')->result();
-	}
-	public function get_filtered_lhkpn($tahun, $unit_kerja)
-	{
-		if ($tahun !== 'Semua') {
+		if ($tahun) {
 			$this->db->where('tahun', $tahun);
 		}
 		if ($unit_kerja !== 'Semua') {
@@ -49,16 +45,20 @@ class Informasi_model extends CI_Model
 		}
 		return $this->db->get('lhkpn')->result();
 	}
-	public function get_all_tahun_lhkpn()
+
+	public function get_all_tahun()
 	{
+		$this->db->distinct();
 		$this->db->select('tahun');
-		$this->db->group_by('tahun');
-		$this->db->order_by('tahun', 'DESC');
+		$this->db->order_by('tahun', 'ASC');
 		return $this->db->get('lhkpn')->result();
 	}
-	public function get_all_unit_kerja_lhkpn()
+
+	public function get_all_units()
 	{
 		$this->db->select('unit_kerja');
+		$this->db->where('unit_kerja !=', '');
+		$this->db->where('unit_kerja IS NOT NULL', null, false);
 		$this->db->group_by('unit_kerja');
 		$this->db->order_by('unit_kerja', 'ASC');
 		return $this->db->get('lhkpn')->result();
