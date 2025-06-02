@@ -13,7 +13,7 @@
 				</nav>
 				<h1>Laporan LHKPN</h1>
 			</div>
-		</div><!-- End Page Title -->
+		</div>
 
 		<div class="container content" data-aos="fade-up" data-aos-delay="100">
 			<hr class="separator">
@@ -74,16 +74,42 @@
 								</tbody>
 							</table>
 
-							<p style="font-family: var(--default-font); font-size: 14px;color: var(--heading-color);">
-								Showing 1 to <?= count($lhkpn) ?> of <?= count($lhkpn) ?> rows
-							</p>
+							<div class="pagination-container" style="margin-bottom: 50px;">
+								<div class="pagination-info">
+									Showing <?= $offset + 1 ?> to <?= min($offset + $limit, $total_rows) ?> of <?= $total_rows ?> rows
+									<select id="limitSelect" onchange="changeLimit()">
+										<?php foreach ([10, 25, 50] as $l): ?>
+											<option value="<?= $l ?>" <?= ($limit == $l) ? 'selected' : '' ?>><?= $l ?></option>
+										<?php endforeach; ?>
+									</select> rows per page
+								</div>
+								<div class="pagination-links">
+									<?php
+									$base_url = base_url('laporan_lhkpn');
+									$prev_offset = max(0, $offset - $limit);
+									$next_offset = $offset + $limit;
+									?>
+									<?php if ($offset > 0): ?>
+										<a href="<?= $base_url . "?limit=$limit&offset=$prev_offset&tahun=$tahun_terpilih&unit_kerja=$unit_terpilih" ?>">&lt;</a>
+									<?php else: ?>
+										<a href="#" class="disabled">&lt;</a>
+									<?php endif; ?>
+
+									<?= $pagination_links ?>
+
+									<?php if ($offset + $limit < $total_rows): ?>
+										<a href="<?= $base_url . "?limit=$limit&offset=$next_offset&tahun=$tahun_terpilih&unit_kerja=$unit_terpilih" ?>">&gt;</a>
+									<?php else: ?>
+										<a href="#" class="disabled">&gt;</a>
+									<?php endif; ?>
+								</div>
+							</div>
 						</div>
 					</div>
 
 					<div class="col-md-4">
 						<?php $this->load->view('informasi_samping'); ?>
 					</div>
-
 				</div>
 			</section>
 		</div>
