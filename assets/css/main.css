@@ -2165,9 +2165,126 @@ td {
 	cursor: default;
 }
 
-/*--------------------------------------------------------------
-  Situs PD Section
-  --------------------------------------------------------------*/
+/* --------------------------------------------------------------
+   Sidebar Kategori - Situs PD
+-----------------------------------------------------------------*/
+.kategori-situs-pd {
+	border: 1px solid #ddd;
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+
+.kategori-situs-pd .nav-item {
+	border-bottom: 1px solid #eee;
+}
+
+.kategori-situs-pd .nav-item:last-child {
+	border-bottom: none;
+}
+
+.kategori-situs-pd .nav-link {
+	display: block;
+	padding: 10px 15px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #333;
+	background-color: #f9f9f9;
+	border-left: 3px solid transparent;
+	transition: all 0.2s ease;
+	border-radius: 0;
+	/* no rounding */
+}
+
+.kategori-situs-pd .nav-link:hover {
+	background-color: #f1f1f1;
+	color: #000;
+}
+
+.kategori-situs-pd .nav-link.active {
+	background-color: #f2f2f2;
+	color: #d13b3b;
+	border-left: 3px solid #d13b3b;
+}
+
+/* --------------------------------------------------------------
+   Tabel PD - Desain
+-----------------------------------------------------------------*/
+.table-wrapper {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.custom-situs-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+	table-layout: auto;
+}
+
+.custom-situs-table thead th {
+	background-color: #f5f5f5;
+	color: #333;
+	font-weight: bold;
+	text-align: left;
+	padding: 10px;
+	vertical-align: middle;
+}
+
+.custom-situs-table td {
+	padding: 10px;
+	vertical-align: top;
+	color: #222;
+	border-top: 1px solid #eee;
+}
+
+.custom-situs-table th,
+.custom-situs-table td {
+	border: 1px solid #e5e5e5;
+}
+
+.custom-situs-table th:nth-child(1),
+.custom-situs-table td:nth-child(1) {
+	width: 50px;
+	text-align: center;
+}
+
+.custom-situs-table th:last-child,
+.custom-situs-table td:last-child {
+	width: 120px;
+	white-space: nowrap;
+}
+
+/* --------------------------------------------------------------
+   Info Footer Tabel
+-----------------------------------------------------------------*/
+.table-count {
+	font-size: 13px;
+	color: #555;
+	margin-top: 8px;
+	font-family: var(--default-font, Arial, sans-serif);
+}
+
+/* --------------------------------------------------------------
+   Responsiveness
+-----------------------------------------------------------------*/
+@media (max-width: 768px) {
+	.kategori-situs-pd .nav-link {
+		font-size: 13px;
+		padding: 8px 12px;
+	}
+
+	.custom-situs-table th,
+	.custom-situs-table td {
+		font-size: 13px;
+		padding: 8px;
+	}
+}
+
+.table td.text-center {
+	font-style: italic;
+	color: #888;
+	background-color: #fcfcfc;
+}
 
 /*--------------------------------------------------------------
   Berita Section

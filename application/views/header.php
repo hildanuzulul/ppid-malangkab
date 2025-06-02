@@ -109,7 +109,7 @@
 								<li><a href="#">Informasi Setiap Saat</a></li>
 								<li><a href="<?= base_url('informasi_dikecualikan'); ?>">Informasi Dikecualikan</a></li>
 							</ul>
-						<li><a href="<?= base_url('portfolio'); ?>">Situs PD</a></li>
+						<li><a href="<?= base_url('situs_pd'); ?>">Situs PD</a></li>
 						<li><a href="<?= base_url('berita'); ?>">Berita</a></li>
 						<li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>

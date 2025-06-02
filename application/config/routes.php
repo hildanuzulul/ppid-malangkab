@@ -56,3 +56,5 @@ $route['translate_uri_dashes'] = FALSE;
 // $route['beranda'] = 'beranda/index';
 
 $route['berita/detail/(:num)/(:num)'] = 'berita/detail/$1/$3';
+$route['situs_pd'] = 'situs_pd/index/badan';
+$route['situs_pd/(:any)'] = 'situs_pd/index/$1';
