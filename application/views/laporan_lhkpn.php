@@ -11,7 +11,7 @@
 						<li class="breadcrumb-item active" aria-current="page">Laporan LHKPN</li>
 					</ol>
 				</nav>
-				<h1>Standart Operasional Prosedur (SOP) PPID</h1>
+				<h1>Laporan LHKPN</h1>
 			</div>
 		</div><!-- End Page Title -->
 
@@ -67,7 +67,6 @@
 											<td><?= $item->nama ?></td>
 											<td><?= $item->jabatan ?></td>
 											<td>
-												<!-- <a href="<?= $item->file_lhkpn ?>" class="btn btn-warning btn-sm" target="_blank">detail</a> -->
 												<a href="<?= $item->file_lhkpn ?>" class="my-custom-button" target="_blank">detail</a>
 											</td>
 										</tr>
