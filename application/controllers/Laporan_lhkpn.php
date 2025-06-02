@@ -7,6 +7,7 @@ class Laporan_lhkpn extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->model('Informasi_model');
+		$this->load->helper('url');
 	}
 
 	public function index()
@@ -27,6 +28,7 @@ class Laporan_lhkpn extends MY_Controller
 		$data['tahun_terpilih'] = $this->input->get('tahun') ?? 'Semua';
 		$data['unit_terpilih'] = $this->input->get('unit_kerja') ?? 'Semua';
 
+		$this->set_sidebar_berita($data);
 		$this->render('laporan_lhkpn', $data);
 	}
 }

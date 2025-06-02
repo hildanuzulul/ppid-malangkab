@@ -37,4 +37,21 @@ class MY_Controller extends CI_Controller
         $this->load->view('footer');
 		
     }
+
+	protected function set_sidebar_berita(&$data)
+{
+    $url = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=4';
+    $response = @file_get_contents($url);
+    $sidebar_berita = $response ? json_decode($response, true) : [];
+
+    $default_image_url = base_url('assets/img/logo.png');
+    foreach ($sidebar_berita as &$item) {
+        $item['gambar'] = !empty($item['artikel_image_url'])
+            ? 'https://web-admin.malangkab.go.id/5' . $item['artikel_image_url']
+            : $default_image_url;
+    }
+
+    $data['sidebar_berita'] = $sidebar_berita;
+}
+
 }

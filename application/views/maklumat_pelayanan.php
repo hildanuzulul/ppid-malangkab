@@ -19,7 +19,7 @@
 			<section id="content">
 				<div class="row g-5">
 					<div class="col-md-8">
-						<img src="https://ppid.malangkab.go.id/media/maklumat.jpg" width="100%" alt="Maklumat Pelayanan">
+						<img src="<?= base_url('assets/img/ppidkominfo-maklumat.jpg') ?>" width="100%" alt="Maklumat Pelayanan">
 					</div>
 					<div class="col-md-4">
 						<?php $this->load->view('informasi_samping'); ?>

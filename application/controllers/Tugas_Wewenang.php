@@ -5,10 +5,13 @@ class Tugas_Wewenang extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('url');
 	}
 
 	public function index()
 	{
-		$this->render('tugas_wewenang');
+		$data = [];
+		$this->set_sidebar_berita($data);
+		$this->render('tugas_wewenang', $data);
 	}
 }
