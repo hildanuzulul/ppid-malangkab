@@ -8,10 +8,10 @@
 					<ol>
 						<li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Informasi Publik</li>
-						<li class="breadcrumb-item active" aria-current="page">Informasi Dikecualikan</li>
+						<li class="breadcrumb-item active" aria-current="page">Informasi Setiap Saat</li>
 					</ol>
 				</nav>
-				<h1>Informasi Dikecualikan</h1>
+				<h1>Informasi Setiap Saat</h1>
 			</div>
 		</div><!-- End Page Title -->
 
@@ -44,7 +44,7 @@
 									foreach ($informasi as $row): ?>
 										<tr>
 											<td><?= $no++ ?></td>
-											<td><?= $row->judul ?></td>
+											<td><?= htmlspecialchars($row->judul) ?></td>
 											<td>
 												<?php
 												if (strpos($row->ringkasan, 'a.') !== false) {
@@ -55,21 +55,26 @@
 														}
 													}
 												} else {
-													echo nl2br($row->ringkasan);
+													echo nl2br(htmlspecialchars($row->ringkasan));
 												}
 												?>
 											</td>
-											<td><?= $row->pejabat ?></td>
-											<td><?= $row->penanggung_jawab ?></td>
-											<td><?= $row->waktu_penerbitan ?></td>
-											<td><?= $row->bentuk ?></td>
-											<td><?= $row->jangka_waktu ?></td>
-											<td><a href="<?= $row->berkas ?>"><i class="fas fa-info-circle"></i></a></td>
+											<td><?= htmlspecialchars($row->pejabat) ?></td>
+											<td><?= htmlspecialchars($row->penanggung_jawab) ?></td>
+											<td><?= htmlspecialchars($row->waktu_penerbitan) ?></td>
+											<td><?= htmlspecialchars($row->bentuk) ?></td>
+											<td><?= htmlspecialchars($row->jangka_waktu) ?></td>
+											<td>
+												<?php if (!empty($row->media)): ?>
+													<?= htmlspecialchars($row->media) ?>
+												<?php else: ?>
+													<span>-</span>
+												<?php endif; ?>
+											</td>
 											<td>
 												<?php if (!empty($row->berkas)): ?>
-													<a href="<?= base_url('informasi_dikecualikan/download/' . basename($row->berkas)) ?>" title="Download Berkas" target="_blank">
-														<i class="fas fa-download"></i>
-													</a>
+													<a href="<?= base_url('informasi_setiap_saat/download/' . basename($row->berkas)) ?>"
+														target="_blank"><i class="fas fa-download"></i></a>
 												<?php else: ?>
 													<span>-</span>
 												<?php endif; ?>
@@ -82,8 +87,8 @@
 										<td colspan="11">Tidak ada data tersedia.</td>
 									</tr>
 								<?php endif; ?>
-
 							</tbody>
+
 						</table>
 					</div>
 				</div>
@@ -100,7 +105,7 @@
 					</div>
 					<div class="pagination-links">
 						<?php
-						$base_url = base_url('informasi_dikecualikan/index');
+						$base_url = base_url('informasi_setiap_saat/index');
 						$prev_offset = max(0, $offset - $limit);
 						$next_offset = $offset + $limit;
 						$max_offset = $total_rows - ($total_rows % $limit ?: $limit);
