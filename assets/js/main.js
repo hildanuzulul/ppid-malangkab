@@ -418,6 +418,23 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
+// Search Unduhan
+document.addEventListener("DOMContentLoaded", function () {
+	const input = document.querySelector(".search-unduh");
+	if (input) {
+		input.addEventListener("keyup", function () {
+			const filter = input.value.toLowerCase();
+			const table = document.getElementById("unduhTable");
+			const rows = table.querySelectorAll("tbody tr");
+
+			rows.forEach(function (row) {
+				const text = row.textContent.toLowerCase();
+				row.style.display = text.includes(filter) ? "" : "none";
+			});
+		});
+	}
+});
+
 // Filter
 document.addEventListener("DOMContentLoaded", function () {
 	const tahunSelect = document.getElementById("tahunFilter");

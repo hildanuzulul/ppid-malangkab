@@ -19,7 +19,7 @@
 				<div class="row g-5">
 					<div class="col-md-8">
 						<div class="table-header">
-							<input type="text" class="search-sop" id="searchInput" placeholder="Cari...">
+							<input type="text" class="search-unduh" id="searchInput" placeholder="Cari...">
 						</div>
 						<div class="tableunduh-wrapper">
 							<div class="tableunduh-responsive">
@@ -55,23 +55,27 @@
 									</div>
 									<div class="pagination-links">
 										<?php
-										$base_url = base_url('laporan_lhkpn');
+										$base_url   = base_url('unduhan');
 										$prev_offset = max(0, $offset - $limit);
 										$next_offset = $offset + $limit;
 										?>
+										<!-- Prev button -->
 										<?php if ($offset > 0): ?>
-											<a href="<?= $base_url . "?limit=$limit&offset=$prev_offset&tahun=$tahun_terpilih&unit_kerja=$unit_terpilih" ?>">&lt;</a>
+											<a href="<?= $base_url . "?limit=$limit&offset=$prev_offset" ?>">&lt;</a>
 										<?php else: ?>
 											<a href="#" class="disabled">&lt;</a>
 										<?php endif; ?>
 
+										<!-- Angka dinamis -->
 										<?= $pagination_links ?>
 
+										<!-- Next button -->
 										<?php if ($offset + $limit < $total_rows): ?>
-											<a href="<?= $base_url . "?limit=$limit&offset=$next_offset&tahun=$tahun_terpilih&unit_kerja=$unit_terpilih" ?>">&gt;</a>
+											<a href="<?= $base_url . "?limit=$limit&offset=$next_offset" ?>">&gt;</a>
 										<?php else: ?>
 											<a href="#" class="disabled">&gt;</a>
 										<?php endif; ?>
+
 									</div>
 								</div>
 
