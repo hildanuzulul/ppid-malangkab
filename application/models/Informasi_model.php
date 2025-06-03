@@ -80,13 +80,29 @@ class Informasi_model extends CI_Model
 
 	// Unduhan
 	public function count_unduhan()
-	{
-		return $this->db->count_all('dokumen');
-	}
+    {
+        return $this->db->count_all('dokumen');
+    }
 
-	public function get_paginated_unduhan($limit, $offset)
-	{
-		$this->db->order_by('id', 'DESC');
-		return $this->db->get('dokumen', $limit, $offset)->result();
-	}
+    public function get_paginated_unduhan($limit, $offset)
+    {
+        $this->db->order_by('id', 'DESC');
+        return $this->db->get('dokumen', $limit, $offset)->result();
+    }
+
+    public function count_by_kategori($kategori)
+    {
+        $this->db->where('kategori', $kategori);
+        return $this->db->count_all_results('informasi');
+    }
+
+    public function get_by_kategori($kategori, $limit = null, $offset = 0)
+    {
+        $this->db->where('kategori', $kategori);
+        $this->db->order_by('tanggal_unggah', 'DESC');
+        if ($limit !== null) {
+            $this->db->limit($limit, $offset);
+        }
+        return $this->db->get('informasi')->result();
+    }
 }
