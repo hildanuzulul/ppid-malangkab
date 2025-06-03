@@ -77,4 +77,16 @@ class Informasi_model extends CI_Model
 		$this->db->order_by('unit_kerja', 'ASC');
 		return $this->db->get('lhkpn')->result();
 	}
+
+	// Unduhan
+	public function count_unduhan()
+	{
+		return $this->db->count_all('dokumen');
+	}
+
+	public function get_paginated_unduhan($limit, $offset)
+	{
+		$this->db->order_by('id', 'DESC');
+		return $this->db->get('dokumen', $limit, $offset)->result();
+	}
 }

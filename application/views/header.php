@@ -121,7 +121,7 @@
 								<li><a href="<?= base_url('permintaan_data'); ?>">Permohonan Informasi</a></li>
 								<li><a href="<?= base_url('login'); ?>">Permohonan Keberatan Informasi</a></li>
 							</ul>
-						<li><a href="<?= base_url('blog'); ?>">Unduhan</a></li>
+						<li><a href="<?= base_url('unduhan'); ?>">Unduhan</a></li>
 						<li><a href="<?= base_url('contact'); ?>">Kontak Kami</a></li>
 					</ul>
 					<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

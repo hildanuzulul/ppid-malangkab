@@ -57,6 +57,8 @@ class Laporan_lhkpn extends MY_Controller
 		$data['offset'] = $offset;
 		$data['pagination_links'] = $this->pagination->create_links();
 
+		$data['lhkpn'] = $this->Informasi_model->get_filtered($tahun_filter, $unit_filter, $limit, $offset);
+		$this->set_sidebar_berita($data);
 		$this->render('laporan_lhkpn', $data);
 	}
 }

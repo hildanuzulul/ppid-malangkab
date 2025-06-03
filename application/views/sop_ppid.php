@@ -38,7 +38,7 @@
 												<td><?= $item->tahun ?></td>
 												<td><?= $item->nama_sop ?></td>
 												<td>
-													<a href="<?= $item->file_sop ?>" class="my-custom-button btn btn-warning btn-sm" target="_blank">Detail</a>
+													<a href="<?= $item->file_sop ?>" class="my-custom-button btn btn-sm" target="_blank">Detail</a>
 												</td>
 											</tr>
 										<?php endforeach; ?>
