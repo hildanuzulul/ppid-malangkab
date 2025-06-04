@@ -8,10 +8,10 @@
 					<ol>
 						<li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Informasi Publik</li>
-						<li class="breadcrumb-item active" aria-current="page">Informasi Dikecualikan</li>
+						<li class="breadcrumb-item active" aria-current="page">Informasi Berkala</li>
 					</ol>
 				</nav>
-				<h1>Informasi Dikecualikan</h1>
+				<h1>Informasi Berkala</h1>
 			</div>
 		</div><!-- End Page Title -->
 
@@ -84,6 +84,7 @@
 								<?php endif; ?>
 
 							</tbody>
+
 						</table>
 					</div>
 				</div>
@@ -100,7 +101,7 @@
 					</div>
 					<div class="pagination-links">
 						<?php
-						$base_url = base_url('informasi_dikecualikan/index');
+						$base_url = base_url('informasi_berkala/index');
 						$prev_offset = max(0, $offset - $limit);
 						$next_offset = $offset + $limit;
 						$max_offset = $total_rows - ($total_rows % $limit ?: $limit);
