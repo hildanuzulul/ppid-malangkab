@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Informasi_dikecualikan extends MY_Controller
+class informasi_berkala extends MY_Controller
 {
 	public function __construct()
 	{
@@ -17,13 +17,13 @@ class Informasi_dikecualikan extends MY_Controller
 		$offset = $this->input->get('offset') ? (int)$this->input->get('offset') : 0;
 
 		// 2. Gunakan kategori “berkala”
-		$kategori = 'dikecualikan';
+		$kategori = 'berkala';
 
 		// 3. Hitung total row untuk kategori ini
 		$total_rows = $this->Informasi_model->count_by_kategori($kategori);
 
 		// 4. Setup pagination
-		$config['base_url'] = base_url('informasi_dikecualikan/index');
+		$config['base_url'] = base_url('informasi_berkala/index');
 		$config['total_rows'] = $total_rows;
 		$config['per_page'] = $limit;
 		$config['page_query_string'] = TRUE;
@@ -48,6 +48,6 @@ class Informasi_dikecualikan extends MY_Controller
 		$data['pagination_links'] = $this->pagination->create_links();
 
 
-		$this->render('informasi_dikecualikan', $data);
+		$this->render('informasi_berkala', $data);
 	}
 }
