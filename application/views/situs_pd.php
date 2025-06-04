@@ -1,4 +1,14 @@
-<body class="sop-page">
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Situs Perangkat Daerah</title>
+	<link rel="stylesheet" href="situs_pd.css">
+</head>
+
+<body class="situs-pd-page">
 	<main class="main">
 		<div class="page-title" data-aos="fade">
 			<div class="container">
@@ -18,12 +28,12 @@
 				<div class="row g-4">
 					<!-- Sidebar -->
 					<div class="col-md-3">
-						<ul class="nav flex-column nav-pills kategori-situs-pd">
-							<?php foreach ($menu_kategori as $item): ?>
+						<ul class="nav flex-column nav-pills sidebar-situs-pd">
+							<?php foreach ($menu_kategori as $slug => $label): ?>
 								<li class="nav-item">
-									<a class="nav-link <?= ($item == $kategori) ? 'active' : '' ?>"
-										href="<?= base_url('situs_pd/index/' . $item) ?>">
-										<?= ucfirst($item) ?>
+									<a class="nav-link <?= ($kategori == $label) ? 'active' : '' ?>"
+										href="<?= base_url('situs_pd/' . $slug) ?>">
+										<?= ucfirst($label) ?>
 									</a>
 								</li>
 							<?php endforeach; ?>
@@ -33,17 +43,19 @@
 					<!-- Tabel -->
 					<div class="col-md-9">
 						<h3><?= ucfirst($kategori) ?></h3>
-						<div class="table-responsive">
-							<table class="table table-bordered custom-situs-table">
+						<div class="table-header">
+							<input type="text" class="search-situs-pd" id="searchInput" placeholder="Cari...">
+						</div>
+						<div class="table-wrapper">
+							<table class="table-situs-pd">
 								<thead>
 									<tr>
-										<th style="width: 5%;">#</th>
-										<th style="width: 28%;">Nama PD</th>
-										<th style="width: 52%;">Alamat</th>
-										<th style="width: 15%;">Telepon</th>
+										<th>#</th>
+										<th>Nama PD</th>
+										<th>Alamat</th>
+										<th>Telepon</th>
 									</tr>
 								</thead>
-
 								<tbody>
 									<?php if (count($list_pd) > 0): ?>
 										<?php $i = 1;
@@ -57,14 +69,12 @@
 										<?php endforeach; ?>
 									<?php else: ?>
 										<tr>
-											<td colspan="4" class="text-center" style="padding: 20px; color: #888;">
+											<td colspan="4" class="text-center">
 												Tidak ada data tersedia untuk kategori ini.
 											</td>
 										</tr>
 									<?php endif; ?>
 								</tbody>
-
-
 							</table>
 						</div>
 						<p class="table-count">Showing 1 to <?= count($list_pd) ?> of <?= count($list_pd) ?> rows</p>
@@ -73,4 +83,3 @@
 			</section>
 		</div>
 	</main>
-</body>

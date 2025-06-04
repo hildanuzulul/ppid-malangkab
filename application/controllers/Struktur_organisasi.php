@@ -12,6 +12,6 @@ class Struktur_organisasi extends MY_Controller
 	{
 		$data = [];
 		$this->set_sidebar_berita($data);
-		$this->render('tugas_wewenang', $data);
+		$this->render('struktur_organisasi', $data);
 	}
 }

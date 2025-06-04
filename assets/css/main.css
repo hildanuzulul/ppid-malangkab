@@ -2157,25 +2157,24 @@ td {
 	pointer-events: none;
 	cursor: default;
 }
-
 /* --------------------------------------------------------------
    Sidebar Kategori - Situs PD
 -----------------------------------------------------------------*/
-.kategori-situs-pd {
+.sidebar-situs-pd {
 	border: 1px solid #ddd;
 	background-color: #fff;
 	margin-bottom: 20px;
 }
 
-.kategori-situs-pd .nav-item {
+.sidebar-situs-pd .nav-item {
 	border-bottom: 1px solid #eee;
 }
 
-.kategori-situs-pd .nav-item:last-child {
+.sidebar-situs-pd .nav-item:last-child {
 	border-bottom: none;
 }
 
-.kategori-situs-pd .nav-link {
+.sidebar-situs-pd .nav-link {
 	display: block;
 	padding: 10px 15px;
 	font-size: 14px;
@@ -2185,36 +2184,35 @@ td {
 	border-left: 3px solid transparent;
 	transition: all 0.2s ease;
 	border-radius: 0;
-	/* no rounding */
 }
 
-.kategori-situs-pd .nav-link:hover {
+.sidebar-situs-pd .nav-link:hover {
 	background-color: #f1f1f1;
 	color: #000;
 }
 
-.kategori-situs-pd .nav-link.active {
+.sidebar-situs-pd .nav-link.active {
 	background-color: #f2f2f2;
 	color: #d13b3b;
 	border-left: 3px solid #d13b3b;
 }
 
 /* --------------------------------------------------------------
-   Tabel PD - Desain
+   Tabel Situs PD
 -----------------------------------------------------------------*/
 .table-wrapper {
 	width: 100%;
 	overflow-x: auto;
 }
 
-.custom-situs-table {
+.table-situs-pd {
 	width: 100%;
 	border-collapse: collapse;
 	font-size: 14px;
 	table-layout: auto;
 }
 
-.custom-situs-table thead th {
+.table-situs-pd thead th {
 	background-color: #f5f5f5;
 	color: #333;
 	font-weight: bold;
@@ -2223,26 +2221,26 @@ td {
 	vertical-align: middle;
 }
 
-.custom-situs-table td {
+.table-situs-pd td {
 	padding: 10px;
 	vertical-align: top;
 	color: #222;
 	border-top: 1px solid #eee;
 }
 
-.custom-situs-table th,
-.custom-situs-table td {
+.table-situs-pd th,
+.table-situs-pd td {
 	border: 1px solid #e5e5e5;
 }
 
-.custom-situs-table th:nth-child(1),
-.custom-situs-table td:nth-child(1) {
+.table-situs-pd th:nth-child(1),
+.table-situs-pd td:nth-child(1) {
 	width: 50px;
 	text-align: center;
 }
 
-.custom-situs-table th:last-child,
-.custom-situs-table td:last-child {
+.table-situs-pd th:last-child,
+.table-situs-pd td:last-child {
 	width: 120px;
 	white-space: nowrap;
 }
@@ -2261,23 +2259,24 @@ td {
    Responsiveness
 -----------------------------------------------------------------*/
 @media (max-width: 768px) {
-	.kategori-situs-pd .nav-link {
+	.sidebar-situs-pd .nav-link {
 		font-size: 13px;
 		padding: 8px 12px;
 	}
 
-	.custom-situs-table th,
-	.custom-situs-table td {
+	.table-situs-pd th,
+	.table-situs-pd td {
 		font-size: 13px;
 		padding: 8px;
 	}
 }
 
-.table td.text-center {
+.table-situs-pd td.text-center {
 	font-style: italic;
 	color: #888;
 	background-color: #fcfcfc;
 }
+
 
 /*--------------------------------------------------------------
   Berita Section

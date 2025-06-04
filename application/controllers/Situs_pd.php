@@ -10,16 +10,30 @@ class Situs_pd extends MY_Controller
 		$this->load->helper('url');
 	}
 
-	public function index($kategori = 'badan')
+	public function index($slug = 'badan')
 	{
-		$allowed = ['badan', 'bagian', 'desa', 'dinas', 'kecamatan', 'kelurahan', 'lembaga', 'malangkab', 'organisasi', 'ppid', 'upt'];
+		$slug_to_label = [
+			'badan' => 'badan',
+			'bagian' => 'bagian',
+			'desa' => 'desa',
+			'dinas' => 'dinas',
+			'kecamatan' => 'kecamatan',
+			'kelurahan' => 'kelurahan',
+			'lembaga' => 'lembaga',
+			'malangkab' => 'malangkab',
+			'organisasi' => 'organisasi',
+			'ppid' => 'ppid',
+			'upt_puskesmas' => 'upt puskesmas'
+		];
 
-		if (!in_array($kategori, $allowed)) {
+		if (!array_key_exists($slug, $slug_to_label)) {
 			show_404();
 		}
 
+		$kategori = $slug_to_label[$slug];
+
 		$data['kategori'] = $kategori;
-		$data['menu_kategori'] = $allowed;
+		$data['menu_kategori'] = $slug_to_label;
 		$data['list_pd'] = $this->Situs_model->get_by_kategori($kategori);
 		$this->set_sidebar_berita($data);
 		$this->render('situs_pd', $data);
