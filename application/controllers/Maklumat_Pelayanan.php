@@ -12,6 +12,6 @@ class Maklumat_Pelayanan extends MY_Controller
 	{
 		$data = [];
 		$this->set_sidebar_berita($data);
-		$this->render('tugas_wewenang', $data);
+		$this->render('maklumat_pelayanan', $data);
 	}
 }

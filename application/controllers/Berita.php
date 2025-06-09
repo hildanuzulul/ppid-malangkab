@@ -70,6 +70,7 @@ class Berita extends MY_Controller
 		$config['prev_link']           = FALSE;
 		$this->pagination->initialize($config);
 
+
 		// Load sidebar berita terbaru (4 item)
 		$sidebar_berita = $this->get_sidebar_berita();
 
@@ -83,6 +84,25 @@ class Berita extends MY_Controller
 			'pagination_links' => $this->pagination->create_links(),
 			'sidebar_berita'   => $sidebar_berita,
 		];
+    
+		// Sidebar Berita Terbaru (4 item)
+		$sidebar_url = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=4';
+		$response_sidebar = @file_get_contents($sidebar_url);
+		$sidebar_berita = $response_sidebar ? json_decode($response_sidebar, true) : [];
+
+		foreach ($sidebar_berita as &$b) {
+			$b['gambar'] = !empty($b['artikel_image_url'])
+				? 'https://web-admin.malangkab.go.id/5' . $b['artikel_image_url']
+				: $default_image_url;
+		}
+
+		$data['berita'] = $berita_page;
+		$data['pagination_links'] = $this->pagination->create_links();
+		$data['limit'] = $limit;
+		$data['offset'] = $offset;
+		$data['total_rows'] = $total_rows;
+		$data['sidebar_berita'] = $sidebar_berita;
+
 		$this->render('berita', $data);
 	}
 
@@ -156,6 +176,7 @@ class Berita extends MY_Controller
 		return $items;
 	}
 
+
 	/**
 	 * Endpoint untuk AJAX live‐search sidebar berita
 	 */
@@ -178,5 +199,10 @@ class Berita extends MY_Controller
 		header('Content-Type: application/json; charset=utf-8');
 		echo json_encode(array_values($items));
 		exit;
+
+		$data['berita'] = $berita_detail;
+		$data['sidebar_berita'] = $sidebar_berita;
+		$this->render('detail_berita', $data);
+
 	}
 }

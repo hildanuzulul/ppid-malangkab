@@ -116,7 +116,7 @@
 								<li><a href="<?= base_url('mekanisme_permohonan_informasi'); ?>">Mekanisme Permohonan Informasi</a></li>
 								<li><a href="<?= base_url('permohonan_keberatan'); ?>">Mekanisme Permohonan Keberatan</a></li>
 								<li><a href="<?= base_url('interaksi_masyarakat'); ?>">Interaksi Masyarakat</a></li>
-								<li><a href="#">Koordinasi Rutin</a></li>
+								<li><a href="<?= base_url('koordinasi_rutin'); ?>">Koordinasi Rutin</a></li>
 								<li><a href="<?= base_url('sengketa'); ?>">Mekanisme Permohonan Penyelesaian Sengketa...</a></li>
 								<li><a href="<?= base_url('permintaan_data'); ?>">Permohonan Informasi</a></li>
 								<li><a href="<?= base_url('login'); ?>">Permohonan Keberatan Informasi</a></li>

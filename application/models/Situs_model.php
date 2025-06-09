@@ -8,8 +8,16 @@ class Situs_model extends CI_Model
 		parent::__construct();
 	}
 
-	public function get_by_kategori($kategori)
+	public function get_by_kategori($kategori, $limit = 10, $offset = 0)
 	{
-		return $this->db->get_where('situs_pd', ['kategori' => $kategori])->result();
+		$this->db->where('kategori', $kategori);
+		$this->db->limit($limit, $offset);
+		return $this->db->get('situs_pd')->result();
+	}
+
+	public function count_by_kategori($kategori)
+	{
+		$this->db->where('kategori', $kategori);
+		return $this->db->count_all_results('situs_pd');
 	}
 }
