@@ -476,116 +476,98 @@ document.getElementById("searchSop").addEventListener("keyup", function () {
 });
 
 // search Informasi Samping
-document.addEventListener("DOMContentLoaded", function () {
-	const inputSearch = document.getElementById("berita-search-input");
-	const btnSearch = document.getElementById("berita-search-btn");
-	const galleryList = document.getElementById("gallery-list");
+// document.addEventListener("DOMContentLoaded", function () {
+// 	const inputSearch = document.getElementById("berita-search-input");
+// 	const btnSearch = document.getElementById("berita-search-btn");
+// 	const galleryList = document.getElementById("gallery-list");
+// 	const fallbackImg = '<?= base_url("assets/uploads/notfound.jpg") ?>';
+// 	let allBeritaCache = [];
 
-	async function fetchBerita() {
-		const apiUrl =
-			"https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=30";
-		try {
-			const resp = await fetch(apiUrl);
-			if (!resp.ok) throw new Error(`HTTP status ${resp.status}`);
-			const json = await resp.json();
-			return json.data || json;
-		} catch (err) {
-			console.error("Gagal memuat berita dari API:", err);
-			return [];
-		}
-	}
+// 	// Fungsi ambil berita dari API
+// 	async function fetchBerita() {
+// 		try {
+// 			const resp = await fetch("https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=30");
+// 			const json = await resp.json();
+// 			return json.data || [];
+// 		} catch (error) {
+// 			console.error("Gagal fetch berita:", error);
+// 			return [];
+// 		}
+// 	}
 
-	function renderBeritaList(arrBerita) {
-		galleryList.innerHTML = "";
-		if (!Array.isArray(arrBerita) || arrBerita.length === 0) {
-			const li = document.createElement("li");
-			li.classList.add("text-muted");
-			li.textContent = "Tidak ditemukan berita.";
-			galleryList.appendChild(li);
-			return;
-		}
-		arrBerita.forEach((item) => {
-			const li = document.createElement("li");
-			li.classList.add("d-flex", "align-items-start", "mb-2");
+// 	// Fungsi render berita
+// 	function renderBeritaList(beritaList) {
+// 		galleryList.innerHTML = "";
 
-			// 1) Gambar
-			const imgBox = document.createElement("div");
-			imgBox.classList.add("image-box", "me-2");
-			const img = document.createElement("img");
-			img.src = item.gambar || "";
-			img.alt = item.judul_artikel;
-			img.width = 64;
-			img.height = 64;
-			img.onerror = function () {
-				this.onerror = null;
-				this.src = '<?= base_url("assets/uploads/notfound.jpg") ?>';
-			};
-			imgBox.appendChild(img);
+// 		if (!beritaList.length) {
+// 			galleryList.innerHTML = "<li class='text-muted'>Tidak ditemukan berita.</li>";
+// 			return;
+// 		}
 
-			// 2) Teks (judul + tanggal)
-			const teksBox = document.createElement("div");
-			teksBox.classList.add("flex-grow-1");
-			const pJudul = document.createElement("p");
-			pJudul.style.marginBottom = "4px";
-			const aJudul = document.createElement("a");
-			aJudul.href = '<?= base_url("berita/detail/") ?>' + item.id_artikel;
-			aJudul.classList.add("sidebar-link");
-			aJudul.textContent = item.judul_artikel;
-			pJudul.appendChild(aJudul);
-			teksBox.appendChild(pJudul);
+// 		beritaList.forEach(item => {
+// 			const li = document.createElement("li");
+// 			li.className = "d-flex align-items-start mb-2";
 
-			const spanDate = document.createElement("span");
-			const dt = new Date(item.created_at);
-			const year = dt.getFullYear();
-			const month = String(dt.getMonth() + 1).padStart(2, "0");
-			const date = String(dt.getDate()).padStart(2, "0");
-			const hh = String(dt.getHours()).padStart(2, "0");
-			const mm = String(dt.getMinutes()).padStart(2, "0");
-			const ss = String(dt.getSeconds()).padStart(2, "0");
-			spanDate.textContent = `${year}-${month}-${date} ${hh}:${mm}:${ss}`;
-			spanDate.classList.add("text-muted", "small");
-			teksBox.appendChild(spanDate);
+// 			const imgBox = document.createElement("div");
+// 			imgBox.className = "image-box me-2";
+// 			const img = document.createElement("img");
+// 			img.src = item.artikel_image_url 
+// 				? "https://web-admin.malangkab.go.id" + item.artikel_image_url 
+// 				: fallbackImg;
+// 			img.alt = item.judul_artikel;
+// 			img.width = 64;
+// 			img.height = 64;
+// 			img.onerror = function () {
+// 				this.src = fallbackImg;
+// 			};
+// 			imgBox.appendChild(img);
 
-			// 3) Gabungkan
-			li.appendChild(imgBox);
-			li.appendChild(teksBox);
-			const hr = document.createElement("hr");
-			hr.classList.add("my-1");
+// 			const teksBox = document.createElement("div");
+// 			teksBox.className = "flex-grow-1";
 
-			galleryList.appendChild(li);
-			galleryList.appendChild(hr);
-		});
-	}
+// 			const pJudul = document.createElement("p");
+// 			pJudul.className = "mb-1";
+// 			const link = document.createElement("a");
+// 			link.href = "<?= base_url("berita/detail/") ?>" + item.slug;
+// 			link.className = "sidebar-link";
+// 			link.textContent = item.judul_artikel;
+// 			pJudul.appendChild(link);
 
-	let allBeritaCache = [];
-	fetchBerita().then((data) => {
-		allBeritaCache = data;
-		renderBeritaList(allBeritaCache);
-	});
+// 			const date = new Date(item.created_at);
+// 			const spanDate = document.createElement("span");
+// 			spanDate.className = "text-muted small";
+// 			spanDate.textContent = date.toLocaleString("id-ID");
 
-	btnSearch.addEventListener("click", function (ev) {
-		ev.preventDefault();
-		const keyword = inputSearch.value.trim().toLowerCase();
-		if (keyword === "") {
-			renderBeritaList(allBeritaCache);
-			return;
-		}
-		const hasil = allBeritaCache.filter((item) =>
-			item.judul_artikel.toLowerCase().includes(keyword)
-		);
-		renderBeritaList(hasil);
-	});
+// 			teksBox.appendChild(pJudul);
+// 			teksBox.appendChild(spanDate);
 
-	// Live‐search (opsional)
-	inputSearch.addEventListener("keyup", function () {
-		const keyword = this.value.trim().toLowerCase();
-		if (keyword === "") {
-			renderBeritaList(allBeritaCache);
-			return;
-		}
-		const hasil = allBeritaCache.filter((item) =>
-			item.judul_artikel.toLowerCase().includes(keyword)
-		);
-		renderBeritaList(hasil);
-	});
-});
+// 			li.appendChild(imgBox);
+// 			li.appendChild(teksBox);
+
+// 			galleryList.appendChild(li);
+// 			galleryList.appendChild(document.createElement("hr"));
+// 		});
+// 	}
+
+// 	// Ambil & render berita awal
+// 	fetchBerita().then(data => {
+// 		allBeritaCache = data;
+// 		renderBeritaList(allBeritaCache);
+// 	});
+
+// 	// Fungsi pencarian (button click)
+// 	btnSearch.addEventListener("click", function () {
+// 		const keyword = inputSearch.value.trim().toLowerCase();
+// 		if (!keyword) return renderBeritaList(allBeritaCache);
+// 		const hasil = allBeritaCache.filter(item =>
+// 			item.judul_artikel.toLowerCase().includes(keyword)
+// 		);
+// 		renderBeritaList(hasil);
+// 	});
+
+// 	// Fungsi pencarian (tekan enter)
+// 	inputSearch.addEventListener("keyup", function (e) {
+// 		if (e.key === "Enter") btnSearch.click();
+// 	});
+// });
+

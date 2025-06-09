@@ -1,8 +1,8 @@
 <aside class="right-sidebar">
 
-	<div class="input-group">
-		<input class="form-control search-input" type="text" placeholder="Type here">
-		<button class="btn btn-search" type="submit">Search</button>
+	<div class="input-group md-3">
+		<input id="berita-search-input" class="form-control search-input" type="text" placeholder="Type here">
+		<button id="berita-search-btn" class="btn btn-search" type="button">Search</button>
 	</div>
 
 	<div class="widget tab-widget">
@@ -19,7 +19,7 @@
 
 		<div class="tab-content">
 			<div class="tab-pane fade show active" id="one">
-				<ul class="gallery-list">
+				<ul class="gallery-list" id="gallery-list">
 					<?php if (!empty($sidebar_berita)): ?>
 						<?php foreach ($sidebar_berita as $item): ?>
 							<li>
