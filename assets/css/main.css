@@ -1919,6 +1919,60 @@ section,
 /*--------------------------------------------------------------
   Informasi Serta Merta Section
   --------------------------------------------------------------*/
+.search-informasi {
+	width: 250px;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.informasi-item {
+	display: flex;
+	gap: 20px;
+	border-bottom: 0.5px solid #ddd;
+	padding-bottom: 20px;
+}
+
+.informasi-item .image img {
+	width: 240px;
+	height: 160px;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 5px;
+}
+
+.informasi-item .content {
+	flex: 1;
+}
+
+.informasi-item .content h5 {
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.informasi-item .content p {
+	margin: 3px 0;
+	font-size: 14px;
+}
+
+.btn.btn-warning {
+	background-color: var(--second-color);
+	color: var(--background-color);
+	border: 1.5px solid var(--background-color);
+	padding: 5px 12px;
+	border-radius: 4px;
+	font-weight: 600;
+	font-size: 14px;
+	transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.btn.btn-warning:hover {
+	background-color: var(--background-color);
+	color: var(--second-color);
+	border: 1.5px solid var(--second-color);
+}
 
 /*--------------------------------------------------------------
   Berkala Section

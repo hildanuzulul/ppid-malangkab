@@ -104,7 +104,7 @@
 							</ul>
 						<li class="dropdown"><a href="#"><span>Informasi Publik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
-								<li><a href="<?= base_url(''); ?>">Informasi Serta Merta</a></li>
+								<li><a href="<?= base_url('informasi_serta_merta'); ?>">Informasi Serta Merta</a></li>
 								<li><a href="<?= base_url('informasi_berkala'); ?>">Informasi Berkala</a></li>
 								<li><a href="<?= base_url('informasi_setiap_saat'); ?>">Informasi Setiap Saat</a></li>
 								<li><a href="<?= base_url('informasi_dikecualikan'); ?>">Informasi Dikecualikan</a></li>
