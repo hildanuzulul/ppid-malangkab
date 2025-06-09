@@ -1,15 +1,14 @@
-<body class="berita-page">
-
+<body class="koordinasi_rutin-page">
 	<main class="main">
 		<div class="page-title" data-aos="fade">
 			<div class="container">
 				<nav class="breadcrumbs">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Berita</li>
+						<li class="breadcrumb-item active" aria-current="page">Koordinasi Rutin</li>
 					</ol>
 				</nav>
-				<h1>Berita Seputar PPID</h1>
+				<h1>Koordinasi Rutin Seputar PPID</h1>
 			</div>
 		</div>
 
@@ -18,16 +17,16 @@
 			<section id="content">
 				<div class="row g-5">
 					<div class="col-md-8">
-						<div class="container-fluid berita-container">
-							<?php foreach ($berita as $item): ?>
-								<div class="berita-item">
+						<div class="container-fluid koordinasi_rutin-container">
+							<?php foreach ($koordinasi_rutin as $item): ?>
+								<div class="koordinasi_rutin-item">
 									<div class="gambar">
-										<img src="<?= $item['gambar'] ?>" alt="gambar berita">
+										<img src="<?= $item['gambar'] ?>" alt="gambar koordinasi_rutin">
 									</div>
 
 									<div class="konten">
 										<h3>
-											<a href="<?= base_url('berita/detail/' . $item['id_artikel']) ?>">
+											<a href="<?= base_url('koordinasi_rutin/detail/' . $item['id_artikel']) ?>">
 												<?= isset($item['judul_artikel']) ? $item['judul_artikel'] : '(Tanpa Judul)' ?>
 											</a>
 										</h3>
@@ -48,11 +47,12 @@
 										$short = strlen($content) > 300 ? substr($content, 0, 275) . '...' : $content;
 										?>
 										<p><?= $short ?></p>
-										<a class="read-more" href="<?= base_url('berita/detail/' . $item['id_artikel']) ?>">Read More <i class="fas fa-angle-right"></i></a>
+										<a class="read-more" href="<?= base_url('koordinasi_rutin/detail/' . $item['id_artikel']) ?>">Read More <i class="fas fa-angle-right"></i></a>
 									</div>
 								</div>
 							<?php endforeach; ?>
 						</div>
+
 						<div class="pagination-container">
 							<div class="pagination-info">
 								Showing <?= $offset + 1 ?> to <?= min($offset + $limit, $total_rows) ?> of <?= $total_rows ?> rows
@@ -65,7 +65,7 @@
 							</div>
 							<div class="pagination-links">
 								<?php
-								$base_url = base_url('berita/index');
+								$base_url = base_url('koordinasi_rutin/index');
 								$prev_offset = max(0, $offset - $limit);
 								$next_offset = $offset + $limit;
 								$max_offset = $total_rows - ($total_rows % $limit ?: $limit);
@@ -78,8 +78,9 @@
 									<a href="<?= $base_url . "?limit=$limit&offset=$prev_offset" ?>">&lt;</a>
 								<?php endif; ?>
 
-								<!-- Numbered links (from create_links) -->
+								<!-- Numbered links -->
 								<?= $pagination_links ?>
+
 								<!-- Next button -->
 								<?php if ($offset + $limit >= $total_rows): ?>
 									<a href="#" class="disabled">&gt;</a>

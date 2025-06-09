@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Berita extends MY_Controller
+class Koordinasi_rutin extends MY_Controller
 {
 	public function __construct()
 	{
@@ -12,33 +12,33 @@ class Berita extends MY_Controller
 
 	public function index()
 	{
-		$limit = $this->input->get('limit') ? (int)$this->input->get('limit') : 10;
+		$limit  = $this->input->get('limit')  ? (int)$this->input->get('limit')  : 10;
 		$offset = $this->input->get('offset') ? (int)$this->input->get('offset') : 0;
 
-		$cache_file = APPPATH . 'cache/berita_all.json';
+		$cache_file = APPPATH . 'cache/koordinasi_rutin_all.json';
 
-		// Cek cache berita
+		// Cek cache
 		if (file_exists($cache_file) && time() - filemtime($cache_file) < 3600) {
-			$berita_all = json_decode(file_get_contents($cache_file), true);
+			$data_all = json_decode(file_get_contents($cache_file), true);
 		} else {
-			$url = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5';
+			$url = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5'; // Ganti id_pd jika perlu
 			$response = @file_get_contents($url);
-			$berita_all = $response ? json_decode($response, true) : [];
-			file_put_contents($cache_file, json_encode($berita_all));
+			$data_all = $response ? json_decode($response, true) : [];
+			file_put_contents($cache_file, json_encode($data_all));
 		}
 
-		$total_rows = count($berita_all);
-		$berita_page = array_slice($berita_all, $offset, $limit);
+		$total_rows = count($data_all);
+		$data_page  = array_slice($data_all, $offset, $limit);
 
 		$default_image_url = base_url('assets/img/logo.png');
-		foreach ($berita_page as &$berita) {
-			$berita['gambar'] = !empty($berita['artikel_image_url'])
-				? 'https://web-admin.malangkab.go.id/5' . $berita['artikel_image_url']
+		foreach ($data_page as &$item) {
+			$item['gambar'] = !empty($item['artikel_image_url'])
+				? 'https://web-admin.malangkab.go.id/5' . $item['artikel_image_url']
 				: $default_image_url;
 		}
 
 		// Konfigurasi pagination
-		$config['base_url'] = base_url('berita/index');
+		$config['base_url'] = base_url('koordinasi_rutin/index');
 		$config['total_rows'] = $total_rows;
 		$config['per_page'] = $limit;
 		$config['page_query_string'] = TRUE;
@@ -54,79 +54,79 @@ class Berita extends MY_Controller
 
 		$this->pagination->initialize($config);
 
-		// Sidebar Berita Terbaru (4 item)
+		// Sidebar (Koordinasi terbaru)
 		$sidebar_url = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=4';
 		$response_sidebar = @file_get_contents($sidebar_url);
-		$sidebar_berita = $response_sidebar ? json_decode($response_sidebar, true) : [];
+		$sidebar = $response_sidebar ? json_decode($response_sidebar, true) : [];
 
-		foreach ($sidebar_berita as &$b) {
+		foreach ($sidebar as &$b) {
 			$b['gambar'] = !empty($b['artikel_image_url'])
 				? 'https://web-admin.malangkab.go.id/5' . $b['artikel_image_url']
 				: $default_image_url;
 		}
 
-		$data['berita'] = $berita_page;
-		$data['pagination_links'] = $this->pagination->create_links();
-		$data['limit'] = $limit;
-		$data['offset'] = $offset;
-		$data['total_rows'] = $total_rows;
-		$data['sidebar_berita'] = $sidebar_berita;
-		$this->render('berita', $data);
+		$data['koordinasi_rutin']   = $data_page;
+		$data['pagination_links']   = $this->pagination->create_links();
+		$data['limit']              = $limit;
+		$data['offset']             = $offset;
+		$data['total_rows']         = $total_rows;
+		$this->set_sidebar_berita($data);
+		$this->render('koordinasi_rutin', $data);
 	}
 
 	public function detail($id)
 	{
-		$cache_file = APPPATH . 'cache/berita_all.json';
+		$cache_file = APPPATH . 'cache/koordinasi_rutin_all.json';
 
 		if (!file_exists($cache_file)) {
 			show_404();
 		}
 
-		$berita_all = json_decode(file_get_contents($cache_file), true);
+		$data_all = json_decode(file_get_contents($cache_file), true);
+		$detail = null;
 
-		$berita_detail = null;
-		foreach ($berita_all as $berita) {
-			if ($berita['id_artikel'] == $id) {
-				$berita_detail = $berita;
+		foreach ($data_all as $item) {
+			if ($item['id_artikel'] == $id) {
+				$detail = $item;
 				break;
 			}
 		}
 
-		if (!$berita_detail) {
+		if (!$detail) {
 			$url_detail = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=30&id_artikel=' . $id;
 			$response_detail = @file_get_contents($url_detail);
-			$berita_all = $response_detail ? json_decode($response_detail, true) : [];
+			$data_all = $response_detail ? json_decode($response_detail, true) : [];
 
-			foreach ($berita_all as $item) {
+			foreach ($data_all as $item) {
 				if ($item['id_artikel'] == $id) {
-					$berita_detail = $item;
+					$detail = $item;
 					break;
 				}
 			}
 		}
 
-		if (!$berita_detail) {
+		if (!$detail) {
 			show_404();
 		}
 
 		$default_image_url = base_url('assets/img/logo.png');
-		$berita_detail['gambar'] = !empty($berita_detail['artikel_image_url'])
-			? 'https://web-admin.malangkab.go.id/5' . $berita_detail['artikel_image_url']
+		$detail['gambar'] = !empty($detail['artikel_image_url'])
+			? 'https://web-admin.malangkab.go.id/5' . $detail['artikel_image_url']
 			: $default_image_url;
 
-		// Sidebar Berita Terbaru (4 item)
+		// Sidebar koordinasi terbaru
 		$sidebar_url = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=4';
 		$response_sidebar = @file_get_contents($sidebar_url);
-		$sidebar_berita = $response_sidebar ? json_decode($response_sidebar, true) : [];
+		$sidebar = $response_sidebar ? json_decode($response_sidebar, true) : [];
 
-		foreach ($sidebar_berita as &$b) {
+		foreach ($sidebar as &$b) {
 			$b['gambar'] = !empty($b['artikel_image_url'])
 				? 'https://web-admin.malangkab.go.id/5' . $b['artikel_image_url']
 				: $default_image_url;
 		}
 
-		$data['berita'] = $berita_detail;
-		$data['sidebar_berita'] = $sidebar_berita;
-		$this->render('detail_berita', $data);
+		$data['koordinasi_rutin']     = $detail;
+		$this->set_sidebar_berita($data);
+		$this->render('detail_koordinasi_rutin', $data);
 	}
 }

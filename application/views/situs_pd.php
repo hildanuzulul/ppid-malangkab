@@ -77,7 +77,42 @@
 								</tbody>
 							</table>
 						</div>
-						<p class="table-count">Showing 1 to <?= count($list_pd) ?> of <?= count($list_pd) ?> rows</p>
+						<div class="pagination-container">
+							<div class="pagination-info">
+								Showing <?= $offset + 1 ?> to <?= min($offset + $limit, $total_rows) ?> of <?= $total_rows ?> rows
+								<select id="limitSelect" onchange="changeLimit()">
+									<?php foreach ([10, 25, 50, 100] as $l): ?>
+										<option value="<?= $l ?>" <?= ($limit == $l) ? 'selected' : '' ?>><?= $l ?></option>
+									<?php endforeach; ?>
+								</select>
+								rows per page
+							</div>
+							<div class="pagination-links">
+								<?php
+								$base_url = base_url('situs_pd/index');
+								$prev_offset = max(0, $offset - $limit);
+								$next_offset = $offset + $limit;
+								$max_offset = $total_rows - ($total_rows % $limit ?: $limit);
+								?>
+
+								<!-- Prev button -->
+								<?php if ($offset <= 0): ?>
+									<a href="#" class="disabled">&lt;</a>
+								<?php else: ?>
+									<a href="<?= $base_url . "?limit=$limit&offset=$prev_offset" ?>">&lt;</a>
+								<?php endif; ?>
+
+								<!-- Numbered links (from create_links) -->
+								<?= $pagination_links ?>
+
+								<!-- Next button -->
+								<?php if ($offset + $limit >= $total_rows): ?>
+									<a href="#" class="disabled">&gt;</a>
+								<?php else: ?>
+									<a href="<?= $base_url . "?limit=$limit&offset=$next_offset" ?>">&gt;</a>
+								<?php endif; ?>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
