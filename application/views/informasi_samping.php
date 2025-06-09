@@ -1,8 +1,8 @@
 <aside class="right-sidebar">
 
-	<div class="input-group">
-		<input class="form-control search-input" type="text" placeholder="Type here">
-		<button class="btn btn-search" type="submit">Search</button>
+	<div class="input-group md-3">
+		<input id="berita-search-input" class="form-control search-input" type="text" placeholder="Type here">
+		<button id="berita-search-btn" class="btn btn-search" type="button">Search</button>
 	</div>
 
 	<div class="widget tab-widget">
@@ -19,7 +19,7 @@
 
 		<div class="tab-content">
 			<div class="tab-pane fade show active" id="one">
-				<ul class="gallery-list">
+				<ul class="gallery-list" id="gallery-list">
 					<?php if (!empty($sidebar_berita)): ?>
 						<?php foreach ($sidebar_berita as $item): ?>
 							<li>
@@ -75,3 +75,52 @@
 	</div>
 
 </aside>
+
+<script>
+	(function() {
+		const $input = document.getElementById('berita-search-input');
+		const $list = document.getElementById('gallery-list');
+		let timer;
+
+		function renderItems(items) {
+			if (!items.length) {
+				$list.innerHTML = '<li>Tidak ada berita.</li>';
+				return;
+			}
+			$list.innerHTML = items.map(item => `
+        <li>
+          <div class="image-box">
+            <img src="${item.gambar}" alt="${item.judul_artikel}">
+          </div>
+          <div>
+            <p>
+              <a href="<?= base_url('berita/detail/') ?>${item.id_artikel}" class="sidebar-link">
+                ${item.judul_artikel}
+              </a>
+            </p>
+            <span>${item.created_at}</span>
+          </div>
+        </li>
+        <hr>
+      `).join('');
+		}
+
+		function fetchSearch(q) {
+			fetch('<?= base_url("berita/search_json") ?>?search=' + encodeURIComponent(q))
+				.then(res => res.json())
+				.then(items => renderItems(items))
+				.catch(err => console.error(err));
+		}
+
+		$input.addEventListener('input', function() {
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				fetchSearch(this.value.trim());
+			}, 300); // debounce 300ms
+		});
+
+		// (opsional) tombol Search memicu fetch juga
+		document.getElementById('berita-search-btn')
+			.addEventListener('click', () => fetchSearch($input.value.trim()));
+	})();
+</script>
