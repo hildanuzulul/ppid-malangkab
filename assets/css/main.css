@@ -1062,7 +1062,10 @@ section,
 .gallery-list img {
 	width: 110px;
 	height: 80px;
+	object-fit: cover;
+	object-position: center;
 	border-radius: 4px;
+	display: block;
 }
 
 .gallery-list p a {
@@ -2361,10 +2364,14 @@ td {
 
 .berita-item .gambar img {
 	width: 100%;
-	height: auto;
+	height: 100px;
+	/* atau 120px sesuai kebutuhan */
+	object-fit: cover;
+	object-position: center;
 	max-width: 150px;
 	border-radius: 4px;
 }
+
 
 .berita-item .konten {
 	width: 70%;
