@@ -5,7 +5,7 @@
 			<div class="container">
 				<nav class="breadcrumbs">
 					<ol>
-						<li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('beranda'); ?>">Beranda</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Unduh Dokumen</li>
 					</ol>
 				</nav>

@@ -6,7 +6,7 @@
 			<div class="container">
 				<nav class="breadcrumbs">
 					<ol>
-						<li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('beranda'); ?>">Beranda</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Pelayanan</li>
 						<li class="breadcrumb-item active" aria-current="page">Mekanisme Permohonan Keberatan</li>
 					</ol>
