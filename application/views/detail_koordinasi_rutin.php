@@ -4,7 +4,7 @@
 			<div class="container">
 				<nav class="breadcrumbs">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('beranda'); ?>">Beranda</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Koordinasi Rutin</li>
 					</ol>
 				</nav>

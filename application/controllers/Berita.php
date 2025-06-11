@@ -84,7 +84,7 @@ class Berita extends MY_Controller
 			'pagination_links' => $this->pagination->create_links(),
 			'sidebar_berita'   => $sidebar_berita,
 		];
-    
+
 		// Sidebar Berita Terbaru (4 item)
 		$sidebar_url = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5&limit=4';
 		$response_sidebar = @file_get_contents($sidebar_url);
@@ -152,7 +152,7 @@ class Berita extends MY_Controller
 		$sidebar_berita = $this->get_sidebar_berita();
 
 		// Tampilkan ke view
-		$this->render('detail', [
+		$this->render('detail_berita', [
 			'berita'         => $berita_detail,
 			'sidebar_berita' => $sidebar_berita,
 		]);
@@ -203,6 +203,5 @@ class Berita extends MY_Controller
 		$data['berita'] = $berita_detail;
 		$data['sidebar_berita'] = $sidebar_berita;
 		$this->render('detail_berita', $data);
-
 	}
 }

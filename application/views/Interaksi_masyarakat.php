@@ -6,7 +6,7 @@
 			<div class="container">
 				<nav class="breadcrumbs">
 					<ol>
-						<li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('beranda'); ?>">Beranda</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Layanan</li>
 						<li class="breadcrumb-item active" aria-current="page">Interaksi Masyarakat</li>
 					</ol>
@@ -21,13 +21,13 @@
 				<li>
 					Sampaikan laporan Anda langsung kepada instansi pemerintah berwenang melalui Layanan Aspirasi dan Pengaduan Online Rakyat
 					<a href="https://www.lapor.go.id/" target="_blank" style="color: #E96B56; font-weight: bold;">
-					LAPOR!-SP4N
+						LAPOR!-SP4N
 					</a>
 				</li>
 				<li>
-					Sampaikan laporan Anda langsung pada instansi pemerintah Kabupaten Malang di layanan Surat Warga Kabupaten Malang 
+					Sampaikan laporan Anda langsung pada instansi pemerintah Kabupaten Malang di layanan Surat Warga Kabupaten Malang
 					<a href="https://suratwarga.malangkab.go.id/" target="_blank" style="color: #E96B56; font-weight: bold;">
-					SURAT WARGA
+						SURAT WARGA
 					</a>
 				</li>
 			</ol>

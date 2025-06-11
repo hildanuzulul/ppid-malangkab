@@ -6,7 +6,7 @@
 			<div class="container">
 				<nav class="breadcrumbs">
 					<ol>
-						<li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('beranda'); ?>">Beranda</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Profil</li>
 						<li class="breadcrumb-item active" aria-current="page">Dasar Hukum</li>
 					</ol>
@@ -22,7 +22,7 @@
 					<button class="faq-question active">
 						<span class="faq-icon">-</span> Undang-Undang Republik Indonesia
 					</button>
-					<div class="faq-answer"style="display: block;">
+					<div class="faq-answer" style="display: block;">
 						<ol>
 							<li>Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik</li>
 							<li>Undang-Undang Nomor 25 Tahun 2009 tentang Pelayanan Publik</li>
