@@ -17,9 +17,9 @@
 
 		<div class="container content" data-aos="fade-up" data-aos-delay="100">
 			<hr class="separator">
-			<div class="table-header">
-				<input type="text" id="searchInput" class="search-informasiSM" placeholder="Cari...">
-			</div>
+			<form method="get" action="<?= base_url('informasi_serta_merta/index') ?>" class="table-header mb-4">
+				<input type="text" id="searchInput" class="search-informasiSM" placeholder="Cari..." name="search" value="<?= htmlspecialchars($search) ?>">
+			</form>
 
 			<?php if (!empty($informasi)): ?>
 				<?php foreach ($informasi as $item): ?>
@@ -74,3 +74,21 @@
 			<br>
 		</div>
 	</main>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			document
+				.querySelectorAll(".search-informasiSM")
+				.forEach(input => {
+					input.addEventListener("keyup", function() {
+						const f = this.value.toLowerCase();
+						document
+							.querySelectorAll(".informasi-item")
+							.forEach(item => {
+								const judul = item.querySelector("h5").textContent.toLowerCase();
+								item.style.display = judul.includes(f) ? "" : "none";
+							});
+					});
+				});
+		});
+	</script>

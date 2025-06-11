@@ -368,18 +368,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-			const input = document.querySelector(".search-situs-pd");
-			if (input) {
-				input.addEventListener("keyup", function () {
-					const filter = input.value.toLowerCase();
-					const rows = document.querySelectorAll(".table-situs-pd tbody tr");
-					rows.forEach(function (row) {
-						const text = row.textContent.toLowerCase();
-						row.style.display = text.includes(filter) ? "" : "none";
-					});
-				});
-			}
+	const input = document.querySelector(".search-situs-pd");
+	if (input) {
+		input.addEventListener("keyup", function () {
+			const filter = input.value.toLowerCase();
+			const rows = document.querySelectorAll(".table-situs-pd tbody tr");
+			rows.forEach(function (row) {
+				const text = row.textContent.toLowerCase();
+				row.style.display = text.includes(filter) ? "" : "none";
+			});
 		});
+	}
+});
 
 //search-sop
 document.addEventListener("DOMContentLoaded", function () {
