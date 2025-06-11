@@ -17,10 +17,21 @@ class Informasi_serta_merta extends MY_Controller
 		$limit  = $this->input->get('limit')  ? (int)$this->input->get('limit')  : 10;
 		$offset = $this->input->get('offset') ? (int)$this->input->get('offset') : 0;
 
+		// Fetch semua data dari API atau cache
+		$cache_file = APPPATH . 'cache/informasi_serta_merta.json';
+		if (file_exists($cache_file) && time() - filemtime($cache_file) < 3600) {
+			$informasi_all = json_decode(file_get_contents($cache_file), true);
+		} else {
+			$url = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5';
+			$response = @file_get_contents($url);
+			$informasi_all = $response ? json_decode($response, true) : [];
+			file_put_contents($cache_file, json_encode($informasi_all));
+		}
+
 		// Fetch semua data dari API
-		$url           = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5';
-		$response      = @file_get_contents($url);
-		$informasi_all = $response ? json_decode($response, true) : [];
+		// $url           = 'https://web-admin.malangkab.go.id/api/list-berita?id_pd=5';
+		// $response      = @file_get_contents($url);
+		// $informasi_all = $response ? json_decode($response, true) : [];
 
 		// Filter berdasarkan judul kalau ada keyword
 		if ($search !== '') {
