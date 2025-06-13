@@ -22,7 +22,7 @@
 				</div>
 				<div class="table-wrapper">
 					<div class="table-container">
-						<table class="table-informasi" id="informasiTable">
+						<table class="table-informasi" id="informasiTable" data-kategori="setiap_saat">
 							<thead>
 								<tr>
 									<th>#</th>
@@ -127,3 +127,5 @@
 			</div>
 		</section>
 	</main>
+
+	<!-- jashdj -->
