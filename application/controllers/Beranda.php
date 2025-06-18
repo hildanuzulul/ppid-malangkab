@@ -22,6 +22,8 @@ class Beranda extends MY_Controller
 		}
 
 		$data['berita'] = $berita_list;
+		// var_dump($data['berita']);
+		// die;
 
 		$this->set_sidebar_berita($data);
 

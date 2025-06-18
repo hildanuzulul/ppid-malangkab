@@ -46,9 +46,17 @@ class Login extends CI_Controller
 			$data = [
 				'nama_user' => $user['nama_user'],
 				'email' => $user['email'],
+				'role' => $user['role'],
+				'logged_in' => TRUE
 			];
 			$this->session->set_userdata($data);
-			redirect('beranda');
+			if ($data['role'] == 'admin') {
+				// var_dump($data);
+				// die;
+				redirect('admin');
+			}else{
+				redirect('beranda');
+			}
 		}else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
 			Username atau Password salah</div>');

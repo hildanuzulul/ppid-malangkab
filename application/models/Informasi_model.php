@@ -9,20 +9,46 @@ class Informasi_model extends CI_Model
 		parent::__construct();
 	}
 
+	public function get_count_info_dikecualikan()
+	{
+		return $this->db->where('kategori', 'dikecualikan')->count_all_results('informasi');
+	}
+	public function get_all_info_dikecualikan($limit, $start)
+	{
+		$this->db->order_by('tanggal_unggah', 'DESC');
+		$this->db->limit($limit, $start);
+		return $this->db->where('kategori', 'dikecualikan')->get('informasi')->result();
+	}
+	public function get_info_dikecualikan_by_id($id)
+	{
+		return $this->db->get_where('informasi', ['id' => $id, 'kategori' => 'dikecualikan'])->row();
+
+	}
+
 	public function get_count()
 	{
+		$this->db->where_not_in('kategori', ['dikecualikan']);
 		return $this->db->count_all('informasi');
 	}
 
 	public function get_all($limit, $start)
 	{
+		$this->db->where_not_in('kategori', ['dikecualikan']);
+		$this->db->order_by('tanggal_unggah', 'DESC');
 		$this->db->limit($limit, $start);
 		return $this->db->get('informasi')->result();
 	}
+	public function get_info_by_id($id)
+	{
+		return $this->db->get_where('informasi', ['id' => $id])->row();
+
+	}
+
 
 	// SOP_PPID
 	public function get_all_sop()
 	{
+		$this->db->order_by('created_at', 'DESC');
 		return $this->db->order_by('tahun', 'DESC')->get('laporan_sop')->result();
 	}
 	public function get_sop_by_id($id)
@@ -57,6 +83,7 @@ class Informasi_model extends CI_Model
 		if ($limit !== null) {
 			$this->db->limit($limit, $offset);
 		}
+		$this->db->order_by('created_at', 'DESC');
 		return $this->db->get('lhkpn')->result();
 	}
 

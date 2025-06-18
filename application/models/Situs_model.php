@@ -20,4 +20,20 @@ class Situs_model extends CI_Model
 		$this->db->where('kategori', $kategori);
 		return $this->db->count_all_results('situs_pd');
 	}
+	public function count_all()
+	{
+		return $this->db->count_all_results('situs_pd');
+	}
+	public function get_all($limit = 10, $offset = 0)
+	{
+		$this->db->order_by('id', 'DESC');
+		$this->db->limit($limit, $offset);
+		return $this->db->get('situs_pd')->result();
+	}
+	public function get_kategori()
+	{
+		$this->db->distinct();
+		$this->db->select('kategori');
+		return $this->db->get('situs_pd')->result();
+	}
 }

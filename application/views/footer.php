@@ -7,9 +7,9 @@
 				<ul style="margin: 0; padding: 0;" class="link-list">
 					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="https://malangkab.go.id/" target="_blank">MalangKab</a></li>
 					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="https://kominfo.malangkab.go.id/" target="_blank">Kominfo</a></li>
-					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="<?= base_url('portfolio'); ?>">LPSE</a></li>
+					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="portfolio">LPSE</a></li>
 					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="https://daily-kanjuruhan.malangkab.go.id/" target="_blank">Daily-Kanjuruhan</a></li>
-					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="<?= base_url('contact'); ?>">Kontak Kami</a></li>
+					<li style="margin: 0; padding: 5px;"><i class="bi bi-chevron-right"></i> <a href="contact">Kontak Kami</a></li>
 				</ul>
 			</div>
 
@@ -22,7 +22,7 @@
 					Jawa Timur - Indonesia<br>
 					<br>
 					<i class="bi bi-telephone"></i> (0341) 408788<br>
-					<i class="bi bi-envelope"></i><a href="mailto:ppid@malangkab.go.id" target="_blank"> ppid@malangkab.go.id</a>
+					<i class="bi bi-envelope"></i><a href="mailto:ppid@malangkab.go.id"> ppid@malangkab.go.id</a>
 				</address>
 			</div>
 
@@ -51,6 +51,15 @@
 		</div>
 	</div>
 
+
+	<!-- <div style="width: 100%; background-color: red; color: white; padding: 3px; text-align: center;">
+		<div class="container mt-6 d-flex flex-column flex-md-row justify-content-between text-center" style="background-color: B22222; color: white; padding: 10px 0;">
+			<p>© <span>Dinas Kominfo Kabupaten Malang. 2025</span> -->
+	<!-- <strong class="px-1 sitename">Eterna</strong> <span>All Rights Reserved</span></p> -->
+	<!-- <p>Designed by <a href="https://bootstrapmade.com/" style="color: white;">BootstrapMade</a></p> -->
+	<!-- </div>
+	</div> -->
+
 </footer>
 
 <!-- Scroll Top -->
@@ -60,26 +69,27 @@
 <div id="preloader"></div>
 
 <!-- Vendor JS Files -->
-<script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/php-email-form/validate.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/aos/aos.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/purecounter/purecounter_vanilla.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/waypoints/noframework.waypoints.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/glightbox/js/glightbox.min.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js'); ?>"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>icon for card beranda -->
+<script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js');?>"></script>
+<script src="<?= base_url('assets/vendor/php-email-form/validate.js');?>"></script>
+<script src="<?= base_url('assets/vendor/aos/aos.js');?>"></script>
+<script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js');?>"></script>
+<script src="<?= base_url('assets/vendor/purecounter/purecounter_vanilla.js');?>"></script>
+<script src="<?= base_url('assets/vendor/waypoints/noframework.waypoints.js');?>"></script>
+<script src="<?= base_url('assets/vendor/glightbox/js/glightbox.min.js');?>"></script>
+<script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js');?>"></script>
+<script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js');?>"></script>
 
 <!-- Main JS File -->
 <script src="<?= base_url('assets/js/main.js'); ?>"></script>
 
 <!-- Script UserWay -->
 <!-- <script src="https://cdn.userway.org/widget.js" data-account="B3mZXfyDkb"></script> -->
-<script
-	src="https://cdn.userway.org/widget.js"
-	data-account="B3mZXfyDkb"
-	data-position="2"
-	data-color="#b22222">
+<script 
+  src="https://cdn.userway.org/widget.js" 
+  data-account="B3mZXfyDkb"
+  data-position="2"
+  data-color="#b22222">
 </script>
 
 
@@ -95,7 +105,17 @@
 		s1.setAttribute('crossorigin', '*');
 		s0.parentNode.insertBefore(s1, s0);
 	})();
-</script>
+
+	// Auto-dismiss popup after 4 seconds
+	document.addEventListener("DOMContentLoaded", function () {
+		const alertBox = document.getElementById('popup-alert');
+		if (alertBox) {
+			setTimeout(() => {
+				alertBox.remove();
+			}, 4000);
+		}
+	});
+</script>  
 </body>
 
 </html>

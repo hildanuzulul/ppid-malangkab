@@ -95,7 +95,7 @@ class Registrasi extends CI_Controller
 			];
 
 			// Debugging: Lihat data yang akan disimpan
-			var_dump($data);
+			// var_dump($data);
 			// die;
 
 			// Insert data

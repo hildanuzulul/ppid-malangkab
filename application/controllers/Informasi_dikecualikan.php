@@ -12,42 +12,41 @@ class Informasi_dikecualikan extends MY_Controller
 
 	public function index()
 	{
-		// 1. Ambil limit & offset
-		$limit  = $this->input->get('limit')  ? (int)$this->input->get('limit')  : 10;
+		// Ambil limit dan offset dari query string (default limit=10, offset=0)
+		$limit = $this->input->get('limit') ? (int)$this->input->get('limit') : 10;
 		$offset = $this->input->get('offset') ? (int)$this->input->get('offset') : 0;
 
-		// 2. Gunakan kategori “berkala”
-		$kategori = 'dikecualikan';
+		// Konfigurasi pagination
 
-		// 3. Hitung total row untuk kategori ini
-		$total_rows = $this->Informasi_model->count_by_kategori($kategori);
-
-		// 4. Setup pagination
 		$config['base_url'] = base_url('informasi_dikecualikan/index');
-		$config['total_rows'] = $total_rows;
+		$config['total_rows'] = $this->Informasi_model->get_count();
 		$config['per_page'] = $limit;
 		$config['page_query_string'] = TRUE;
 		$config['query_string_segment'] = 'offset';
-		$config['reuse_query_string']  = TRUE;
-		$config['full_tag_open']  = '';
+
+		// Styling pagination: gunakan tag a untuk semua link supaya CSS cocok
+		$config['full_tag_open'] = '';
 		$config['full_tag_close'] = '';
-		$config['cur_tag_open']   = '<a href="#" class="current">';
-		$config['cur_tag_close']  = '</a>';
-		$config['first_link']     = FALSE;
-		$config['last_link']      = FALSE;
-		$config['next_link']      = FALSE;
-		$config['prev_link']      = FALSE;
-		$this->load->library('pagination');
+
+		$config['cur_tag_open'] = '<a href="#" class="current">';
+		$config['cur_tag_close'] = '</a>';
+
+		$config['first_link'] = FALSE;
+		$config['last_link'] = FALSE;
+		$config['next_link'] = FALSE;
+		$config['prev_link'] = FALSE;
+
 		$this->pagination->initialize($config);
 
-		// 5. Ambil data sesuai kategori + pagination
-		$data['informasi']       = $this->Informasi_model->get_by_kategori($kategori, $limit, $offset);
-		$data['total_rows']      = $total_rows;
-		$data['limit']           = $limit;
-		$data['offset']          = $offset;
+		$data['informasi'] = $this->Informasi_model->get_all($limit, $offset);
+		$data['total_rows'] = $config['total_rows'];
+		$data['limit'] = $limit;
+		$data['offset'] = $offset;
+
+		// Kirim link pagination ke view
 		$data['pagination_links'] = $this->pagination->create_links();
-
-
+		
 		$this->render('informasi_dikecualikan', $data);
+
 	}
 }
