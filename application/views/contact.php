@@ -11,10 +11,10 @@
 				<nav class="breadcrumbs">
 					<ol>
 						<li class="breadcrumb-item"><a href="<?= base_url('beranda'); ?>">Beranda</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Contact</li>
+						<li class="breadcrumb-item active" aria-current="page">Kontak</li>
 					</ol>
 				</nav>
-				<h1>Contact</h1>
+				<h1>Kontak</h1>
 			</div>
 		</div>
 
@@ -35,37 +35,31 @@
 				<div class="row gy-4 mb-5">
 					<!-- Form -->
 					<div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-
 						<?= form_open('contact'); ?>
 						<div class="row gy-4">
 							<h3>Ajukan Saran, Kritik, atau Permintaan Informasi</h3>
 
 							<div class="col-md-12">
-								<input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" value="<?= set_value('nama'); ?>" required>
+								<input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" value="<?= set_value('nama'); ?>">
 								<?= form_error('nama', '<small class="text-danger ps-2">', '</small>'); ?>
 							</div>
 
 							<div class="col-md-12">
-								<input type="email" name="email" class="form-control" placeholder="Email" value="<?= set_value('email'); ?>" required>
+								<input type="email" name="email" class="form-control" placeholder="Email" value="<?= set_value('email'); ?>">
 								<?= form_error('email', '<small class="text-danger ps-2">', '</small>'); ?>
 							</div>
 
 							<div class="col-md-12">
-								<input type="tel" name="telepon" class="form-control" placeholder="Telepon" pattern="\d+" maxlength="13" value="<?= set_value('telepon'); ?>" required>
+								<input type="tel" name="telepon" class="form-control" placeholder="Telepon" pattern="\d+" maxlength="13" value="<?= set_value('telepon'); ?>">
 								<?= form_error('telepon', '<small class="text-danger ps-2">', '</small>'); ?>
 							</div>
 
 							<div class="col-md-12">
-								<textarea name="pesan" rows="6" class="form-control" placeholder="Pesan" required><?= set_value('pesan'); ?></textarea>
+								<textarea name="pesan" rows="6" class="form-control" placeholder="Pesan"><?= set_value('pesan'); ?></textarea>
 								<?= form_error('pesan', '<small class="text-danger ps-2">', '</small>'); ?>
 							</div>
 
 							<div class="col-md-12 text-center">
-								<!-- Loading/error/sent-message bisa dikendalikan lewat JS jika dibutuhkan -->
-								<!-- <div class="loading">Loading</div>
-								<div class="error-message"></div>
-								<div class="sent-message">Pesanmu sudah terkirim. Terima kasih!</div> -->
-
 								<button type="submit" class="btn btn-sm btn-danger w-100">Kirim Pesan</button>
 							</div>
 						</div>

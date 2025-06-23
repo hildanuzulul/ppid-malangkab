@@ -8,7 +8,7 @@ class Permintaan_data extends MY_Controller
 		$this->load->library('form_validation');
 		$this->user = $this->db->get_where('users', ['nama_user' => $this->session->userdata('nama_user')])->row_array();
 		if (!$this->session->userdata('nama_user')) {
-			$this->session->set_flashdata('message', '<div class="alert alert-warning">Login terlebihdahulu sebelum melakukan permintaan data</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-warning">Login terlebih dahulu sebelum melakukan permintaan data</div>');
 			redirect('login');
 		}
 	}
@@ -24,14 +24,14 @@ class Permintaan_data extends MY_Controller
 		$this->form_validation->set_rules('cara_memperoleh', 'Cara Memperoleh', 'required|trim', [
 			'required' => 'Cara memperoleh tidak boleh kosong',
 		]);
-		$this->form_validation->set_rules('bentuk_salinan','Bentuk Salinan' ,'required|trim');
+		$this->form_validation->set_rules('bentuk_salinan', 'Bentuk Salinan', 'required|trim');
 		$this->form_validation->set_rules('kirim_salinan', 'Cara Mendapatkan Salinan', 'required|trim', [
 			'required' => 'Cara mendapatkan salinan tidak boleh kosong',
 		]);
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->render('permintaan_data');
-		}else{
+		} else {
 			$data_insert = [
 				'user_id' => $this->user['id'],
 				'permintaan_informasi' => $this->input->post('permintaan_informasi'),

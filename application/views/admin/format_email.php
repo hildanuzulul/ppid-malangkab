@@ -23,13 +23,13 @@
 		}
 
 		.header {
-			border-bottom: 2px solid #007BFF;
+			border-bottom: 2px solid #e22222;
 			padding-bottom: 10px;
 			margin-bottom: 20px;
 		}
 
 		.header h2 {
-			color: #007BFF;
+			color: #e22222;
 			margin: 0;
 		}
 
