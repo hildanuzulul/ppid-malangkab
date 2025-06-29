@@ -5,10 +5,26 @@
 	<meta charset="UTF-8">
 	<title>Informasi Permohonan</title>
 	<style>
+		:root {
+			--default-font: "Open Sans", sans-serif;
+			--heading-font: "Open Sans", sans-serif;
+			--nav-font: "Open Sans", sans-serif;
+		}
+
+		:root {
+			--background-color: #ffffff;
+			--default-color: #444444;
+			--heading-color: #545454;
+			--accent-color: #e96b56;
+			--second-color: #b22222;
+			--surface-color: #ffffff;
+			--contrast-color: #ffffff;
+		}
+
 		body {
-			font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-			background-color: #f9f9f9;
-			color: #333;
+			font-family: var(--default-font);
+			background-color: var(--background-color);
+			color: var(--heading-color);
 			margin: 0;
 			padding: 0;
 		}
@@ -16,20 +32,20 @@
 		.email-container {
 			max-width: 600px;
 			margin: auto;
-			background-color: #fff;
+			background-color: var(--background-color);
 			padding: 30px;
 			border: 1px solid #ddd;
 			border-radius: 8px;
 		}
 
 		.header {
-			border-bottom: 2px solid #e22222;
+			border-bottom: 2px solid var(--second-color);
 			padding-bottom: 10px;
 			margin-bottom: 20px;
 		}
 
 		.header h2 {
-			color: #e22222;
+			color: var(--second-color);
 			margin: 0;
 		}
 
@@ -41,10 +57,19 @@
 			display: inline-block;
 			padding: 12px 20px;
 			margin-top: 20px;
-			background-color: #e22222;
-			color: #fff;
+			background-color: var(--second-color);
+			color: white;
 			text-decoration: none;
 			border-radius: 5px;
+		}
+
+		.btn:link,
+		.btn:visited,
+		.btn:hover,
+		.btn:active {
+			background-color: #fff;
+			color: var(--second-color);
+			text-decoration: none;
 		}
 
 		.footer {
@@ -93,5 +118,4 @@
 		</div>
 	</div>
 </body>
-
 </html>
