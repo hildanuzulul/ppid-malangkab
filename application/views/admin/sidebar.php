@@ -1,10 +1,10 @@
 <div class="sidebar bg-dark-red">
 	<ul class="nav flex-column">
-		<!-- <li class="nav-item">
+		<li class="nav-item">
 			<a class="nav-link <?php echo $active_menu == 'dashboard' ? 'active' : ''; ?>" href="<?php echo base_url('admin'); ?>">
 				<i class="fas fa-tachometer-alt me-2"></i> Dashboard
 			</a>
-		</li> -->
+		</li>
 		<li class="nav-item">
 			<a class="nav-link <?php echo $active_menu == 'informasi_dikecualikan' ? 'active' : ''; ?>" href="<?php echo base_url('admin_informasi_dikecualikan'); ?>">
 				<i class="fas fa-file-excel me-2"></i> Informasi Dikecualikan

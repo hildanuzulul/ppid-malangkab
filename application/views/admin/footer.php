@@ -1,7 +1,7 @@
         <!-- Footer -->
         <footer class="footer text-center py-3">
         	<div class="container-fluid">
-        		<span>&copy; 2023 Admin Panel. All rights reserved.</span>
+        		<span>&copy; 2025 Dinas Komunikasi dan Informatika Kabupaten Malang.</span>
         	</div>
         </footer>
         </div>
@@ -30,12 +30,12 @@
         			title: 'Gagal!',
         			text: '<?= $this->session->flashdata('error'); ?>'
         		});
-			<?php elseif ($this->session->flashdata('error_modal')): ?>
-				Swal.fire({
-					icon: 'error',
-					title: 'Gagal!',
-					html: '<?= $this->session->flashdata('error_modal'); ?>'
-				});
+        	<?php elseif ($this->session->flashdata('error_modal')): ?>
+        		Swal.fire({
+        			icon: 'error',
+        			title: 'Gagal!',
+        			html: '<?= $this->session->flashdata('error_modal'); ?>'
+        		});
         	<?php endif; ?>
         </script>
         <script>
