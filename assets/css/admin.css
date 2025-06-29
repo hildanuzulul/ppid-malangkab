@@ -77,13 +77,15 @@ h6 {
 }
 
 .sidebar .nav-link:hover {
-	background-color: rgba(248, 249, 250, 0.6);
-	color: rgba(178, 34, 34, 0.9);
+	/* background-color: #6a0527; */
+	background-color: #5e021c;
+	color: var(--background-color);
 }
 
 .sidebar .nav-link.active {
-	background-color: rgba(248, 249, 250, 0.6);
-	color: rgba(178, 34, 34, 0.9);
+	/* background-color: #6a0527; */
+	background-color: #5e021c;
+	color: var(--background-color);
 	font-weight: bold;
 }
 
@@ -139,25 +141,10 @@ h6 {
 }
 
 /* Cards */
-/* .bg-light-red {
-    background-color: var(--light-red);
-}
-
-.card {
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-} */
-
 .dashboard-card {
-	background-color: var(--background-color);
+	background-color: #ffffff;
 	border-radius: 20px;
-	box-shadow: 0 10px 20px var(--accent-color);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
 	padding: 20px 10px;
 	transition: all 0.3s ease;
 	text-align: center;
@@ -184,7 +171,7 @@ h6 {
 /* Animasi hover */
 .dashboard-card:hover {
 	transform: translateY(-8px);
-	box-shadow: 0 14px 28px var(--accent-color);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
 }
 
 /* Judul */
