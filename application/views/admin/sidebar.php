@@ -5,11 +5,11 @@
 				<i class="fas fa-home me-2"></i> Dashboard
 			</a>
 		</li>
-		<li class="nav-item">
+		<!-- <li class="nav-item">
 			<a class="nav-link <?php echo $active_menu == 'informasi_dikecualikan' ? 'active' : ''; ?>" href="<?php echo base_url('admin_informasi_dikecualikan'); ?>">
 				<i class="fas fa-lock me-2"></i> Informasi Dikecualikan
 			</a>
-		</li>
+		</li> -->
 		<li class="nav-item">
 			<a class="nav-link <?php echo $active_menu == 'informasi' ? 'active' : ''; ?>" href="<?php echo base_url('admin_informasi'); ?>">
 				<i class="fas fa-info-circle me-2"></i> Informasi

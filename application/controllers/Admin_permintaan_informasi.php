@@ -110,15 +110,17 @@ class Admin_permintaan_informasi extends CI_Controller
 			}
 		}
 	}
+
 	public function delete($id)
 	{
-		if ($this->db->delete('dokumen', ['id' => $id])) {
+		if ($this->db->delete('permintaan_informasi', ['id' => $id])) {
 			redirect('admin_permintaan_informasi');
 		} else {
 			log_message('error', 'Gagal delete: ' . $this->db->last_query());
 			show_error('Gagal menghapus data.');
 		}
 	}
+
 
 	public function valid_url() {}
 

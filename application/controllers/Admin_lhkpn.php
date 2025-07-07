@@ -99,7 +99,7 @@ class Admin_lhkpn extends CI_Controller
 		} else {
 			// Jika validasi berhasil, simpan data
 			$data_insert = [
-				'id' => $this->db->select_max('id')->get('nama_tabel')->row()->id + 1,
+				'id' => $this->db->select_max('id')->get('lhkpn')->row()->id + 1,
 				'tahun' => $this->input->post('tahun'),
 				'nama' => $this->input->post('nama_pejabat'),
 				'jabatan' => $this->input->post('jabatan'),
@@ -153,7 +153,7 @@ class Admin_lhkpn extends CI_Controller
 			$data['user'] = $this->user;
 			$data['lhkpn'] = $this->db->get_where('lhkpn', ['id' => $id])->row();
 			$data['unit_kerja'] = $this->Informasi_model->get_all_units();
-			
+
 			$this->load->view('admin/header', $data);
 			$this->load->view('admin/sidebar', $data);
 			$this->load->view('admin/lhkpn_edit', $data);
